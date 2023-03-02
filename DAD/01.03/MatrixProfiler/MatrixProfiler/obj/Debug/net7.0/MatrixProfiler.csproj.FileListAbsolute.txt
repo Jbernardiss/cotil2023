@@ -1,0 +1,15 @@
+/Users/Jbernardis/Documents/Programming/C#/MatrixProfiler/MatrixProfiler/bin/Debug/net7.0/MatrixProfiler
+/Users/Jbernardis/Documents/Programming/C#/MatrixProfiler/MatrixProfiler/bin/Debug/net7.0/MatrixProfiler.deps.json
+/Users/Jbernardis/Documents/Programming/C#/MatrixProfiler/MatrixProfiler/bin/Debug/net7.0/MatrixProfiler.runtimeconfig.json
+/Users/Jbernardis/Documents/Programming/C#/MatrixProfiler/MatrixProfiler/bin/Debug/net7.0/MatrixProfiler.dll
+/Users/Jbernardis/Documents/Programming/C#/MatrixProfiler/MatrixProfiler/bin/Debug/net7.0/MatrixProfiler.pdb
+/Users/Jbernardis/Documents/Programming/C#/MatrixProfiler/MatrixProfiler/obj/Debug/net7.0/MatrixProfiler.csproj.AssemblyReference.cache
+/Users/Jbernardis/Documents/Programming/C#/MatrixProfiler/MatrixProfiler/obj/Debug/net7.0/MatrixProfiler.GeneratedMSBuildEditorConfig.editorconfig
+/Users/Jbernardis/Documents/Programming/C#/MatrixProfiler/MatrixProfiler/obj/Debug/net7.0/MatrixProfiler.AssemblyInfoInputs.cache
+/Users/Jbernardis/Documents/Programming/C#/MatrixProfiler/MatrixProfiler/obj/Debug/net7.0/MatrixProfiler.AssemblyInfo.cs
+/Users/Jbernardis/Documents/Programming/C#/MatrixProfiler/MatrixProfiler/obj/Debug/net7.0/MatrixProfiler.csproj.CoreCompileInputs.cache
+/Users/Jbernardis/Documents/Programming/C#/MatrixProfiler/MatrixProfiler/obj/Debug/net7.0/MatrixProfiler.dll
+/Users/Jbernardis/Documents/Programming/C#/MatrixProfiler/MatrixProfiler/obj/Debug/net7.0/refint/MatrixProfiler.dll
+/Users/Jbernardis/Documents/Programming/C#/MatrixProfiler/MatrixProfiler/obj/Debug/net7.0/MatrixProfiler.pdb
+/Users/Jbernardis/Documents/Programming/C#/MatrixProfiler/MatrixProfiler/obj/Debug/net7.0/MatrixProfiler.genruntimeconfig.cache
+/Users/Jbernardis/Documents/Programming/C#/MatrixProfiler/MatrixProfiler/obj/Debug/net7.0/ref/MatrixProfiler.dll
