@@ -1,0 +1,15 @@
+F:\school_repo\DAD\01.03\SaddlePoint\SaddlePoint\bin\Debug\net7.0\SaddlePoint.exe
+F:\school_repo\DAD\01.03\SaddlePoint\SaddlePoint\bin\Debug\net7.0\SaddlePoint.deps.json
+F:\school_repo\DAD\01.03\SaddlePoint\SaddlePoint\bin\Debug\net7.0\SaddlePoint.runtimeconfig.json
+F:\school_repo\DAD\01.03\SaddlePoint\SaddlePoint\bin\Debug\net7.0\SaddlePoint.dll
+F:\school_repo\DAD\01.03\SaddlePoint\SaddlePoint\bin\Debug\net7.0\SaddlePoint.pdb
+F:\school_repo\DAD\01.03\SaddlePoint\SaddlePoint\obj\Debug\net7.0\SaddlePoint.csproj.AssemblyReference.cache
+F:\school_repo\DAD\01.03\SaddlePoint\SaddlePoint\obj\Debug\net7.0\SaddlePoint.GeneratedMSBuildEditorConfig.editorconfig
+F:\school_repo\DAD\01.03\SaddlePoint\SaddlePoint\obj\Debug\net7.0\SaddlePoint.AssemblyInfoInputs.cache
+F:\school_repo\DAD\01.03\SaddlePoint\SaddlePoint\obj\Debug\net7.0\SaddlePoint.AssemblyInfo.cs
+F:\school_repo\DAD\01.03\SaddlePoint\SaddlePoint\obj\Debug\net7.0\SaddlePoint.csproj.CoreCompileInputs.cache
+F:\school_repo\DAD\01.03\SaddlePoint\SaddlePoint\obj\Debug\net7.0\SaddlePoint.dll
+F:\school_repo\DAD\01.03\SaddlePoint\SaddlePoint\obj\Debug\net7.0\refint\SaddlePoint.dll
+F:\school_repo\DAD\01.03\SaddlePoint\SaddlePoint\obj\Debug\net7.0\SaddlePoint.pdb
+F:\school_repo\DAD\01.03\SaddlePoint\SaddlePoint\obj\Debug\net7.0\SaddlePoint.genruntimeconfig.cache
+F:\school_repo\DAD\01.03\SaddlePoint\SaddlePoint\obj\Debug\net7.0\ref\SaddlePoint.dll
