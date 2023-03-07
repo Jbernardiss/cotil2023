@@ -1,0 +1,14 @@
+C:\Users\aluno\3D Objects\school\DAD\01.03\matrixMultiply\matrixMultiply\bin\Debug\netcoreapp3.1\matrixMultiply.exe
+C:\Users\aluno\3D Objects\school\DAD\01.03\matrixMultiply\matrixMultiply\bin\Debug\netcoreapp3.1\matrixMultiply.deps.json
+C:\Users\aluno\3D Objects\school\DAD\01.03\matrixMultiply\matrixMultiply\bin\Debug\netcoreapp3.1\matrixMultiply.runtimeconfig.json
+C:\Users\aluno\3D Objects\school\DAD\01.03\matrixMultiply\matrixMultiply\bin\Debug\netcoreapp3.1\matrixMultiply.runtimeconfig.dev.json
+C:\Users\aluno\3D Objects\school\DAD\01.03\matrixMultiply\matrixMultiply\bin\Debug\netcoreapp3.1\matrixMultiply.dll
+C:\Users\aluno\3D Objects\school\DAD\01.03\matrixMultiply\matrixMultiply\bin\Debug\netcoreapp3.1\matrixMultiply.pdb
+C:\Users\aluno\3D Objects\school\DAD\01.03\matrixMultiply\matrixMultiply\obj\Debug\netcoreapp3.1\matrixMultiply.csproj.AssemblyReference.cache
+C:\Users\aluno\3D Objects\school\DAD\01.03\matrixMultiply\matrixMultiply\obj\Debug\netcoreapp3.1\matrixMultiply.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\aluno\3D Objects\school\DAD\01.03\matrixMultiply\matrixMultiply\obj\Debug\netcoreapp3.1\matrixMultiply.AssemblyInfoInputs.cache
+C:\Users\aluno\3D Objects\school\DAD\01.03\matrixMultiply\matrixMultiply\obj\Debug\netcoreapp3.1\matrixMultiply.AssemblyInfo.cs
+C:\Users\aluno\3D Objects\school\DAD\01.03\matrixMultiply\matrixMultiply\obj\Debug\netcoreapp3.1\matrixMultiply.csproj.CoreCompileInputs.cache
+C:\Users\aluno\3D Objects\school\DAD\01.03\matrixMultiply\matrixMultiply\obj\Debug\netcoreapp3.1\matrixMultiply.dll
+C:\Users\aluno\3D Objects\school\DAD\01.03\matrixMultiply\matrixMultiply\obj\Debug\netcoreapp3.1\matrixMultiply.pdb
+C:\Users\aluno\3D Objects\school\DAD\01.03\matrixMultiply\matrixMultiply\obj\Debug\netcoreapp3.1\matrixMultiply.genruntimeconfig.cache

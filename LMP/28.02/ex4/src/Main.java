@@ -1,3 +1,5 @@
+import java.io.Writer;
+
 public class Main {
     public static void main(String[] args) {
         Stock stock1 = new Stock("Impressora", 13, 6);
@@ -16,6 +18,5 @@ public class Main {
         System.out.println(stock1.showStock()); //e
         System.out.println(stock2.showStock());
         System.out.println(stock3.showStock());
-
     }
 }
