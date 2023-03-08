@@ -1,0 +1,22 @@
+
+body {
+    background-color: #EE1C25;
+    background-image: url(../img/flag-of-the-peoples-republic-of-china.png);
+    background-repeat: no-repeat;
+}
+
+main {
+    text-align: center;
+    color: #FFFF00;
+}
+
+#imgs {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#imgs div {
+    display: flex;
+    flex-direction: row;
+}
