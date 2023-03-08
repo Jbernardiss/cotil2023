@@ -1,0 +1,14 @@
+C:\Users\aluno\3D Objects\school\DAD\08.03\selectionSort\selectionSort\obj\Debug\netcoreapp3.1\selectionSort.csproj.AssemblyReference.cache
+C:\Users\aluno\3D Objects\school\DAD\08.03\selectionSort\selectionSort\obj\Debug\netcoreapp3.1\selectionSort.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\aluno\3D Objects\school\DAD\08.03\selectionSort\selectionSort\obj\Debug\netcoreapp3.1\selectionSort.AssemblyInfoInputs.cache
+C:\Users\aluno\3D Objects\school\DAD\08.03\selectionSort\selectionSort\obj\Debug\netcoreapp3.1\selectionSort.AssemblyInfo.cs
+C:\Users\aluno\3D Objects\school\DAD\08.03\selectionSort\selectionSort\obj\Debug\netcoreapp3.1\selectionSort.csproj.CoreCompileInputs.cache
+C:\Users\aluno\3D Objects\school\DAD\08.03\selectionSort\selectionSort\bin\Debug\netcoreapp3.1\selectionSort.exe
+C:\Users\aluno\3D Objects\school\DAD\08.03\selectionSort\selectionSort\bin\Debug\netcoreapp3.1\selectionSort.deps.json
+C:\Users\aluno\3D Objects\school\DAD\08.03\selectionSort\selectionSort\bin\Debug\netcoreapp3.1\selectionSort.runtimeconfig.json
+C:\Users\aluno\3D Objects\school\DAD\08.03\selectionSort\selectionSort\bin\Debug\netcoreapp3.1\selectionSort.runtimeconfig.dev.json
+C:\Users\aluno\3D Objects\school\DAD\08.03\selectionSort\selectionSort\bin\Debug\netcoreapp3.1\selectionSort.dll
+C:\Users\aluno\3D Objects\school\DAD\08.03\selectionSort\selectionSort\bin\Debug\netcoreapp3.1\selectionSort.pdb
+C:\Users\aluno\3D Objects\school\DAD\08.03\selectionSort\selectionSort\obj\Debug\netcoreapp3.1\selectionSort.dll
+C:\Users\aluno\3D Objects\school\DAD\08.03\selectionSort\selectionSort\obj\Debug\netcoreapp3.1\selectionSort.pdb
+C:\Users\aluno\3D Objects\school\DAD\08.03\selectionSort\selectionSort\obj\Debug\netcoreapp3.1\selectionSort.genruntimeconfig.cache
