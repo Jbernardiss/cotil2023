@@ -1,0 +1,15 @@
+F:\school_repo\DAD\08.03\Ex1\Ex1\bin\Debug\net7.0\Ex1.exe
+F:\school_repo\DAD\08.03\Ex1\Ex1\bin\Debug\net7.0\Ex1.deps.json
+F:\school_repo\DAD\08.03\Ex1\Ex1\bin\Debug\net7.0\Ex1.runtimeconfig.json
+F:\school_repo\DAD\08.03\Ex1\Ex1\bin\Debug\net7.0\Ex1.dll
+F:\school_repo\DAD\08.03\Ex1\Ex1\bin\Debug\net7.0\Ex1.pdb
+F:\school_repo\DAD\08.03\Ex1\Ex1\obj\Debug\net7.0\Ex1.csproj.AssemblyReference.cache
+F:\school_repo\DAD\08.03\Ex1\Ex1\obj\Debug\net7.0\Ex1.GeneratedMSBuildEditorConfig.editorconfig
+F:\school_repo\DAD\08.03\Ex1\Ex1\obj\Debug\net7.0\Ex1.AssemblyInfoInputs.cache
+F:\school_repo\DAD\08.03\Ex1\Ex1\obj\Debug\net7.0\Ex1.AssemblyInfo.cs
+F:\school_repo\DAD\08.03\Ex1\Ex1\obj\Debug\net7.0\Ex1.csproj.CoreCompileInputs.cache
+F:\school_repo\DAD\08.03\Ex1\Ex1\obj\Debug\net7.0\Ex1.dll
+F:\school_repo\DAD\08.03\Ex1\Ex1\obj\Debug\net7.0\refint\Ex1.dll
+F:\school_repo\DAD\08.03\Ex1\Ex1\obj\Debug\net7.0\Ex1.pdb
+F:\school_repo\DAD\08.03\Ex1\Ex1\obj\Debug\net7.0\Ex1.genruntimeconfig.cache
+F:\school_repo\DAD\08.03\Ex1\Ex1\obj\Debug\net7.0\ref\Ex1.dll
