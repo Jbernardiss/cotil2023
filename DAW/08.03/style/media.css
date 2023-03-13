@@ -10,13 +10,13 @@ main {
     color: #FFFF00;
 }
 
-#imgs {
+.imgs {
     display: flex;
+    flex-direction: row;
     justify-content: center;
     align-items: center;
 }
 
-#imgs div {
-    display: flex;
-    flex-direction: row;
+.question {
+    font-size: 150%;
 }
