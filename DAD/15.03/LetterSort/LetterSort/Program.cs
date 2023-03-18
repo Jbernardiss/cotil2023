@@ -6,14 +6,20 @@ namespace LetterSort
     {
         static string letterSort(string word)
         {
+            word = word.ToLower();
             char[] charArr = word.ToCharArray();
+
             bool changed = false;
             char temp;
+            
 
             do
             {
-                for(int i = 0; i < (word.Length - 1); i++)
+                changed = false;
+
+                for(int i = 0; i < (charArr.Length - 1); i++)
                 {
+
                     if(charArr[i] > charArr[i + 1])
                     {
                         temp = charArr[i];
@@ -21,10 +27,9 @@ namespace LetterSort
                         charArr[i + 1] = temp;
 
                         changed = true;
-                        char[] bruh = charArr;
                     }
                 }
-            } while (changed);
+            } while (changed); 
 
             return new string(charArr);
         } 

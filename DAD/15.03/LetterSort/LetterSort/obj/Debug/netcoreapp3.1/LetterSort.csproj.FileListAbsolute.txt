@@ -12,3 +12,17 @@ C:\Users\aluno\3D Objects\school\DAD\15.03\LetterSort\LetterSort\obj\Debug\netco
 C:\Users\aluno\3D Objects\school\DAD\15.03\LetterSort\LetterSort\obj\Debug\netcoreapp3.1\LetterSort.dll
 C:\Users\aluno\3D Objects\school\DAD\15.03\LetterSort\LetterSort\obj\Debug\netcoreapp3.1\LetterSort.pdb
 C:\Users\aluno\3D Objects\school\DAD\15.03\LetterSort\LetterSort\obj\Debug\netcoreapp3.1\LetterSort.genruntimeconfig.cache
+F:\school_repo\DAD\15.03\LetterSort\LetterSort\bin\Debug\netcoreapp3.1\LetterSort.exe
+F:\school_repo\DAD\15.03\LetterSort\LetterSort\bin\Debug\netcoreapp3.1\LetterSort.deps.json
+F:\school_repo\DAD\15.03\LetterSort\LetterSort\bin\Debug\netcoreapp3.1\LetterSort.runtimeconfig.json
+F:\school_repo\DAD\15.03\LetterSort\LetterSort\bin\Debug\netcoreapp3.1\LetterSort.runtimeconfig.dev.json
+F:\school_repo\DAD\15.03\LetterSort\LetterSort\bin\Debug\netcoreapp3.1\LetterSort.dll
+F:\school_repo\DAD\15.03\LetterSort\LetterSort\bin\Debug\netcoreapp3.1\LetterSort.pdb
+F:\school_repo\DAD\15.03\LetterSort\LetterSort\obj\Debug\netcoreapp3.1\LetterSort.csproj.AssemblyReference.cache
+F:\school_repo\DAD\15.03\LetterSort\LetterSort\obj\Debug\netcoreapp3.1\LetterSort.GeneratedMSBuildEditorConfig.editorconfig
+F:\school_repo\DAD\15.03\LetterSort\LetterSort\obj\Debug\netcoreapp3.1\LetterSort.AssemblyInfoInputs.cache
+F:\school_repo\DAD\15.03\LetterSort\LetterSort\obj\Debug\netcoreapp3.1\LetterSort.AssemblyInfo.cs
+F:\school_repo\DAD\15.03\LetterSort\LetterSort\obj\Debug\netcoreapp3.1\LetterSort.csproj.CoreCompileInputs.cache
+F:\school_repo\DAD\15.03\LetterSort\LetterSort\obj\Debug\netcoreapp3.1\LetterSort.dll
+F:\school_repo\DAD\15.03\LetterSort\LetterSort\obj\Debug\netcoreapp3.1\LetterSort.pdb
+F:\school_repo\DAD\15.03\LetterSort\LetterSort\obj\Debug\netcoreapp3.1\LetterSort.genruntimeconfig.cache

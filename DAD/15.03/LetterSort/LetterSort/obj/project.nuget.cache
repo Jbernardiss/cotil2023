@@ -1,8 +1,13 @@
 {
   "version": 2,
-  "dgSpecHash": "Szm/1X4zDNOWFZPcqvOy5TCnIgjketflMQBLFek483thavAoY7Jm/jHc/3VneEnye9gQVBa/lIwbfNrs+0/FTA==",
+  "dgSpecHash": "KQzPMBFSpSf5PtfGhr2QDBjRLAsRyKQ1z+zsh1Ku+NF93LJyXMRPHFl3zN+om2Kf7Ubi/bU4jyyusPIMJo/8cw==",
   "success": true,
-  "projectFilePath": "C:\\Users\\aluno\\3D Objects\\school\\DAD\\15.03\\LetterSort\\LetterSort\\LetterSort.csproj",
-  "expectedPackageFiles": [],
+  "projectFilePath": "F:\\school_repo\\DAD\\15.03\\LetterSort\\LetterSort\\LetterSort.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\Windows\\.nuget\\packages\\microsoft.windowsdesktop.app.ref\\3.1.0\\microsoft.windowsdesktop.app.ref.3.1.0.nupkg.sha512",
+    "C:\\Users\\Windows\\.nuget\\packages\\microsoft.netcore.app.ref\\3.1.0\\microsoft.netcore.app.ref.3.1.0.nupkg.sha512",
+    "C:\\Users\\Windows\\.nuget\\packages\\microsoft.aspnetcore.app.ref\\3.1.10\\microsoft.aspnetcore.app.ref.3.1.10.nupkg.sha512",
+    "C:\\Users\\Windows\\.nuget\\packages\\microsoft.netcore.app.host.win-x64\\3.1.32\\microsoft.netcore.app.host.win-x64.3.1.32.nupkg.sha512"
+  ],
   "logs": []
 }
