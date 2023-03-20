@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Forms</title>
+</head>
+<body>
+    <form>
+        <label for="nome">Nome:</label><br/>
+        <input type="text" size="35" minlength="3" maxlength="30" required placeholder="Type your name" name="nome">
+
+        <br/><br/>
+        <label for="idade">Idade:</label><br/>
+        <input type="number" name="idade" id="idade" min="18" max="60" step="2">
+
+        <br/><br/>
+        <label for="cargo">Cargo:</label><br/>
+        <input type="text" size="25" name="cargo" id="cargo" value="Professor(a)" readonly>
+
+        <br/><br/>
+        <label for="senha">Senha:</label><br/>
+        <input type="password" size="25" name="senha" id="senha" minlength="8" maxlength="10" required>
+
+        <br/><br/>
+        <label for="senha">Sexo:</label><br/>
+        M <input type="radio" size="25" name="sexo" id="sexo" value="M">
+        F <input type="radio" size="25" name="sexo" id="sexo" value="F">
+
+        <br/><br/>
+        <label>Períodos de aula:</label><br/>
+        <input type="checkbox" name="manhã"> Manhã
+        <input type="checkbox" name="tarde" checked> Tarde
+        <input type="checkbox" name="noite"> Noite
+
+        <br/><br/>
+        <label for="corCamiseta">Cor de Camiseta:</label><br/>
+        <input type="color" name="corCamiseta" id="corCamiseta">
+
+        <br/><br/>
+        <fieldset>
+            <legend align="center" >Date</legend>
+
+            <label for="dataNasc">Data Nascimento:</label><br/>
+            <input type="date" name="dataNasc" id="dataNasc">
+
+            <br/><br/>
+            <label for="dataHora">Data e hora do cadastro:</label><br/>
+            <input type="datetime-local" name="dataHora" id="dataHora">
+
+            <br/><br/>
+            <label for="horaCad">Horário do cadastro:</label><br/>
+            <input type="time" name="horaCad" id="horaCad">
+
+            <br/><br/>
+            <label for="mesEncerra">Mês de encerramento do contrato:</label><br/>
+            <input type="month" name="mesEncerra" id="mesEncerra">
+
+            
+        </fieldset>
+
+        <br/><br/>
+        <label for="email">Email:</label><br/>
+        <input type="email" placeholder="exemplo@email.com" name="email" id="email">
+
+        <br/><br/>
+        <label for="site">Site:</label><br/>
+        <input type="url" placeholder="https://exemplo.com" name="site" id="site">
+
+        <br/><br/>
+        <label for="capacitacao">Capacitação:</label><br/>
+        <input type="range" min="0" max="10" name="capacitacao" id="capacitacao">
+
+        <br/><br/>
+        <label for="foto">Foto:</label><br/>
+        <input type="file" name="foto" id="foto" accept="image/*">
+
+        <br/><br/>
+        <input type="button" value="Test" onclick="alert('bruh')">
+        <input type="submit" value="Submit">
+        <input type="reset" value="Clear">
+    </form>
+</body>
+</html>
