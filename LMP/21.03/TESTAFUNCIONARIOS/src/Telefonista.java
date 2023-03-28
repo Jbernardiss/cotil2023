@@ -6,6 +6,12 @@ public class Telefonista extends Funcionario{
         this.codEstacao = codEstacao;
     }
 
+    @Override
+    public void mostraDados() {
+        super.mostraDados();
+        System.out.println("Código estação: " + codEstacao);
+    }
+
     public int getCodEstacao() {
         return codEstacao;
     }

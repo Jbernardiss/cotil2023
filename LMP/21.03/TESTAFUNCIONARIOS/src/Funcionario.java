@@ -8,7 +8,12 @@ public class Funcionario {
     }
 
     double calcBonificacao() {
-        return (salario * 1.1);
+        return (salario * 0.1);
+    }
+
+    public void mostraDados() {
+        System.out.println("Nome: " + this.nome);
+        System.out.println("Salário: " + this.salario);
     }
 
     public String getNome() {

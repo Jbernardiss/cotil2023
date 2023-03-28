@@ -8,6 +8,17 @@ public class Gerente extends Funcionario{
         this.senha = senha;
     }
 
+    public double calcBonificacao() {
+        return (salario * 0.2);
+    }
+
+    @Override
+    public void mostraDados() {
+        super.mostraDados();
+        System.out.println("Usuário: " + this.nomeUsuario);
+        System.out.println("Senha: " + this.senha);
+    }
+
     public String getNomeUsuario() {
         return nomeUsuario;
     }
