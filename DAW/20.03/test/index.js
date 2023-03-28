@@ -8,5 +8,5 @@ app.get("/", (req, res) => {
 })
 
 app.listen(port, () => {
-    console.log("bruh");
+    console.log("Привет");
 })
