@@ -77,6 +77,44 @@
         <input type="file" name="foto" id="foto" accept="image/*">
 
         <br/><br/>
+        <label for="curso">Curso:</label><br/>
+        <select name="curso" id="curso">
+            <option>Bruh</option>
+            <option value="Informática">Informática</option>
+            <option value="Edificações">Edificações</option>
+            <option value="Geomática">Geomática</option>
+            <option value="Mecânica">Mecânica</option>
+            <option value="Enfermagem">Enfermagem</option>
+        </select>
+
+        <br/><br/>
+        <label for="areas">Áreas preferidas:</label><br/>
+        <select name="areas" id="areas" size="3" multiple>
+            <option value="Exatas">Exatas</option>
+            <option value="Humanas">Humanas</option>
+            <option value="Biológicas">Biológicas</option>
+        </select>
+
+        <br/><br/>
+        <label for="veiculo">Veículo que utilizará no campus:</label><br/>
+        <select name="veiculo" id="veiculo">
+            <optgroup label="Carros">
+                <option value="GM">GM</option>
+                <option value="VW" selected>VW</option>
+                <option value="Renault">Renault</option>
+            </optgroup>
+            <optgroup label="Motos">
+                <option value="Honda">Honda</option>
+                <option value="Yamaha" selected>Yamaha</option>
+                <option value="Suzuki">Suzuki</option>
+            </optgroup>
+        </select>
+
+        <br/><br/>
+        <label for="essay" >Texto</label><br/>
+        <textarea rows="15" cols="50" spellcheck="true"></textarea>
+
+        <br/><br/>
         <input type="button" value="Test" onclick="alert('bruh')">
         <input type="submit" value="Submit">
         <input type="reset" value="Clear">
