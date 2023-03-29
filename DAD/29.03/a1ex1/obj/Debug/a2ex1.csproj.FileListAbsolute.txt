@@ -1,0 +1,10 @@
+C:\Users\aluno\3D Objects\school\DAD\29.03\a2ex1\bin\Debug\a2ex1.exe.config
+C:\Users\aluno\3D Objects\school\DAD\29.03\a2ex1\bin\Debug\a2ex1.exe
+C:\Users\aluno\3D Objects\school\DAD\29.03\a2ex1\bin\Debug\a2ex1.pdb
+C:\Users\aluno\3D Objects\school\DAD\29.03\a2ex1\obj\Debug\a2ex1.csproj.AssemblyReference.cache
+C:\Users\aluno\3D Objects\school\DAD\29.03\a2ex1\obj\Debug\a2ex1.Form1.resources
+C:\Users\aluno\3D Objects\school\DAD\29.03\a2ex1\obj\Debug\a2ex1.Properties.Resources.resources
+C:\Users\aluno\3D Objects\school\DAD\29.03\a2ex1\obj\Debug\a2ex1.csproj.GenerateResource.cache
+C:\Users\aluno\3D Objects\school\DAD\29.03\a2ex1\obj\Debug\a2ex1.csproj.CoreCompileInputs.cache
+C:\Users\aluno\3D Objects\school\DAD\29.03\a2ex1\obj\Debug\a2ex1.exe
+C:\Users\aluno\3D Objects\school\DAD\29.03\a2ex1\obj\Debug\a2ex1.pdb

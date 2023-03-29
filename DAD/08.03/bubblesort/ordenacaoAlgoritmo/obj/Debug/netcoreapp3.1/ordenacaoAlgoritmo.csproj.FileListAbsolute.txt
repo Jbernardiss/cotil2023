@@ -12,3 +12,17 @@ C:\Users\aluno\3D Objects\school\DAD\08.03\ordenacaoAlgoritmo\ordenacaoAlgoritmo
 C:\Users\aluno\3D Objects\school\DAD\08.03\ordenacaoAlgoritmo\ordenacaoAlgoritmo\obj\Debug\netcoreapp3.1\ordenacaoAlgoritmo.dll
 C:\Users\aluno\3D Objects\school\DAD\08.03\ordenacaoAlgoritmo\ordenacaoAlgoritmo\obj\Debug\netcoreapp3.1\ordenacaoAlgoritmo.pdb
 C:\Users\aluno\3D Objects\school\DAD\08.03\ordenacaoAlgoritmo\ordenacaoAlgoritmo\obj\Debug\netcoreapp3.1\ordenacaoAlgoritmo.genruntimeconfig.cache
+C:\Users\aluno\3D Objects\school\DAD\08.03\bubblesort\ordenacaoAlgoritmo\bin\Debug\netcoreapp3.1\ordenacaoAlgoritmo.exe
+C:\Users\aluno\3D Objects\school\DAD\08.03\bubblesort\ordenacaoAlgoritmo\bin\Debug\netcoreapp3.1\ordenacaoAlgoritmo.deps.json
+C:\Users\aluno\3D Objects\school\DAD\08.03\bubblesort\ordenacaoAlgoritmo\bin\Debug\netcoreapp3.1\ordenacaoAlgoritmo.runtimeconfig.json
+C:\Users\aluno\3D Objects\school\DAD\08.03\bubblesort\ordenacaoAlgoritmo\bin\Debug\netcoreapp3.1\ordenacaoAlgoritmo.runtimeconfig.dev.json
+C:\Users\aluno\3D Objects\school\DAD\08.03\bubblesort\ordenacaoAlgoritmo\bin\Debug\netcoreapp3.1\ordenacaoAlgoritmo.dll
+C:\Users\aluno\3D Objects\school\DAD\08.03\bubblesort\ordenacaoAlgoritmo\bin\Debug\netcoreapp3.1\ordenacaoAlgoritmo.pdb
+C:\Users\aluno\3D Objects\school\DAD\08.03\bubblesort\ordenacaoAlgoritmo\obj\Debug\netcoreapp3.1\ordenacaoAlgoritmo.csproj.AssemblyReference.cache
+C:\Users\aluno\3D Objects\school\DAD\08.03\bubblesort\ordenacaoAlgoritmo\obj\Debug\netcoreapp3.1\ordenacaoAlgoritmo.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\aluno\3D Objects\school\DAD\08.03\bubblesort\ordenacaoAlgoritmo\obj\Debug\netcoreapp3.1\ordenacaoAlgoritmo.AssemblyInfoInputs.cache
+C:\Users\aluno\3D Objects\school\DAD\08.03\bubblesort\ordenacaoAlgoritmo\obj\Debug\netcoreapp3.1\ordenacaoAlgoritmo.AssemblyInfo.cs
+C:\Users\aluno\3D Objects\school\DAD\08.03\bubblesort\ordenacaoAlgoritmo\obj\Debug\netcoreapp3.1\ordenacaoAlgoritmo.csproj.CoreCompileInputs.cache
+C:\Users\aluno\3D Objects\school\DAD\08.03\bubblesort\ordenacaoAlgoritmo\obj\Debug\netcoreapp3.1\ordenacaoAlgoritmo.dll
+C:\Users\aluno\3D Objects\school\DAD\08.03\bubblesort\ordenacaoAlgoritmo\obj\Debug\netcoreapp3.1\ordenacaoAlgoritmo.pdb
+C:\Users\aluno\3D Objects\school\DAD\08.03\bubblesort\ordenacaoAlgoritmo\obj\Debug\netcoreapp3.1\ordenacaoAlgoritmo.genruntimeconfig.cache

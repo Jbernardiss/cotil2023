@@ -15,11 +15,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\aluno\\3D Objects\\school\\DAD\\08.03\\ordenacaoAlgoritmo\\ordenacaoAlgoritmo\\ordenacaoAlgoritmo.csproj",
+      "projectUniqueName": "C:\\Users\\aluno\\3D Objects\\school\\DAD\\08.03\\bubblesort\\ordenacaoAlgoritmo\\ordenacaoAlgoritmo.csproj",
       "projectName": "ordenacaoAlgoritmo",
-      "projectPath": "C:\\Users\\aluno\\3D Objects\\school\\DAD\\08.03\\ordenacaoAlgoritmo\\ordenacaoAlgoritmo\\ordenacaoAlgoritmo.csproj",
+      "projectPath": "C:\\Users\\aluno\\3D Objects\\school\\DAD\\08.03\\bubblesort\\ordenacaoAlgoritmo\\ordenacaoAlgoritmo.csproj",
       "packagesPath": "C:\\Users\\aluno\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\aluno\\3D Objects\\school\\DAD\\08.03\\ordenacaoAlgoritmo\\ordenacaoAlgoritmo\\obj\\",
+      "outputPath": "C:\\Users\\aluno\\3D Objects\\school\\DAD\\08.03\\bubblesort\\ordenacaoAlgoritmo\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",

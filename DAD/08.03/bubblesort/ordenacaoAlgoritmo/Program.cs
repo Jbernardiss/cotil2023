@@ -10,7 +10,7 @@ namespace ordenacaoAlgoritmo
             int[] v = new int[5];
             bool trocou;
 
-
+            int troca = 0, comp= 0;
             for(int i = 0; i < 5; i++)
             {
                 Console.WriteLine("Escreva um número: ");
@@ -27,8 +27,10 @@ namespace ordenacaoAlgoritmo
                 trocou = false;
                 for(int i = 0; i < 4; i++)
                 {
+                    comp++;
                     if(v[i] > v[i + 1])
                     {
+                        troca++;
                         temp = v[i];
                         v[i] = v[i + 1];
                         v[i + 1] = temp;
@@ -42,6 +44,9 @@ namespace ordenacaoAlgoritmo
             {
                 Console.Write(v[i] + " ");
             }
+
+            Console.WriteLine("\ntroca: " + troca);
+            Console.WriteLine("Comp: " + comp);
         }
     }
 }
