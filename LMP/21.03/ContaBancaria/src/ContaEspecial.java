@@ -8,8 +8,12 @@ public class ContaEspecial extends ContaBancaria{
     }
 
     public void sacar(double saque){
-        if(getSaldo() - saque < limite){
-            System.out.println("Limite excedido");
+        if(saque > (getSaldo() + getLimite())) {
+            System.out.println("Pobre! Não tem dinheiro kk!");
+        }
+        else if(saque > getSaldo()){
+            setLimite(getLimite() - (saque - getSaldo()));
+            setSaldo(0);
         }else{
             System.out.println("Valor sacado: R$" + saque);
             setSaldo(getSaldo() - saque);
