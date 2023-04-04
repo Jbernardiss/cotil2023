@@ -13,6 +13,11 @@ public class Bolsista extends Aluno{
         System.out.println(bolsa);
     }
 
+    @Override
+    public void mostraTipo() {
+        System.out.println("É um bolsista");
+    }
+
     public Bolsista(int cpf, String nome, int ra) {
         super(cpf, nome, ra);
     }

@@ -12,6 +12,11 @@ public class Aluno extends Pessoa{
         System.out.println(this.ra);
     }
 
+    @Override
+    public void mostraTipo() {
+        System.out.println("É um Aluno");
+    }
+
     public double calcMedia(double n1, double n2) {
         return ((n1 + n2)/2);
     }

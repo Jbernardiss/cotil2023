@@ -12,6 +12,10 @@ public class Pessoa {
         System.out.println(this.cpf);
     }
 
+    public void mostraTipo() {
+        System.out.println("É uma pessoa");
+    }
+
     public int getCpf() {
         return cpf;
     }

@@ -6,6 +6,11 @@ public class Professor extends Pessoa{
         this.salario = salario;
     }
 
+    @Override
+    public void mostraTipo() {
+        System.out.println("É um Profesor");
+    }
+
     public double getSalario() {
         return salario;
     }
