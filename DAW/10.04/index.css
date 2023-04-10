@@ -1,0 +1,60 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Luxurious+Script&display=swap');
+
+
+body {
+    
+    margin: 0px;
+    font-size: 30px;
+}
+
+
+
+.fakeStart {
+    margin: 0px;
+    background-color: #D9C196;
+    height: 100vh;
+}
+.fakeStart p {
+    font-family: 'Luxurious Script', cursive;;
+    margin: 40px 40px;
+}
+
+.fakeStart p span {
+    text-decoration: underline;
+    text-transform: uppercase;
+}
+
+.text {
+    text-align: center;
+}
+
+.trueStart {
+    height: 100vh;
+    background-image: url("./img/aircraftCarrier.jpg");
+}
+
+#a10 {
+    position: relative;
+    right: 230px;
+}
+
+#b52 {
+    position: relative;
+    top: -128px;
+    right: -516px;
+}
+
+#bomb {
+    position: relative;
+    top: 469px;
+    left: 109px;
+}
+
+#greatTitle {
+    color: blue;
+    text-shadow: 3px 3px red;
+
+    position: relative;
+    right: 500px;
+}
