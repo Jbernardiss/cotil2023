@@ -1,0 +1,10 @@
+C:\Users\aluno\3D Objects\school\DAD\05.04\Calculadora\bin\Debug\Calculadora.exe.config
+C:\Users\aluno\3D Objects\school\DAD\05.04\Calculadora\bin\Debug\Calculadora.exe
+C:\Users\aluno\3D Objects\school\DAD\05.04\Calculadora\bin\Debug\Calculadora.pdb
+C:\Users\aluno\3D Objects\school\DAD\05.04\Calculadora\obj\Debug\Calculadora.csproj.AssemblyReference.cache
+C:\Users\aluno\3D Objects\school\DAD\05.04\Calculadora\obj\Debug\Calculadora.Form1.resources
+C:\Users\aluno\3D Objects\school\DAD\05.04\Calculadora\obj\Debug\Calculadora.Properties.Resources.resources
+C:\Users\aluno\3D Objects\school\DAD\05.04\Calculadora\obj\Debug\Calculadora.csproj.GenerateResource.cache
+C:\Users\aluno\3D Objects\school\DAD\05.04\Calculadora\obj\Debug\Calculadora.csproj.CoreCompileInputs.cache
+C:\Users\aluno\3D Objects\school\DAD\05.04\Calculadora\obj\Debug\Calculadora.exe
+C:\Users\aluno\3D Objects\school\DAD\05.04\Calculadora\obj\Debug\Calculadora.pdb
