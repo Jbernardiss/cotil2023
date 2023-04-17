@@ -34,10 +34,17 @@ namespace Calculadora
         }
 
         private void button11_Click(object sender, EventArgs e)
-        {
+        {   
             if(textBox1.Text.IndexOf(",") == -1)
             {
-                textBox1.Text += ",";
+                if(String.IsNullOrEmpty(textBox1.Text))
+                {
+                    textBox1.Text += "0,";
+                }
+                else
+                {
+                    textBox1.Text += ",";
+                }
             }
         }
 

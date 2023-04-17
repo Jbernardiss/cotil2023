@@ -1,0 +1,47 @@
+
+body {
+    margin: 0px;
+    background-color: red;
+    background-image: url("./img/eagle.jpg");
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: 50%;
+    background-attachment: fixed;
+}
+
+h1 {
+    /*background-image: url(./img/palmerias.png);*/
+    /*-webkit-background-clip: text;*/
+    /*-webkit-text-fill-color: transparent;*/
+    background-size: 10px;
+}
+
+#menu {
+    background-color: black;
+    color: white;
+    margin-bottom: 20px;
+    padding: 5px;
+}
+
+#cotil {
+
+    background-color: rgb(255, 163, 7, 0.7);
+    
+    border: solid 2px gray;
+    border-radius: 15px;
+    /*border-top-left-radius: 50px;*/
+    /*border-bottom-right-radius: 50px; Я хочу уходить это класс!*/
+    
+    width: 300px;
+    height: 430px;
+
+    margin-top: 270px;
+    margin-left: 39%;
+
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+#cotil p {
+    text-align: justify;
+}
