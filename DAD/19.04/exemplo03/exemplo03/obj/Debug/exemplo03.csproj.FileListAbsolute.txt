@@ -1,0 +1,10 @@
+C:\Users\aluno\3D Objects\school\DAD\19.04\exemplo03\exemplo03\bin\Debug\exemplo03.exe.config
+C:\Users\aluno\3D Objects\school\DAD\19.04\exemplo03\exemplo03\bin\Debug\exemplo03.exe
+C:\Users\aluno\3D Objects\school\DAD\19.04\exemplo03\exemplo03\bin\Debug\exemplo03.pdb
+C:\Users\aluno\3D Objects\school\DAD\19.04\exemplo03\exemplo03\obj\Debug\exemplo03.Form1.resources
+C:\Users\aluno\3D Objects\school\DAD\19.04\exemplo03\exemplo03\obj\Debug\exemplo03.Properties.Resources.resources
+C:\Users\aluno\3D Objects\school\DAD\19.04\exemplo03\exemplo03\obj\Debug\exemplo03.csproj.GenerateResource.cache
+C:\Users\aluno\3D Objects\school\DAD\19.04\exemplo03\exemplo03\obj\Debug\exemplo03.csproj.CoreCompileInputs.cache
+C:\Users\aluno\3D Objects\school\DAD\19.04\exemplo03\exemplo03\obj\Debug\exemplo03.exe
+C:\Users\aluno\3D Objects\school\DAD\19.04\exemplo03\exemplo03\obj\Debug\exemplo03.pdb
+C:\Users\aluno\3D Objects\school\DAD\19.04\exemplo03\exemplo03\obj\Debug\exemplo03.csproj.AssemblyReference.cache
