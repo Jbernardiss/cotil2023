@@ -39,7 +39,7 @@ public class Song {
     public void printData() {
         System.out.println("ID: " + this.id);
         System.out.println("Name: " + this.name);
-        System.out.println("Durations: " + this.duration + "min");
+        System.out.println("Durations: " + this.duration + "s");
         System.out.println("Album: " + this.album);
         System.out.println("Artist: " + this.artist);
     }

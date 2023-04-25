@@ -73,7 +73,7 @@ public class Main {
 
                     artistSearchResults = null;
 
-                    System.out.println("Nationality: ");
+                    System.out.print("Nationality: ");
                     nationality = scanner.nextLine();
 
                     artistSearchResults = Artist.getArtistByNationality(nationality);
