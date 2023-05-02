@@ -12,7 +12,7 @@ public class Main {
         Artist artistObject = null;
         Scanner scanner = new Scanner(System.in);
         int option;
-        String name;
+        String name; 
         String nationality;
         int duration;
         String album;
@@ -70,6 +70,7 @@ public class Main {
                     break;
 
                 case 4:
+
 
                     artistSearchResults = null;
 

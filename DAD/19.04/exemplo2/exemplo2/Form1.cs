@@ -46,5 +46,13 @@ namespace exemplo2
             }
 
         }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            checkBox1.Checked = false;
+            checkBox2.Checked = false;
+            checkBox3.Checked = false;
+            checkBox4.Checked = false;
+        }
     }
 }

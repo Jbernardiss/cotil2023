@@ -12,6 +12,7 @@ namespace Exemplo_4
 {
     public partial class Form1 : Form
     {
+         int sentinela = 0;
         public Form1()
         {
             InitializeComponent();
@@ -23,7 +24,20 @@ namespace Exemplo_4
             {
                 progressBar1.Value = i;
             }
-            listBox1.Items.Add(comboBox1.Text);
+            if (!(listBox1.Items.Contains(comboBox1.Text)) && comboBox1.Text != "")
+            {
+                listBox1.Items.Add(comboBox1.Text);
+                comboBox1.Items.Remove(comboBox1.SelectedItem);
+                sentinela++;
+            }
+        }
+ 
+
+        private void listBox1_DoubleClick(object sender, EventArgs e)
+        {
+            comboBox1.Items.Add(listBox1.SelectedItem.ToString());
+            listBox1.Items.Remove(listBox1.SelectedItem);
+            sentinela--;
         }
     }
 }
