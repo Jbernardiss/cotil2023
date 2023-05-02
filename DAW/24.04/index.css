@@ -21,11 +21,29 @@ body {
     width: 250px;
     background-color: blue;
     color: white;
-
+    opacity: 50%;
     display: flex;
     align-items: center;
     justify-content: space-evenly;
     flex-direction: column;
+
+    z-index: 10;
+}
+
+.caixa1{
+    position: relative;
+    right: 100px;
+    top: 30px;
+    height: 100px;
+    width: 250px;
+    background-color: red;
+    color: white;
+    opacity: 80%;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    flex-direction: column;
+    z-index: 15;
 }
 
 /*
