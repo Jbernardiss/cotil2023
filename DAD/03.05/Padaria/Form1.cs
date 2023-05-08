@@ -98,6 +98,7 @@ namespace Padaria
             listBox1.Items.Clear();
 
             total.Clear();
+
         }
 
         private void button2_Click(object sender, EventArgs e)

@@ -1,0 +1,99 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Zilla+Slab:wght@500&display=swap');
+
+@font-face {
+    font-family: "Ferro Rosso";
+    src: url("../fonts/FerroRosso.ttf");
+}
+
+
+/*
+
+Theme colors
+
+Ferrari Yellow: #FFF200
+
+Random: 
+-> #0D0D0D
+-> #590202
+-> #8C0E03
+-> #BF1304
+-> #F21905
+
+
+Ferrari 499P:
+-> #260101
+-> #F20505
+-> #F29F05
+-> #F2B705
+-> #F2E205
+
+*/
+
+
+* {
+    font-family: 'Zilla Slab', serif;
+    color: beige;
+}
+
+body {
+    margin: 0px;
+    background-color: #590202;
+}
+
+.navbar {
+    background-color: #0D0D0D;
+    height: 70px;
+
+    display: flex;
+    align-items: center;
+}
+
+.navbar nav {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.navLink {
+    margin: 0px 15px 0px 15px;
+    text-decoration: none;
+    color: #FFF200;
+}
+
+.navLink:hover {
+    text-decoration: underline;
+}
+
+main {
+    margin: auto;
+    margin-top: 70px;
+
+    width: 60%;    
+}
+
+figcaption {
+    margin-top: 15px;
+    margin-bottom: 15px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+figcaption img {
+    border: solid black 5px;
+}
+
+.mainTitle {
+    font-size: 40px;
+}
+
+section {
+    font-size: 130%;
+}
+
+.notice {
+    color: yellow;
+}
