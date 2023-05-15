@@ -4,24 +4,28 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="index.css" rel="stylesheet" type="text/css">
+
     <title>Forms</title>
+
 </head>
 <body>
+<div id="forms">
     <form>
         <label for="nome">Nome:</label><br/>
-        <input type="text" size="35" minlength="3" maxlength="30" required placeholder="Type your name" name="nome">
+        <input type="text" size="35" minlength="3" maxlength="30" required placeholder="Type your name" name="nome" class="formataInput">
 
         <br/><br/>
         <label for="idade">Idade:</label><br/>
-        <input type="number" name="idade" id="idade" min="18" max="60" step="2">
+        <input type="number" name="idade" id="idade" min="18" max="60" step="2" class="formataInput">
 
         <br/><br/>
         <label for="cargo">Cargo:</label><br/>
-        <input type="text" size="25" name="cargo" id="cargo" value="Professor(a)" readonly>
+        <input type="text" size="25" name="cargo" id="cargo" value="Professor(a)" readonly class="formataInput">
 
         <br/><br/>
         <label for="senha">Senha:</label><br/>
-        <input type="password" size="25" name="senha" id="senha" minlength="8" maxlength="10" required>
+        <input type="password" size="25" name="senha" id="senha" minlength="8" maxlength="10" required placeholder="Senha" class="formataInput">
 
         <br/><br/>
         <label for="senha">Sexo:</label><br/>
@@ -62,8 +66,14 @@
 
         <br/><br/>
         <label for="email">Email:</label><br/>
-        <input type="email" placeholder="exemplo@email.com" name="email" id="email">
-
+        <input type="email" placeholder="exemplo@email.com" name="email" id="email" class="formataInput">
+        <br>
+        <div>
+            <img src="Galo-Cego-1-2.jpg" alt="galo cego">
+            <img src="R.jpeg" alt="bob">
+            <img src="fazueli.jpg" alt="só faz">
+        </div>
+        
         <br/><br/>
         <label for="site">Site:</label><br/>
         <input type="url" placeholder="https://exemplo.com" name="site" id="site">
@@ -116,8 +126,9 @@
 
         <br/><br/>
         <input type="button" value="Test" onclick="alert('bruh')">
-        <input type="submit" value="Submit">
         <input type="reset" value="Clear">
+        <input type="submit" value="Submit">
     </form>
+</div>
 </body>
 </html>
