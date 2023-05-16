@@ -1,21 +1,21 @@
-public class Futebol extends JogoComBola{
+public class Volei extends JogoComBola{
 
     private String equipe1, equipe2;
 
 
     @Override
     public void iniciar() {
-        System.out.println("A bola rola no gramado!");
+        System.out.println("Saque!");
     }
 
     @Override
     public void jogar() {
-        System.out.println("Jbernardis chuta a bola!");
+        System.out.println("Jbernardis faz a manchete!");
     }
 
     @Override
     public void finalizar() {
-        System.out.println("Apita o arbitro!");
+        System.out.println("3 sets! Acabou!");
     }
 
     @Override
