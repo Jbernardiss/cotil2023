@@ -4,7 +4,7 @@ body {
     justify-content: center;
     align-items: center;
     /* background: linear-gradient(to bottom, gray, rgb(212, 205, 205)); */
-    background: repeating-linear-gradient(green, red 10%, yellow 20%);
+    background-image:url(Color_Flash.gif);
 }
 
 .formataInput {
