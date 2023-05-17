@@ -1,0 +1,102 @@
+
+body { 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* background: linear-gradient(to bottom, gray, rgb(212, 205, 205)); */
+    background-image:url(Color_Flash.gif);
+}
+
+.formataInput {
+    border: black solid 3px;
+    border-radius: 10px;
+
+    height: 30px;
+    width: 100%;
+
+    margin-top: 5px;
+    margin-bottom: 15px;
+
+    background-color: lightgray;
+}
+
+input:hover {
+    border-color: green;
+    background-color: gray;
+}
+
+input:focus {
+    background-color: white;
+    color: green;
+}
+
+/*
+input:hover::placeholder { --> Só muda a cor quando houver um hover sobre o input
+    color: white;
+}
+*/
+
+input::placeholder {
+    color: white;
+}
+
+input[type="submit"] {
+
+    margin-top: 15px;
+    margin-bottom: 15px;
+
+    width: 650px;
+    font-size: 15px;
+    padding: 10px;
+
+    /*
+    border-radius: 10px;
+    border-bottom: 5px solid green;
+    border-right: 5px solid green;
+    border-right: 5px solid lightgreen;
+    border-right: 5px solid lightgreen;
+    */
+    background: linear-gradient(to left, lightgreen, green, black);
+    display: block;
+    background-color: green;
+    color: white;
+
+}
+
+
+input[type="submit"]:hover {
+    /*
+    border-bottom: 5px solid lightgreen;
+    border-right: 5px solid lightgreen;
+    border-right: 5px solid green;
+    border-right: 5px solid green;
+    */
+    background: linear-gradient(270deg, black, green, lightgreen);
+}
+
+#forms{
+
+    width: 40vw;
+
+    border: black solid 3px;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+img{
+    width: 10px;
+    height: 10px;
+    align-items: center;
+    transition: width 15s, height 15s, transform 5s;
+
+}
+
+img:hover{
+    width: 5000px;
+    height: 1000px;
+    transform: rotateY(90deg);
+    transform: rotateX(100deg);
+    transform: rotateZ(359deg);
+}

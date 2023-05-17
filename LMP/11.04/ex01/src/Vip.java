@@ -13,4 +13,6 @@ public class Vip extends Ingresso{
     public void setValorAdicional(double valorAdicional) {
         this.valorAdicional = valorAdicional;
     }
+
+
 }

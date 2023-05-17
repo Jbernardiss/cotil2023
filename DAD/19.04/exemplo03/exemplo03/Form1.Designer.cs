@@ -53,6 +53,8 @@ namespace exemplo03
             this.radioButton1.TabStop = true;
             this.radioButton1.Text = "Desenvolvimento de Sistemas";
             this.radioButton1.UseVisualStyleBackColor = true;
+            this.radioButton1.CheckedChanged += new System.EventHandler(this.radioButton1_CheckedChanged);
+            this.radioButton1.Click += new System.EventHandler(this.radioButton1_Click);
             // 
             // radioButton2
             // 
@@ -64,6 +66,8 @@ namespace exemplo03
             this.radioButton2.TabStop = true;
             this.radioButton2.Text = "Edificações";
             this.radioButton2.UseVisualStyleBackColor = true;
+            this.radioButton2.CheckedChanged += new System.EventHandler(this.radioButton2_CheckedChanged);
+            this.radioButton2.Click += new System.EventHandler(this.radioButton2_Click);
             // 
             // radioButton3
             // 
@@ -75,6 +79,8 @@ namespace exemplo03
             this.radioButton3.TabStop = true;
             this.radioButton3.Text = "Geodésia e Cartografia";
             this.radioButton3.UseVisualStyleBackColor = true;
+            this.radioButton3.CheckedChanged += new System.EventHandler(this.radioButton3_CheckedChanged);
+            this.radioButton3.Click += new System.EventHandler(this.radioButton3_Click);
             // 
             // radioButton4
             // 
@@ -86,6 +92,8 @@ namespace exemplo03
             this.radioButton4.TabStop = true;
             this.radioButton4.Text = "Terceira";
             this.radioButton4.UseVisualStyleBackColor = true;
+            this.radioButton4.CheckedChanged += new System.EventHandler(this.radioButton4_CheckedChanged);
+            this.radioButton4.Click += new System.EventHandler(this.radioButton4_Click);
             // 
             // radioButton5
             // 
@@ -97,6 +105,8 @@ namespace exemplo03
             this.radioButton5.TabStop = true;
             this.radioButton5.Text = "Segunda";
             this.radioButton5.UseVisualStyleBackColor = true;
+            this.radioButton5.CheckedChanged += new System.EventHandler(this.radioButton5_CheckedChanged);
+            this.radioButton5.Click += new System.EventHandler(this.radioButton5_Click);
             // 
             // radioButton6
             // 
@@ -108,6 +118,8 @@ namespace exemplo03
             this.radioButton6.TabStop = true;
             this.radioButton6.Text = "Primeira";
             this.radioButton6.UseVisualStyleBackColor = true;
+            this.radioButton6.CheckedChanged += new System.EventHandler(this.radioButton6_CheckedChanged);
+            this.radioButton6.Click += new System.EventHandler(this.radioButton6_Click);
             // 
             // button1
             // 

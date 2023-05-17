@@ -1,0 +1,61 @@
+
+/* file for specific components and general things */
+/* HTML components should adequate for classes here, not the classes that should stylize specific components */ 
+
+
+
+/* Navbar class */
+
+.navbar {
+    background-color: #0D0D0D;
+    height: 70px;
+
+    display: flex;
+    align-items: center;
+}
+
+.navbar nav {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.navLink {
+    margin: 0px 15px 0px 15px;
+    text-decoration: none;
+    color: #FFF200;
+}
+
+.navLink:hover {
+    text-decoration: underline;
+}
+
+
+
+/* Figcaption styles */
+
+figcaption {
+    margin-top: 15px;
+    margin-bottom: 15px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+figcaption img {
+    border: solid black 5px;
+}
+
+
+
+/* Main title styling */
+
+.mainTitle {
+    font-size: 40px;
+}
+
+
+
+

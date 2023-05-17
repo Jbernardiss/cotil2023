@@ -1,0 +1,10 @@
+C:\Users\aluno\3D Objects\school\DAD\03.05\Padaria\bin\Debug\Padaria.exe.config
+C:\Users\aluno\3D Objects\school\DAD\03.05\Padaria\bin\Debug\Padaria.exe
+C:\Users\aluno\3D Objects\school\DAD\03.05\Padaria\bin\Debug\Padaria.pdb
+C:\Users\aluno\3D Objects\school\DAD\03.05\Padaria\obj\Debug\Padaria.csproj.AssemblyReference.cache
+C:\Users\aluno\3D Objects\school\DAD\03.05\Padaria\obj\Debug\Padaria.Form1.resources
+C:\Users\aluno\3D Objects\school\DAD\03.05\Padaria\obj\Debug\Padaria.Properties.Resources.resources
+C:\Users\aluno\3D Objects\school\DAD\03.05\Padaria\obj\Debug\Padaria.csproj.GenerateResource.cache
+C:\Users\aluno\3D Objects\school\DAD\03.05\Padaria\obj\Debug\Padaria.csproj.CoreCompileInputs.cache
+C:\Users\aluno\3D Objects\school\DAD\03.05\Padaria\obj\Debug\Padaria.exe
+C:\Users\aluno\3D Objects\school\DAD\03.05\Padaria\obj\Debug\Padaria.pdb

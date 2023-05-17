@@ -22,5 +22,10 @@ namespace exemplo04
             colorDialog1.ShowDialog();
             BackColor = colorDialog1.Color;
         }
+
+        private void Form2_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            Form1.isOpen = false;
+        }
     }
 }

@@ -16,13 +16,18 @@ public class Main {
         list.add(ingresso4);
         list.add(ingresso5);
 
+
+        int j = 0;
         for(Ingresso i: list){
+
             if(i instanceof Vip){
                 total += (i.getReais() + ((Vip) i).getValorAdicional());
+                System.out.println(j);
             }
             else {
                 total += i.getReais();
             }
+            j++;
         }
         System.out.println("Valor total: R$" + total);
     }

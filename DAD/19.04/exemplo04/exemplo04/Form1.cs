@@ -12,25 +12,34 @@ namespace exemplo04
 {
     public partial class Form1 : Form
     {
-        Form2 form2 = new Form2();
+        public static bool isOpen = false;
+
+        // Form2 form2 = new Form2();
         public Form1()
         {
             InitializeComponent();
-
-            
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
             Form2 form2 = new Form2();
-            form2.Show();
+
+            if (!(isOpen))
+            {
+                form2.Show();
+                isOpen = true;
+            }
         }
 
         private void novoToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Form2 form2 = new Form2();
             form2.BackColor = Color.Yellow;
-            form2.Show();
+            if (!(isOpen))
+            {
+                form2.Show();
+                isOpen = true;
+            }
         }
     }
 }
