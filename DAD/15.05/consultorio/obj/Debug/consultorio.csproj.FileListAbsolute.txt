@@ -1,0 +1,11 @@
+C:\Users\aluno\3D Objects\school\DAD\15.05\consultorio\bin\Debug\consultorio.exe.config
+C:\Users\aluno\3D Objects\school\DAD\15.05\consultorio\bin\Debug\consultorio.exe
+C:\Users\aluno\3D Objects\school\DAD\15.05\consultorio\bin\Debug\consultorio.pdb
+C:\Users\aluno\3D Objects\school\DAD\15.05\consultorio\obj\Debug\consultorio.csproj.AssemblyReference.cache
+C:\Users\aluno\3D Objects\school\DAD\15.05\consultorio\obj\Debug\consultorio.Form1.resources
+C:\Users\aluno\3D Objects\school\DAD\15.05\consultorio\obj\Debug\consultorio.Form2.resources
+C:\Users\aluno\3D Objects\school\DAD\15.05\consultorio\obj\Debug\consultorio.Properties.Resources.resources
+C:\Users\aluno\3D Objects\school\DAD\15.05\consultorio\obj\Debug\consultorio.csproj.GenerateResource.cache
+C:\Users\aluno\3D Objects\school\DAD\15.05\consultorio\obj\Debug\consultorio.csproj.CoreCompileInputs.cache
+C:\Users\aluno\3D Objects\school\DAD\15.05\consultorio\obj\Debug\consultorio.exe
+C:\Users\aluno\3D Objects\school\DAD\15.05\consultorio\obj\Debug\consultorio.pdb

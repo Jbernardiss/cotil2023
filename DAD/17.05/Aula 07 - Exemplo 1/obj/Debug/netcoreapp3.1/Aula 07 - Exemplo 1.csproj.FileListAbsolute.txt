@@ -1,0 +1,17 @@
+C:\Users\aluno\3D Objects\school\DAD\17.05\Aula 07 - Exemplo 1\bin\Debug\netcoreapp3.1\Aula 07 - Exemplo 1.exe
+C:\Users\aluno\3D Objects\school\DAD\17.05\Aula 07 - Exemplo 1\bin\Debug\netcoreapp3.1\Aula 07 - Exemplo 1.deps.json
+C:\Users\aluno\3D Objects\school\DAD\17.05\Aula 07 - Exemplo 1\bin\Debug\netcoreapp3.1\Aula 07 - Exemplo 1.runtimeconfig.json
+C:\Users\aluno\3D Objects\school\DAD\17.05\Aula 07 - Exemplo 1\bin\Debug\netcoreapp3.1\Aula 07 - Exemplo 1.runtimeconfig.dev.json
+C:\Users\aluno\3D Objects\school\DAD\17.05\Aula 07 - Exemplo 1\bin\Debug\netcoreapp3.1\Aula 07 - Exemplo 1.dll
+C:\Users\aluno\3D Objects\school\DAD\17.05\Aula 07 - Exemplo 1\bin\Debug\netcoreapp3.1\Aula 07 - Exemplo 1.pdb
+C:\Users\aluno\3D Objects\school\DAD\17.05\Aula 07 - Exemplo 1\obj\Debug\netcoreapp3.1\Aula 07 - Exemplo 1.csproj.AssemblyReference.cache
+C:\Users\aluno\3D Objects\school\DAD\17.05\Aula 07 - Exemplo 1\obj\Debug\netcoreapp3.1\Aula_07___Exemplo_1.Form1.resources
+C:\Users\aluno\3D Objects\school\DAD\17.05\Aula 07 - Exemplo 1\obj\Debug\netcoreapp3.1\Aula 07 - Exemplo 1.csproj.GenerateResource.cache
+C:\Users\aluno\3D Objects\school\DAD\17.05\Aula 07 - Exemplo 1\obj\Debug\netcoreapp3.1\Aula 07 - Exemplo 1.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\aluno\3D Objects\school\DAD\17.05\Aula 07 - Exemplo 1\obj\Debug\netcoreapp3.1\Aula 07 - Exemplo 1.AssemblyInfoInputs.cache
+C:\Users\aluno\3D Objects\school\DAD\17.05\Aula 07 - Exemplo 1\obj\Debug\netcoreapp3.1\Aula 07 - Exemplo 1.AssemblyInfo.cs
+C:\Users\aluno\3D Objects\school\DAD\17.05\Aula 07 - Exemplo 1\obj\Debug\netcoreapp3.1\Aula 07 - Exemplo 1.csproj.CoreCompileInputs.cache
+C:\Users\aluno\3D Objects\school\DAD\17.05\Aula 07 - Exemplo 1\obj\Debug\netcoreapp3.1\Aula 07 - Exemplo 1.dll
+C:\Users\aluno\3D Objects\school\DAD\17.05\Aula 07 - Exemplo 1\obj\Debug\netcoreapp3.1\Aula 07 - Exemplo 1.pdb
+C:\Users\aluno\3D Objects\school\DAD\17.05\Aula 07 - Exemplo 1\obj\Debug\netcoreapp3.1\Aula 07 - Exemplo 1.genruntimeconfig.cache
+C:\Users\aluno\3D Objects\school\DAD\17.05\Aula 07 - Exemplo 1\obj\Debug\netcoreapp3.1\Aula_07___Exemplo_1.Form2.resources
