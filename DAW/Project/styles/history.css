@@ -2,5 +2,11 @@
 
 .dinoFerrari {
     display: flex;
+    justify-content: space-between;
 
+}
+
+.dinoFerrari * {
+    margin-left: 20px;
+    margin-right: 20px;
 }

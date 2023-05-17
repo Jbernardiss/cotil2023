@@ -42,6 +42,9 @@ figcaption {
     flex-direction: column;
     align-items: center;
     justify-content: center;
+
+    font-size: 80%;
+    text-align: center;
 }
 
 figcaption img {
