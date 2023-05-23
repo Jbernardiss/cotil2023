@@ -20,13 +20,15 @@ public class Main {
         try {
             al1.setRa(-1);
             al1.setNome(null);
-        } catch (IllegalArgumentException e) {
+        } catch (raNegativoException e) {
             System.out.println(e.getMessage());
+        } catch(nomeNuloException e) {
+            e.getMessage();
         }
 
         try {
             al1.setAltura(-90);
-        }catch(IllegalArgumentException e){
+        }catch(alturaNegativaException e){
             System.out.println(e.getMessage());
         }
         System.out.println("************FIM************");

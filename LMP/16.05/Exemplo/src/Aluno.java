@@ -11,7 +11,7 @@ public class Aluno {
 
     public void setRa(int ra) {
         if(ra < 0) {
-            throw new IllegalArgumentException("O RA não pode ser negativo.");
+            throw new raNegativoException();
         } else {
             this.ra = ra;
         }
@@ -22,8 +22,8 @@ public class Aluno {
     }
 
     public void setNome(String nome) {
-        if(nome == null) {
-            throw new IllegalArgumentException("O nome não deve ser nulo.");
+        if(nome == null){
+            throw new nomeNuloException();
         } else {
             this.nome = nome;
         }
@@ -35,7 +35,7 @@ public class Aluno {
 
     public void setAltura(double altura) {
         if(altura < 0){
-            throw new IllegalArgumentException("Altura não pode ser negativa o bobão, animal, burrão");
+            throw new alturaNegativaException();
         }else{
             this.altura = altura;
         }
