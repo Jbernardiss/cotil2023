@@ -59,6 +59,13 @@ figcaption img {
     font-size: 40px;
 }
 
+.mainFooter {
+    background-color: #0D0D0D;
+    height: 70px;
 
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
 
 
