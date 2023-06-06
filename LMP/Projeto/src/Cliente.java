@@ -7,15 +7,17 @@ public class Cliente extends Pessoa implements IPessoa {
 
         super(idade, nome, cpf);
 
-        if(cpf.contains("-")){
+
+        if(endereco == null){
+            throw new NullPointerException();
+        }else if(cnh.matches("^[a-zA-Z]*$")){
+            throw new ContemLetraException();
+        }
+        else if(cnh == null) {
+            throw new NullPointerException();
+        } else if(cnh.startsWith("-")) {
             throw new valorNegativoException();
-        }
-        else if(cpf == null){
-            throw new NullPointerException();
-        }
-        else if(endereco == null){
-            throw new NullPointerException();
-        }else{
+        } else {
             this.cnh = cnh;
             this.endereco = endereco;
         }

@@ -6,7 +6,7 @@ public abstract class Pessoa {
 
     public Pessoa(int idade, String nome, String cpf) {
 
-        if(idade < 0) {
+        if(idade <= 0) {
             throw new valorNegativoException();
         }
         else if(nome == null){
@@ -15,8 +15,11 @@ public abstract class Pessoa {
         else if(cpf == null){
             throw new NullPointerException();
         }
-        else if( cpf.contains("-")){
+        else if( cpf.startsWith("-")){
             throw new valorNegativoException();
+        }
+        else if(cpf.matches("^[a-zA-Z]*$")){
+            throw new ContemLetraException();
         }
         else{
             this.idade = idade;
