@@ -15,6 +15,14 @@ public class Carro {
         this.modelo = modelo;
     }
 
+    public void exibir() {
+        System.out.println("ID: " + id);
+        System.out.println("Marca: " + marca);
+        System.out.println("Modelo: " + modelo);
+        System.out.println("Descrição: " + desc);
+        System.out.println("Preço: " + preco);
+    }
+
     public static int getUltimoId() {
         return ultimoId;
     }

@@ -19,6 +19,7 @@ public abstract class Pessoa {
             throw new valorNegativoException();
         }
         else if(cpf.matches("^[a-zA-Z]*$")){
+            System.out.println("Bruh");
             throw new ContemLetraException();
         }
         else{
