@@ -1,16 +1,25 @@
 import java.util.ArrayList;
 import java.util.InputMismatchException;
 import java.util.Scanner;
+import java.util.concurrent.ExecutionException;
 
 public class Main {
 
     static public void msgApertarTecla() {
         Scanner scanner = new Scanner(System.in);
 
-        System.out.println();
-        System.out.print("Aperte Enter para continuar");
-        scanner.nextLine();
-        System.out.println();
+        try{
+            System.out.println();
+            System.out.print("Aperte Enter para continuar");
+            scanner.nextLine();
+            System.out.println();
+        }catch(Exception e){
+            System.out.println();
+            System.out.println("Houve um erro ao clicar, tente novamente!");
+            System.out.print("Aperte Enter para continuar");
+            scanner.nextLine();
+            System.out.println();
+        }
     }
 
     static public void exibirMenu(ArrayList<String> listaOpcoes) {
@@ -51,6 +60,10 @@ public class Main {
 
             System.out.println("Caractere Inválido");
             scanner.nextLine();
+            msgApertarTecla();
+            return -1;
+        } catch (Exception e){
+            System.out.println("Houve um erro ao inserir os dados!");
             msgApertarTecla();
             return -1;
         }
@@ -237,6 +250,10 @@ public class Main {
                     encontrou++;
                 }
             }
+        } else{
+            System.out.println("Digite uma opção válida");
+            msgApertarTecla();
+            return null;
         }
 
 
@@ -346,15 +363,15 @@ public class Main {
         menuDeletar.add("Retornar ao menu inicial");
 
         ArrayList<String> menuBuscaCarro = new ArrayList<>();
-        menuBuscaCarro.add("Busca para deletar por descrição");
-        menuBuscaCarro.add("Busca para deletar por preço");
-        menuBuscaCarro.add("Busca para deletar por marca");
-        menuBuscaCarro.add("Busca para deletar por modelo");
+        menuBuscaCarro.add("Busca por descrição");
+        menuBuscaCarro.add("Busca por preço");
+        menuBuscaCarro.add("Busca por marca");
+        menuBuscaCarro.add("Busca por modelo");
         menuBuscaCarro.add("Retornar ao menu anterior");
 
         while(true) {
 
-            exibirMenu("Nós gostariamos de abolir o usuário", menuInicial);
+            exibirMenu("Menu Inicial", menuInicial);
             opcao = inputEscolhaMenu();
 
             if(opcao == -1) { // failsafe
@@ -389,8 +406,12 @@ public class Main {
                             endereco = scanner.nextLine();
 
                         } catch (InputMismatchException e) {
-                            System.out.println("Você escreveu q nem um retardado, faz dnv");
-                            scanner.nextLine();
+                            System.out.println("Há dados com tipos errados, insira eles novamente");
+                            msgApertarTecla();
+                            continue;
+                        } catch (Exception e){
+                            System.out.println("Houve um erro ao inserir os dados");
+                            msgApertarTecla();
                             continue;
                         }
 
@@ -406,8 +427,12 @@ public class Main {
                             break;
                         } catch (ContemLetraException e) {
                             e.getMessage();
+                            msgApertarTecla();
+                            continue;
                         } catch (RuntimeException e) {
-                            System.out.println("Houve um erro no cadastro do funcionário");
+                            System.out.println("Houve um erro no cadastro do cliente, tente novamente!");
+                            msgApertarTecla();
+                            continue;
                         }
 
                         System.out.println("Cadastro realizado!");
@@ -437,8 +462,12 @@ public class Main {
                             scanner.nextLine();
 
                         } catch (InputMismatchException e) {
-                            System.out.println("Você escreveu q nem um retardado, faz dnv");
-                            scanner.nextLine();
+                            System.out.println("Há dados com tipos errados, insira eles novamente");
+                            msgApertarTecla();
+                            continue;
+                        } catch(Exception e){
+                            System.out.println("Houve um erro ao inserir os dados");
+                            msgApertarTecla();
                             continue;
                         }
 
@@ -447,14 +476,19 @@ public class Main {
                         } catch (valorNegativoException e) {
                             System.out.println(e.getMessage());
                             msgApertarTecla();
+                            continue;
                         } catch (NullPointerException e) {
                             System.out.println("Valor nulo não permitido!");
                             msgApertarTecla();
-                            break;
+                            continue;
                         } catch (ContemLetraException e) {
                             e.getMessage();
+                            msgApertarTecla();
+                            continue;
                         } catch (RuntimeException e) {
-                            System.out.println("Houve um erro no cadastro do funcionário");
+                            System.out.println("Houve um erro no cadastro do funcionário, tente novamente!");
+                            msgApertarTecla();
+                            continue;
                         }
 
                         System.out.println("Cadastro realizado!");
@@ -479,13 +513,29 @@ public class Main {
 
                             System.out.print("Modelo: ");
                             modelo = scanner.nextLine();
+
                         } catch (InputMismatchException e) {
-                            System.out.println("Você escreveu q nem um retardado, faz dnv");
-                            scanner.nextLine();
+                            System.out.println("Há dados com tipos errados, insira eles novamente");
+                            msgApertarTecla();
+                            continue;
+                        } catch(Exception e){
+                            System.out.println("Houve um erro ao inserir os dados");
+                            msgApertarTecla();
                             continue;
                         }
 
-                        carros.add(new Carro(desc, preco, marca, modelo));
+                        try {
+                            carros.add(new Carro(desc, preco, marca, modelo));
+                        }
+                        catch(valorNegativoException e){
+                            System.out.println("Valores negativos não são aceitos!");
+                            msgApertarTecla();
+                            continue;
+                        }catch (Exception e){
+                            System.out.println("Houve um erro ao cadastrar o carro, tente novamente!");
+                            msgApertarTecla();
+                            continue;
+                        }
 
                         System.out.println("Cadastro Realizado!");
                         msgApertarTecla();
@@ -509,6 +559,7 @@ public class Main {
                     if(opcao == -1) {
                         continue;
                     }
+
                     else if(opcao == 1) { // Buscar Cliente
 
                         System.out.print("Nome para busca: ");
@@ -526,21 +577,33 @@ public class Main {
                         }catch (IndexOutOfBoundsException e){
                             System.out.println("Input inválido, tente novamente");
                             msgApertarTecla();
+                        }catch (Exception e){
+                            System.out.println("Houve um erro ao tentar buscar");
+                            msgApertarTecla();
                         }
                     }
+
                     else if(opcao == 2) { // Buscar Funcionário
                         System.out.print("Nome para busca: ");
                         stringBusca = scanner.nextLine();
 
-
-                        Pessoa p = buscarPessoa(funcionarios, stringBusca);
-                        if(p == null) {
-                            System.out.println("Não há pessoas com esse nome!");
+                        try{
+                            Pessoa p = buscarPessoa(funcionarios, stringBusca);
+                            if(p == null) {
+                                System.out.println("Não há pessoas com esse nome!");
+                                msgApertarTecla();
+                            } else {
+                                ((Cliente) p).exibir();
+                                msgApertarTecla();
+                            }
+                        }catch(IndexOutOfBoundsException e){
+                            System.out.println("Input inválido, tente novamente!");
                             msgApertarTecla();
-                        } else {
-                            ((Cliente) p).exibir();
+                        }catch(Exception e){
+                            System.out.println("Houve um erro ao tentar buscar");
                             msgApertarTecla();
                         }
+
                     }
                     else if(opcao ==3) { //Buscar Carro
 
@@ -549,81 +612,89 @@ public class Main {
                         while(true) {
                             exibirMenu("Buscar Carro", menuBuscaCarro);
                             opcao = inputEscolhaMenu();
-
-                            if(opcao == -1) {
-                                continue;
-                            }
-                            else if(opcao == 1) {
-                                System.out.print("Descrição para busca: ");
-                                stringBusca = scanner.nextLine();
-
-                                c = buscarCarro(carros, stringBusca, 0);
-
-                                if(c == null) {
-                                    System.out.println("Não há carros com esta descrição!");
-                                    msgApertarTecla();
-                                } else {
-                                    c.exibir();
-                                    msgApertarTecla();
-                                }
-                            }
-                            else if(opcao == 2) {
-                                System.out.print("Preço para busca: ");
-                                try {
-                                    preco = scanner.nextDouble();
-                                    scanner.nextLine();
-                                } catch (InputMismatchException e) {
-                                    System.out.println("Caracter Inválido");
-                                    scanner.nextLine();
-                                    msgApertarTecla();
+                            try{
+                                if(opcao == -1) {
                                     continue;
                                 }
+                                else if(opcao == 1) {
+                                    System.out.print("Descrição para busca: ");
+                                    stringBusca = scanner.nextLine();
 
-                                c = buscarCarro(carros, preco);
+                                    c = buscarCarro(carros, stringBusca, 0);
 
-                                if(c == null) {
-                                    System.out.println("Não há carros com este preço!");
-                                    msgApertarTecla();
-                                } else {
-                                    c.exibir();
+                                    if(c == null) {
+                                        System.out.println("Não há carros com esta descrição!");
+                                        msgApertarTecla();
+                                    } else {
+                                        c.exibir();
+                                        msgApertarTecla();
+                                    }
+                                }
+                                else if(opcao == 2) {
+                                    System.out.print("Preço para busca: ");
+                                    try {
+                                        preco = scanner.nextDouble();
+                                        scanner.nextLine();
+                                    } catch (InputMismatchException e) {
+                                        System.out.println("Caracter Inválido");
+                                        scanner.nextLine();
+                                        msgApertarTecla();
+                                        continue;
+                                    }
+
+                                    c = buscarCarro(carros, preco);
+
+                                    if(c == null) {
+                                        System.out.println("Não há carros com este preço!");
+                                        msgApertarTecla();
+                                    } else {
+                                        c.exibir();
+                                        msgApertarTecla();
+                                    }
+                                }
+                                else if(opcao == 3) {
+                                    System.out.print("Marca para busca: ");
+                                    stringBusca = scanner.nextLine();
+
+                                    c = buscarCarro(carros, stringBusca, 1);
+
+                                    if(c == null) {
+                                        System.out.println("Não há carros desta marca!");
+                                        msgApertarTecla();
+                                    } else {
+                                        c.exibir();
+                                        msgApertarTecla();
+                                    }
+                                }
+                                else if (opcao == 4) {
+                                    System.out.print("Modelo para busca: ");
+                                    stringBusca = scanner.nextLine();
+
+                                    c = buscarCarro(carros, stringBusca, 2);
+
+                                    if(c == null) {
+                                        System.out.println("Não há carros deste modelo!");
+                                        msgApertarTecla();
+                                    } else {
+                                        c.exibir();
+                                        msgApertarTecla();
+                                    }
+                                }
+                                else if(opcao == 5) {
+                                    break;
+                                }
+                                else {
+                                    System.out.println("Opção inexistente");
                                     msgApertarTecla();
                                 }
-                            }
-                            else if(opcao == 3) {
-                                System.out.print("Marca para busca: ");
-                                stringBusca = scanner.nextLine();
-
-                                c = buscarCarro(carros, stringBusca, 1);
-
-                                if(c == null) {
-                                    System.out.println("Não há carros desta marca!");
-                                    msgApertarTecla();
-                                } else {
-                                    c.exibir();
-                                    msgApertarTecla();
-                                }
-                            }
-                            else if (opcao == 4) {
-                                System.out.print("Modelo para busca: ");
-                                stringBusca = scanner.nextLine();
-
-                                c = buscarCarro(carros, stringBusca, 2);
-
-                                if(c == null) {
-                                    System.out.println("Não há carros deste modelo!");
-                                    msgApertarTecla();
-                                } else {
-                                    c.exibir();
-                                    msgApertarTecla();
-                                }
-                            }
-                            else if(opcao == 5) {
-                                break;
-                            }
-                            else {
-                                System.out.println("Opção inexistente");
+                            }catch (IndexOutOfBoundsException e){
+                                System.out.println("Input inválido, tente novamente!");
+                                msgApertarTecla();
+                            }catch(Exception e){
+                                System.out.println("Houve um erro ao realizar a busca, tente novamente!");
                                 msgApertarTecla();
                             }
+
                         }
                     }
                     else if(opcao == 4) {
@@ -648,70 +719,82 @@ public class Main {
                         System.out.print("Digite o nome para exclusão: ");
                         stringBusca = scanner.nextLine();
 
-                        Pessoa p = buscarPessoa(clientes, stringBusca);
+                        try{
+                            Pessoa p = buscarPessoa(clientes, stringBusca);
 
-                        if(p == null) {
-                            System.out.println("Não há pessoas com esse nome!");
-                            msgApertarTecla();
-                        } else {
-                            ((Cliente) p).exibir();
+                            if(p == null) {
+                                System.out.println("Não há pessoas com esse nome!");
+                                msgApertarTecla();
+                            } else {
+                                ((Cliente) p).exibir();
 
-                            while(true) {
-                                System.out.println();
-                                System.out.print("Deseja realmente excluir este cliente?[s/n]: ");
-                                simOuNao = scanner.nextLine().toLowerCase();
+                                while(true) {
+                                    System.out.println();
+                                    System.out.print("Deseja realmente excluir este cliente?[s/n]: ");
+                                    simOuNao = scanner.nextLine().toLowerCase();
 
-                                if(simOuNao.equals("s")) {
-                                    System.out.println("Cliente excluído");
-                                    clientes.remove(p);
+                                    if(simOuNao.equals("s")) {
+                                        System.out.println("Cliente excluído");
+                                        clientes.remove(p);
 
-                                    msgApertarTecla();
+                                        msgApertarTecla();
 
-                                    break;
-                                } else if(simOuNao.equals("n")){
-                                    System.out.println("Cliente não excluído");
+                                        break;
+                                    } else if(simOuNao.equals("n")){
+                                        System.out.println("Cliente não excluído");
 
-                                    msgApertarTecla();
+                                        msgApertarTecla();
 
-                                    break;
-                                } else {
-                                    System.out.println("Opção invalida");
-                                    continue;
+                                        break;
+                                    } else {
+                                        System.out.println("Opção invalida");
+                                        continue;
+                                    }
                                 }
                             }
+                        }catch(Exception e){
+                            System.out.println("Houve um erro ao tentar apagar o cliente, tente novamente");
+                            msgApertarTecla();
                         }
+
                     }
                     else if (opcao == 2) { // Deletar Funcionário
 
                         System.out.print("Digite o nome para exclusão: ");
                         stringBusca = scanner.nextLine();
 
-                        Pessoa p = buscarPessoa(funcionarios, stringBusca);
+                        try{
+                            Pessoa p = buscarPessoa(funcionarios, stringBusca);
 
-                        if(p == null) {
-                            System.out.println("Não há pessoas com esse nome!");
-                            msgApertarTecla();
-                        } else {
-                            ((Funcionario) p).exibir();
+                            if(p == null) {
+                                System.out.println("Não há pessoas com esse nome!");
+                                msgApertarTecla();
+                            } else {
+                                ((Funcionario) p).exibir();
 
-                            while(true) {
-                                System.out.println();
-                                System.out.print("Deseja realmente excluir este funcionário?[s/n]: ");
-                                simOuNao = scanner.nextLine().toLowerCase();
+                                while(true) {
+                                    System.out.println();
+                                    System.out.print("Deseja realmente excluir este funcionário?[s/n]: ");
+                                    simOuNao = scanner.nextLine().toLowerCase();
 
-                                if(simOuNao.equals("s")) {
-                                    System.out.println("Funcionário excluído");
-                                    funcionarios.remove(p);
-                                    break;
-                                } else if(simOuNao.equals("n")){
-                                    System.out.println("Funcionário não excluído");
-                                    break;
-                                } else {
-                                    System.out.println("Opção invalida");
-                                    continue;
+                                    if(simOuNao.equals("s")) {
+                                        System.out.println("Funcionário excluído");
+                                        funcionarios.remove(p);
+                                        break;
+                                    } else if(simOuNao.equals("n")){
+                                        System.out.println("Funcionário não excluído");
+                                        break;
+                                    } else {
+                                        System.out.println("Opção invalida");
+                                        continue;
+                                    }
                                 }
                             }
+                        }catch (Exception e){
+                            System.out.println("Houve um erro ao tentar apagar o funcionário!");
+                            msgApertarTecla();
                         }
+
                     }
                     else if (opcao == 3) { // Deletar Carro
                         Carro c;
@@ -720,138 +803,143 @@ public class Main {
                             exibirMenu("Deletar Carro", menuBuscaCarro);
                             opcao = inputEscolhaMenu();
 
-                            if(opcao == -1) {
-                                continue;
-                            }
-                            else if(opcao == 1) {
-                                System.out.print("Descrição do carro para deletar: ");
-                                stringBusca = scanner.nextLine();
-
-                                c = buscarCarro(carros, stringBusca, 0);
-
-                                if(c == null) {
-                                    System.out.println("Não há carros com esta descrição!");
-                                    msgApertarTecla();
-                                } else {
-                                    while(true) {
-                                        System.out.println();
-                                        System.out.print("Deseja realmente excluir este carro?[s/n]: ");
-                                        simOuNao = scanner.nextLine().toLowerCase();
-
-                                        if(simOuNao.equals("s")) {
-                                            System.out.println("Carro excluído");
-                                            carros.remove(c);
-                                            break;
-                                        } else if(simOuNao.equals("n")){
-                                            System.out.println("Carro não excluído");
-                                            break;
-                                        } else {
-                                            System.out.println("Opção invalida");
-                                            continue;
-                                        }
-                                    }
-                                }
-                            }
-                            else if(opcao == 2) {
-                                System.out.print("Preço do carro para deletar: ");
-                                try {
-                                    preco = scanner.nextDouble();
-                                    scanner.nextLine();
-                                } catch (InputMismatchException e) {
-                                    System.out.println("Caracter Inválido");
-                                    scanner.nextLine();
-                                    msgApertarTecla();
+                            try{
+                                if(opcao == -1) {
                                     continue;
                                 }
+                                else if(opcao == 1) {
+                                    System.out.print("Descrição do carro para deletar: ");
+                                    stringBusca = scanner.nextLine();
 
-                                c = buscarCarro(carros, preco);
+                                    c = buscarCarro(carros, stringBusca, 0);
 
-                                if(c == null) {
-                                    System.out.println("Não há carros com este preço!");
-                                    msgApertarTecla();
-                                } else {
-                                    while(true) {
-                                        System.out.println();
-                                        System.out.print("Deseja realmente excluir este carro?[s/n]: ");
-                                        simOuNao = scanner.nextLine().toLowerCase();
+                                    if(c == null) {
+                                        System.out.println("Não há carros com esta descrição!");
+                                        msgApertarTecla();
+                                    } else {
+                                        while(true) {
+                                            System.out.println();
+                                            System.out.print("Deseja realmente excluir este carro?[s/n]: ");
+                                            simOuNao = scanner.nextLine().toLowerCase();
 
-                                        if(simOuNao.equals("s")) {
-                                            System.out.println("Carro excluído");
-                                            carros.remove(c);
-                                            break;
-                                        } else if(simOuNao.equals("n")){
-                                            System.out.println("Carro não excluído");
-                                            break;
-                                        } else {
-                                            System.out.println("Opção invalida");
-                                            continue;
+                                            if(simOuNao.equals("s")) {
+                                                System.out.println("Carro excluído");
+                                                carros.remove(c);
+                                                break;
+                                            } else if(simOuNao.equals("n")){
+                                                System.out.println("Carro não excluído");
+                                                break;
+                                            } else {
+                                                System.out.println("Opção invalida");
+                                                continue;
+                                            }
                                         }
                                     }
                                 }
-                            }
-                            else if(opcao == 3) {
-                                System.out.print("Marca do carro para deletar: ");
-                                stringBusca = scanner.nextLine();
+                                else if(opcao == 2) {
+                                    System.out.print("Preço do carro para deletar: ");
+                                    try {
+                                        preco = scanner.nextDouble();
+                                        scanner.nextLine();
+                                    } catch (InputMismatchException e) {
+                                        System.out.println("Caracter Inválido");
+                                        scanner.nextLine();
+                                        msgApertarTecla();
+                                        continue;
+                                    }
 
-                                c = buscarCarro(carros, stringBusca, 1);
+                                    c = buscarCarro(carros, preco);
 
-                                if(c == null) {
-                                    System.out.println("Não há carros desta marca!");
-                                    msgApertarTecla();
-                                } else {
-                                    while(true) {
-                                        System.out.println();
-                                        System.out.print("Deseja realmente excluir este carro?[s/n]: ");
-                                        simOuNao = scanner.nextLine().toLowerCase();
+                                    if(c == null) {
+                                        System.out.println("Não há carros com este preço!");
+                                        msgApertarTecla();
+                                    } else {
+                                        while(true) {
+                                            System.out.println();
+                                            System.out.print("Deseja realmente excluir este carro?[s/n]: ");
+                                            simOuNao = scanner.nextLine().toLowerCase();
 
-                                        if(simOuNao.equals("s")) {
-                                            System.out.println("Carro excluído");
-                                            carros.remove(c);
-                                            break;
-                                        } else if(simOuNao.equals("n")){
-                                            System.out.println("Carro não excluído");
-                                            break;
-                                        } else {
-                                            System.out.println("Opção invalida");
-                                            continue;
+                                            if(simOuNao.equals("s")) {
+                                                System.out.println("Carro excluído");
+                                                carros.remove(c);
+                                                break;
+                                            } else if(simOuNao.equals("n")){
+                                                System.out.println("Carro não excluído");
+                                                break;
+                                            } else {
+                                                System.out.println("Opção invalida");
+                                                continue;
+                                            }
                                         }
                                     }
                                 }
-                            }
-                            else if (opcao == 4) {
-                                System.out.print("Modelo do carro para deletar: ");
-                                stringBusca = scanner.nextLine();
+                                else if(opcao == 3) {
+                                    System.out.print("Marca do carro para deletar: ");
+                                    stringBusca = scanner.nextLine();
 
-                                c = buscarCarro(carros, stringBusca, 2);
+                                    c = buscarCarro(carros, stringBusca, 1);
 
-                                if(c == null) {
-                                    System.out.println("Não há carros deste modelo!");
-                                    msgApertarTecla();
-                                } else {
-                                    while(true) {
-                                        System.out.println();
-                                        System.out.print("Deseja realmente excluir este carro?[s/n]: ");
-                                        simOuNao = scanner.nextLine().toLowerCase();
+                                    if(c == null) {
+                                        System.out.println("Não há carros desta marca!");
+                                        msgApertarTecla();
+                                    } else {
+                                        while(true) {
+                                            System.out.println();
+                                            System.out.print("Deseja realmente excluir este carro?[s/n]: ");
+                                            simOuNao = scanner.nextLine().toLowerCase();
 
-                                        if(simOuNao.equals("s")) {
-                                            System.out.println("Carro excluído");
-                                            carros.remove(c);
-                                            break;
-                                        } else if(simOuNao.equals("n")){
-                                            System.out.println("Carro não excluído");
-                                            break;
-                                        } else {
-                                            System.out.println("Opção invalida");
-                                            continue;
+                                            if(simOuNao.equals("s")) {
+                                                System.out.println("Carro excluído");
+                                                carros.remove(c);
+                                                break;
+                                            } else if(simOuNao.equals("n")){
+                                                System.out.println("Carro não excluído");
+                                                break;
+                                            } else {
+                                                System.out.println("Opção invalida");
+                                                continue;
+                                            }
                                         }
                                     }
                                 }
-                            }
-                            else if(opcao == 5) {
-                                break;
-                            }
-                            else {
-                                System.out.println("Opção inexistente");
+                                else if (opcao == 4) {
+                                    System.out.print("Modelo do carro para deletar: ");
+                                    stringBusca = scanner.nextLine();
+
+                                    c = buscarCarro(carros, stringBusca, 2);
+
+                                    if(c == null) {
+                                        System.out.println("Não há carros deste modelo!");
+                                        msgApertarTecla();
+                                    } else {
+                                        while(true) {
+                                            System.out.println();
+                                            System.out.print("Deseja realmente excluir este carro?[s/n]: ");
+                                            simOuNao = scanner.nextLine().toLowerCase();
+
+                                            if(simOuNao.equals("s")) {
+                                                System.out.println("Carro excluído");
+                                                carros.remove(c);
+                                                break;
+                                            } else if(simOuNao.equals("n")){
+                                                System.out.println("Carro não excluído");
+                                                break;
+                                            } else {
+                                                System.out.println("Opção invalida");
+                                                continue;
+                                            }
+                                        }
+                                    }
+                                }
+                                else if(opcao == 5) {
+                                    break;
+                                }
+                                else {
+                                    System.out.println("Opção inexistente");
+                                    msgApertarTecla();
+                                }
+                            }catch (Exception e){
+                                System.out.println("Houve um erro ao tentar apagar o carro, tente novamente");
                                 msgApertarTecla();
                             }
                         }
@@ -863,36 +951,47 @@ public class Main {
             }
             else if(opcao == 4) { // Stat cliente
 
-                System.out.println();
-                if(clientes.size() > 0) {
-                    System.out.println("Cliente mais velho: " + nomeMaiorIdade(clientes).getNome() + ", idade: " + nomeMaiorIdade(clientes).getIdade() + " anos");
-                    System.out.println("Cliente mais novo " + nomeMenorIdade(clientes).getNome() + " idade: " + nomeMenorIdade(clientes).getIdade() + " anos");
-                    System.out.println("Quantidade de clientes maiores de 60 anos: " + quantidadeMaiorSessenta(clientes));
-                    System.out.println("Quantidade de clientes menores de 18 anos: "  + quantidadeMenordezoito(clientes));
-                    System.out.println("Idade média: " + calcularIdadeMedia(clientes) + " anos");
-                } else {
-                    System.out.println("Não há clientes cadastrados no sistema!");
+                try{
+                    System.out.println();
+                    if(clientes.size() > 0) {
+                        System.out.println("Cliente mais velho: " + nomeMaiorIdade(clientes).getNome() + ", idade: " + nomeMaiorIdade(clientes).getIdade() + " anos");
+                        System.out.println("Cliente mais novo " + nomeMenorIdade(clientes).getNome() + " idade: " + nomeMenorIdade(clientes).getIdade() + " anos");
+                        System.out.println("Quantidade de clientes maiores de 60 anos: " + quantidadeMaiorSessenta(clientes));
+                        System.out.println("Quantidade de clientes menores de 18 anos: "  + quantidadeMenordezoito(clientes));
+                        System.out.println("Idade média: " + calcularIdadeMedia(clientes) + " anos");
+                    } else {
+                        System.out.println("Não há clientes cadastrados no sistema!");
+                        msgApertarTecla();
+                    }
+                }catch (Exception e){
+                    System.out.println("Erro ao informar estatísticas dos cliente, tente novamente");
                     msgApertarTecla();
                 }
+
 
 
             }
             else if(opcao == 5) { // Stat carro
 
-                System.out.println();
-                if(carros.size() > 0) {
-                    carroMaisCaro = carroMaisCaro(carros);
-                    carroMaisBarato = carroMaisBarato(carros);
-                    precoMedio = precoMedio(carros);
-                    precosAcimaDaMedia = precosAcimaDaMedia(carros);
+                try{
+                    System.out.println();
+                    if(carros.size() > 0) {
+                        carroMaisCaro = carroMaisCaro(carros);
+                        carroMaisBarato = carroMaisBarato(carros);
+                        precoMedio = precoMedio(carros);
+                        precosAcimaDaMedia = precosAcimaDaMedia(carros);
 
-                    System.out.println("Carro mais caro: " + carroMaisCaro.getMarca() + " " + carroMaisCaro.getModelo() + " - R$" + carroMaisCaro.getPreco());
-                    System.out.println("Carro mais barato: " + carroMaisBarato.getMarca() + " " + carroMaisBarato.getModelo() + " - R$" + carroMaisBarato.getPreco());
-                    System.out.println("Preço médio: R$" + precoMedio);
-                    System.out.println("Quantidade de carros com preço acima da média: " + precosAcimaDaMedia);
-                    msgApertarTecla();
-                } else {
-                    System.out.println("Não há carros no estoque!");
+                        System.out.println("Carro mais caro: " + carroMaisCaro.getMarca() + " " + carroMaisCaro.getModelo() + " - R$" + carroMaisCaro.getPreco());
+                        System.out.println("Carro mais barato: " + carroMaisBarato.getMarca() + " " + carroMaisBarato.getModelo() + " - R$" + carroMaisBarato.getPreco());
+                        System.out.println("Preço médio: R$" + precoMedio);
+                        System.out.println("Quantidade de carros com preço acima da média: " + precosAcimaDaMedia);
+                        msgApertarTecla();
+                    } else {
+                        System.out.println("Não há carros no estoque!");
+                        msgApertarTecla();
+                    }
+                }catch (Exception e){
+                    System.out.println("Erro ao exibir estatísticas dos carros, tente novamente");
                     msgApertarTecla();
                 }
             }

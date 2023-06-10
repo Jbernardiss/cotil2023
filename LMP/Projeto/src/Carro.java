@@ -8,11 +8,16 @@ public class Carro {
     private String modelo;
 
     public Carro(String desc, double preco, String marca, String modelo) {
-        this.id = ++ultimoId;
-        this.desc = desc;
-        this.preco = preco;
-        this.marca = marca;
-        this.modelo = modelo;
+        if(preco < 0){
+            throw new valorNegativoException();
+        }else{
+            this.id = ++ultimoId;
+            this.desc = desc;
+            this.preco = preco;
+            this.marca = marca;
+            this.modelo = modelo;
+        }
+
     }
 
     public void exibir() {
