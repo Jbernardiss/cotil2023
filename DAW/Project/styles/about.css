@@ -1,0 +1,23 @@
+.diferent-text{
+    color: yellow;
+}
+
+main{
+    margin-bottom: 20px;
+}
+
+.about-website{
+    margin-top: 10px;
+    border: 2px black solid;
+    border-radius: 10px;
+    padding: 10px;
+    text-align: center;
+}
+
+.about-website a{
+    color: yellow;
+}
+
+.about-website div{
+    margin-bottom: 10px;
+}
