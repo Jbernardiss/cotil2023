@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact</title>
+
+    <link href="../styles/general.css" rel="stylesheet" type="text/css">
+    <link href="../styles/components.css" rel="stylesheet" type="text/css">
+    <link href="../styles/contact.css" rel="stylesheet" type="text/css">
+</head>
+<body>
+    <header id="top" class="navbar">
+        <span class="notice">TODO: WEBSITE LOGO</span>
+        <nav>
+            <a class="navLink" href="../index.html">Home</a>
+            <a class="navLink" href="history.html">History</a>
+            <a class="navLink" href="scuderiaFerrari.html">Scuderia Ferrari</a>
+            <a class="navLink" href="about.html">About</a>
+            <a class="navLink" href="contact.html">Contact</a>
+        </nav>
+    </header>
+    <main>
+        <header>
+            <h1 class="mainTitle">Contact</h1>
+        </header>
+        <article>
+            <p>Send us a ticket!</p>
+            <form action="about:blank" target="_blank" method="post">
+
+                <label class="inputLabel">Name: <input type="text" name="username" id="username" placeholder="name"></label>
+                    
+                <label class="inputLabel">Email: <input type="email" name="userEmail" id="userEmail" placeholder="email"></label>
+                
+                <label class="inputLabel">Subject: <input type="text" name="subject" id="subject" placeholder="subject"></label>
+                
+                <label class="inputLabel">Message: <textarea rows="7" cols="60"></textarea></label>
+                
+                <label class="inputLabel">Send Ticket: <input class="sendButton" type="submit" formaction="about:blank" formmethod="post"></label>
+            </form>
+            <img class="carAnim" src="../images/ferrariF1side.png">
+        </article>
+    </main>
+    <footer class="mainFooter">
+        <a href="#top">Back to top</a>
+    </footer>
+</body>
+</html>
