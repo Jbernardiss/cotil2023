@@ -26,15 +26,13 @@ input, textarea {
     margin-bottom: 30px;
 }
 
-@keyframes carAnim1 {
-    0% {
-        transform: translateX(400px);
+@keyframes carAnim1
+{
+    from {
+        left: -400px;
     }
-    50% {
-    
-    }
-    100% {
-
+    to {
+        left: 450px;
     }
 }
 
@@ -43,10 +41,8 @@ input, textarea {
 
     position: relative;
     bottom: 119px;
-    left: 400px;
+    left: 450px;
 
-    animation-name: carAnim1;
-    transition-duration: 5s;
-    animation-iteration-count: infinite;
+    animation: carAnim1 5s;
 }
 

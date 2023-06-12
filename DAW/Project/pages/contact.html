@@ -9,16 +9,17 @@
     <link href="../styles/general.css" rel="stylesheet" type="text/css">
     <link href="../styles/components.css" rel="stylesheet" type="text/css">
     <link href="../styles/contact.css" rel="stylesheet" type="text/css">
+    <link rel="shortcut icon" href="../images/favicon_32x32.png" type="image/x-icon">
 </head>
 <body>
     <header id="top" class="navbar">
-        <span class="notice">TODO: WEBSITE LOGO</span>
+        <a href="../index.html"><img src="../images/logo.png" alt="website logo" width="100px" id="menu_img"></a>
         <nav>
             <a class="navLink" href="../index.html">Home</a>
             <a class="navLink" href="history.html">History</a>
             <a class="navLink" href="scuderiaFerrari.html">Scuderia Ferrari</a>
             <a class="navLink" href="about.html">About</a>
-            <a class="navLink" href="contact.html">Contact</a>
+            <a class="navLink" href="contact.html">Contact</a>            
         </nav>
     </header>
     <main>
@@ -29,21 +30,18 @@
             <p>Send us a ticket!</p>
             <form action="about:blank" target="_blank" method="post">
 
-                <label class="inputLabel">Name: <input type="text" name="username" id="username" placeholder="name"></label>
+                <label class="inputLabel">Name: <input type="text" name="username" id="username" placeholder="name" tabindex="1"></label>
                     
-                <label class="inputLabel">Email: <input type="email" name="userEmail" id="userEmail" placeholder="email"></label>
+                <label class="inputLabel">Email: <input type="email" name="userEmail" id="userEmail" placeholder="email" tabindex="2"></label>
                 
-                <label class="inputLabel">Subject: <input type="text" name="subject" id="subject" placeholder="subject"></label>
+                <label class="inputLabel">Subject: <input type="text" name="subject" id="subject" placeholder="subject" tabindex="3"></label>
                 
-                <label class="inputLabel">Message: <textarea rows="7" cols="60"></textarea></label>
+                <label class="inputLabel">Message: <textarea rows="7" cols="60" tabindex="4"></textarea></label>
                 
-                <label class="inputLabel">Send Ticket: <input class="sendButton" type="submit" formaction="about:blank" formmethod="post"></label>
+                <label class="inputLabel">Send Ticket: <input class="sendButton" type="submit" formaction="about:blank" formmethod="post" tabindex="5"></label>
             </form>
             <img class="carAnim" src="../images/ferrariF1side.png">
         </article>
     </main>
-    <footer class="mainFooter">
-        <a href="#top">Back to top</a>
-    </footer>
 </body>
 </html>
