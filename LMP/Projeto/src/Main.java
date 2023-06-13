@@ -250,12 +250,12 @@ public class Main {
                     encontrou++;
                 }
             }
-        } else{
+        }
+        else{
             System.out.println("Digite uma opção válida");
             msgApertarTecla();
             return null;
         }
-
 
         if(encontrou == 0) {
             return result;
@@ -593,18 +593,20 @@ public class Main {
                                 System.out.println("Não há pessoas com esse nome!");
                                 msgApertarTecla();
                             } else {
-                                ((Cliente) p).exibir();
+                                ((Funcionario) p).exibir();
                                 msgApertarTecla();
                             }
                         }catch(IndexOutOfBoundsException e){
                             System.out.println("Input inválido, tente novamente!");
                             msgApertarTecla();
                         }catch(Exception e){
+                            System.out.println(e.getMessage());
                             System.out.println("Houve um erro ao tentar buscar");
                             msgApertarTecla();
                         }
 
                     }
+
                     else if(opcao ==3) { //Buscar Carro
 
                         Carro c;
@@ -697,9 +699,11 @@ public class Main {
 
                         }
                     }
+
                     else if(opcao == 4) {
                         break;
                     }
+
                     else {
                         System.out.println("Opção inexistente");
                         msgApertarTecla();
@@ -939,6 +943,7 @@ public class Main {
                                     msgApertarTecla();
                                 }
                             }catch (Exception e){
+                                System.out.println(e.getMessage());
                                 System.out.println("Houve um erro ao tentar apagar o carro, tente novamente");
                                 msgApertarTecla();
                             }
@@ -954,11 +959,13 @@ public class Main {
                 try{
                     System.out.println();
                     if(clientes.size() > 0) {
-                        System.out.println("Cliente mais velho: " + nomeMaiorIdade(clientes).getNome() + ", idade: " + nomeMaiorIdade(clientes).getIdade() + " anos");
-                        System.out.println("Cliente mais novo " + nomeMenorIdade(clientes).getNome() + " idade: " + nomeMenorIdade(clientes).getIdade() + " anos");
+                        System.out.println("Cliente mais velho: " + nomeMaiorIdade(clientes).getNome() + ", " + nomeMaiorIdade(clientes).getIdade() + " anos");
+                        System.out.println("Cliente mais novo: " + nomeMenorIdade(clientes).getNome() + ", " + nomeMenorIdade(clientes).getIdade() + " anos");
                         System.out.println("Quantidade de clientes maiores de 60 anos: " + quantidadeMaiorSessenta(clientes));
                         System.out.println("Quantidade de clientes menores de 18 anos: "  + quantidadeMenordezoito(clientes));
                         System.out.println("Idade média: " + calcularIdadeMedia(clientes) + " anos");
+
+                        msgApertarTecla();
                     } else {
                         System.out.println("Não há clientes cadastrados no sistema!");
                         msgApertarTecla();
