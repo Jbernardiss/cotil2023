@@ -13,11 +13,13 @@ import javax.swing.JOptionPane;
  * @author aluno
  */
 public class FrmLogin extends javax.swing.JFrame {
-
+    
+    UsuarioControl uControl;
     /**
      * Creates new form FrmLogin
      */
     public FrmLogin() {
+        uControl = new UsuarioControl();
         initComponents();
     }
 
@@ -37,6 +39,7 @@ public class FrmLogin extends javax.swing.JFrame {
         txtUsuario = new javax.swing.JTextField();
         txtSenha = new javax.swing.JTextField();
         btnlogin = new javax.swing.JButton();
+        btnLimpar = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -51,6 +54,13 @@ public class FrmLogin extends javax.swing.JFrame {
             }
         });
 
+        btnLimpar.setText("Limpar");
+        btnLimpar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnLimparActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
@@ -58,7 +68,10 @@ public class FrmLogin extends javax.swing.JFrame {
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(btnlogin, javax.swing.GroupLayout.PREFERRED_SIZE, 89, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addComponent(btnLimpar)
+                        .addGap(18, 18, 18)
+                        .addComponent(btnlogin, javax.swing.GroupLayout.PREFERRED_SIZE, 89, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                             .addComponent(lblSenha)
@@ -81,7 +94,9 @@ public class FrmLogin extends javax.swing.JFrame {
                     .addComponent(lblSenha)
                     .addComponent(txtSenha, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
-                .addComponent(btnlogin)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(btnlogin)
+                    .addComponent(btnLimpar))
                 .addContainerGap(116, Short.MAX_VALUE))
         );
 
@@ -108,7 +123,7 @@ public class FrmLogin extends javax.swing.JFrame {
     private void btnloginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnloginActionPerformed
         String nome = txtUsuario.getText();
         String senha = txtSenha.getText();
-        UsuarioControl uControl = new UsuarioControl();
+        
         if(uControl.verificaLogin(nome,senha)){
             JOptionPane.showMessageDialog(null, "Acesso permitido");
         }else{
@@ -117,6 +132,13 @@ public class FrmLogin extends javax.swing.JFrame {
     
         // JOptionPane.showMessageDialog(null, nome + ":" + senha);
     }//GEN-LAST:event_btnloginActionPerformed
+
+    private void btnLimparActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLimparActionPerformed
+        txtUsuario.setText("");
+        txtSenha.setText("");
+        String msg = uControl.exibeMensagem();
+        JOptionPane.showMessageDialog(null, msg);
+    }//GEN-LAST:event_btnLimparActionPerformed
 
     /**
      * @param args the command line arguments
@@ -154,6 +176,7 @@ public class FrmLogin extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btnLimpar;
     private javax.swing.JButton btnlogin;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JLabel lblSenha;

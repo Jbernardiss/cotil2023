@@ -37,4 +37,9 @@ public class UsuarioControl {
         
         return achou;
     }
+    
+    public String exibeMensagem() {
+        
+        return "Teste";
+    }
 }
