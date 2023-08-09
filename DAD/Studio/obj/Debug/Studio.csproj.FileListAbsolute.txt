@@ -12,3 +12,4 @@ C:\Users\aluno\3D Objects\school\DAD\Studio\obj\Debug\Studio.csproj.CoreCompileI
 C:\Users\aluno\3D Objects\school\DAD\Studio\obj\Debug\Studio.csproj.CopyComplete
 C:\Users\aluno\3D Objects\school\DAD\Studio\obj\Debug\Studio.exe
 C:\Users\aluno\3D Objects\school\DAD\Studio\obj\Debug\Studio.pdb
+C:\Users\aluno\3D Objects\school\DAD\Studio\obj\Debug\Studio.CadLogin.resources
