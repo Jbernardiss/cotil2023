@@ -6,11 +6,10 @@ body {
 .topSigmas {
     margin: 0 auto;
 
-    max-width: 50%;
+    max-width: 80%;
     display: flex;
     flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: center;
+    justify-content:flex-start;
     align-items: center;
 }
 
@@ -27,4 +26,26 @@ body {
     margin: 10px;
     border: black 5px solid;
     padding: 10px;
+    width: 300px;
+
+}
+
+.image img {
+    width: 100%;
+}
+
+.i1 {
+    flex-shrink: 1;
+}
+
+.i2 {
+    flex-shrink: 2;
+}
+
+.i3 {
+    flex-shrink: 0;
+}
+
+.textBruh {
+    line-height: 2em;
 }

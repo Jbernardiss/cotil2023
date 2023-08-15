@@ -10,7 +10,6 @@ namespace Studio
     class DAO_Conexao
     {
         private static MySqlConnection con;
-        private static Boolean bancoAcesso = false;
         public static Boolean getConexao(String local, String banco, String user, String senha) 
         {
             Boolean retorno = false;
@@ -20,7 +19,6 @@ namespace Studio
                     "; password=" + senha + "; SslMode = none");
                 con.Open();
                 retorno = true;
-                bancoAcesso = true;
             }
             catch (Exception e)
             {
@@ -34,12 +32,7 @@ namespace Studio
             bool cad = false;
             try
             {
-                if (bancoAcesso == false)
-                {
-                    con.Open();
-                    bancoAcesso = true;
-                }
-                
+                con.Open();
                 MySqlCommand insere = new MySqlCommand("insert into Estudio_Login (usuario, senha, tipo) " +
                     "values ('" + usuario + "','" + senha + "'," + tipo + ")", con);
                 insere.ExecuteNonQuery();
@@ -52,7 +45,6 @@ namespace Studio
             finally
             {
                 con.Close();
-                bancoAcesso = false;
             }
             return cad;
         }

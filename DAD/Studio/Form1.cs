@@ -36,12 +36,18 @@ namespace Studio
 
         private void button1_Click(object sender, EventArgs e)
         {
-
-            if (DAO_Conexao.loginExiste(textBox1.Text, textBox2.Text))
+            if(textBox1.Text != "" && textBox2.Text != "")
             {
-                MessageBox.Show("Login com sucesso");
-                menuStrip1.Visible = true;
-                groupBox1.Visible = false;
+                if (DAO_Conexao.loginExiste(textBox1.Text, textBox2.Text))
+                {
+                    MessageBox.Show("Login com sucesso");
+                    menuStrip1.Visible = true;
+                    groupBox1.Visible = false;
+                }
+                else
+                {
+                    MessageBox.Show("Não");
+                }
             }
             else
             {
