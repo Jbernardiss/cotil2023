@@ -15,7 +15,6 @@ namespace Studio
         public Form1()
         {
             InitializeComponent();
-            menuStrip1.Visible = false;
 
             if (DAO_Conexao.getConexao("143.106.241.3", "cl202232", "cl202232", "Th30n3Wh0Kn0ck$"))
             {
@@ -36,23 +35,33 @@ namespace Studio
 
         private void button1_Click(object sender, EventArgs e)
         {
-            if(textBox1.Text != "" && textBox2.Text != "")
+            int tipoUsuario = DAO_Conexao.buscaTipoUsuario(textBox1.Text, textBox2.Text);
+
+            if (tipoUsuario == 1)
             {
-                if (DAO_Conexao.loginExiste(textBox1.Text, textBox2.Text))
-                {
-                    MessageBox.Show("Login com sucesso");
-                    menuStrip1.Visible = true;
-                    groupBox1.Visible = false;
-                }
-                else
-                {
-                    MessageBox.Show("Não");
-                }
+                MessageBox.Show("Login realizado com sucesso | Admininstrador");
+                menuStrip1.Visible = true;
+                groupBox1.Visible = false;
+            }
+            else if (tipoUsuario == 2)
+            {
+                MessageBox.Show("Login realizado com sucesso | Usuário Comum");
+                menuStrip1.Visible = true;
+                groupBox1.Visible = false;
+            }
+            else if (tipoUsuario == 0)
+            {
+                MessageBox.Show("Falha ao realizar login");
             }
             else
             {
                 MessageBox.Show("Não");
             }
+        }
+
+        private void sairToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
         }
     }
 }

@@ -9,15 +9,14 @@ namespace Studio
 {
     class DAO_Conexao
     {
-        private static MySqlConnection con;
-        public static Boolean getConexao(String local, String banco, String user, String senha) 
+        public static MySqlConnection con;
+        public static Boolean getConexao(String endereco, String banco, String user, String senha) 
         {
             Boolean retorno = false;
             try
             {
-                con = new MySqlConnection("server=" + local + ";User ID=" + user + ";" + "database=" + banco + 
+                con = new MySqlConnection("server=" + endereco + ";User ID=" + user + ";" + "database=" + banco + 
                     "; password=" + senha + "; SslMode = none");
-                con.Open();
                 retorno = true;
             }
             catch (Exception e)
@@ -27,13 +26,13 @@ namespace Studio
             return retorno;
         }
 
-        public static Boolean cadLogin(string usuario, string senha, int tipo)
+        public static Boolean cadastroUsuario(string usuario, string senha, int tipo)
         {
             bool cad = false;
             try
             {
                 con.Open();
-                MySqlCommand insere = new MySqlCommand("insert into Estudio_Login (usuario, senha, tipo) " +
+                MySqlCommand insere = new MySqlCommand("insert into Estudio_Usuario (usuario, senha, tipo) " +
                     "values ('" + usuario + "','" + senha + "'," + tipo + ")", con);
                 insere.ExecuteNonQuery();
                 cad = true;
@@ -49,21 +48,34 @@ namespace Studio
             return cad;
         }
 
-        public static Boolean loginExiste(string usuario, string senha)
+        internal static object getConexao()
         {
-            bool existe = false;
+            throw new NotImplementedException();
+        }
+
+        public static int buscaTipoUsuario(string usuario, string senha)
+        {
+            int tipo = 0;
             try
             {
-                MySqlCommand select = new MySqlCommand("select * from Estudio_Login where (usuario = '" + usuario + "' and senha = '" + senha + "')", con);
-                select.ExecuteReader();
-                existe = true;
+                con.Open();
+                MySqlCommand select = new MySqlCommand("select * from Estudio_Usuario where usuario = '" + usuario + "' and senha = '" + senha + "'", con);
+                MySqlDataReader resultado =  select.ExecuteReader();
+                if(resultado.Read())
+                {
+                    tipo = Convert.ToInt32(resultado["tipo"].ToString());
+                }
             }
             catch(Exception ex)
             {
                 Console.WriteLine(ex.ToString());
             }
+            finally
+            {
+                con.Close();
+            }
 
-            return existe;
+            return tipo;
         }
     }
 }

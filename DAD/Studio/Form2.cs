@@ -29,7 +29,7 @@ namespace Studio
                 tipo = 2;
             }
 
-            if(DAO_Conexao.cadLogin(textBox1.Text, textBox2.Text, tipo))
+            if(DAO_Conexao.cadastroUsuario(textBox1.Text, textBox2.Text, tipo))
             {
                 MessageBox.Show("Cadastro realizado com sucesso");
             }
