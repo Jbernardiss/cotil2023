@@ -1,0 +1,57 @@
+
+body {
+    margin: 0;
+}
+
+nav {
+    background-color: black;
+    color: white;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 15px;
+}
+
+nav a {
+    margin: 0px 5px;
+}
+
+nav a:link {
+    color: white;
+    text-decoration: none;
+}
+
+nav a:hover {
+    text-decoration: underline;
+}
+
+main {
+    display: flex;
+    margin: 50px;
+}
+
+main div {
+    margin: 15px;
+}
+
+@media (min-width: 200px) and (max-width: 414px) {
+    main div {
+        background-color: blue;
+    }
+
+    main {
+        flex-direction: column;
+    }
+}
+
+@media (min-width: 415px) and (max-width: 820px) {
+    main div {
+        background-color: green;
+    }
+    
+    main {
+        flex-direction: column;
+    }
+}

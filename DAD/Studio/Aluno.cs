@@ -22,8 +22,9 @@ namespace Studio
         private byte[] foto;
         private bool ativo;
 
+
         public Aluno(string cpf, string nome, string rua, string numero, string bairro, string complemento, string cep, string cidade, string estado, string telefone, 
-        string email, byte[] foto, bool ativo) {
+        string email, byte[] foto) {
             setCpf(cpf);
             setNome(nome);
             setRua(rua);
@@ -36,12 +37,22 @@ namespace Studio
             setTelefone(telefone);
             setEmail(email);
             setFoto(foto);
-            setAtivo(ativo);
+            setAtivo(true);
         }
 
+        public Aluno()
+        {
+
+        }
+
+        public Aluno(string cpf)
+        {
+            setCpf(cpf);
+        }
 
         public bool cadastroAluno()
         {
+            /*
             bool cadastro = false;
             try
             {
@@ -49,6 +60,7 @@ namespace Studio
             }
 
             return cadastro;
+            */
         }
 
 
