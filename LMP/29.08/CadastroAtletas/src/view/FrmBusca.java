@@ -6,6 +6,8 @@
 package view;
 
 import control.AtletaControl;
+import java.util.ArrayList;
+import javax.swing.DefaultListModel;
 import javax.swing.JOptionPane;
 import model.Atleta;
 
@@ -39,7 +41,10 @@ public class FrmBusca extends javax.swing.JFrame {
         txtBusca = new javax.swing.JTextField();
         lblBusca = new javax.swing.JLabel();
         btnBusca = new javax.swing.JButton();
-        jButton1 = new javax.swing.JButton();
+        btnMostrarTodosCadastros = new javax.swing.JButton();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        jListBusca = new javax.swing.JList<>();
+        jButton2 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -56,12 +61,17 @@ public class FrmBusca extends javax.swing.JFrame {
             }
         });
 
-        jButton1.setText("Exibir todos cadastrados");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
+        btnMostrarTodosCadastros.setText("Exibir todos cadastrados");
+        btnMostrarTodosCadastros.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+                btnMostrarTodosCadastrosActionPerformed(evt);
             }
         });
+
+        jScrollPane1.setViewportView(jListBusca);
+
+        jButton2.setText("Excluir Selecionado");
+        jButton2.setToolTipText("");
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -69,19 +79,25 @@ public class FrmBusca extends javax.swing.JFrame {
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jScrollPane1)
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addComponent(lblTipoBusca)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addComponent(lblTipoBusca)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(comboBoxTipoBusca, javax.swing.GroupLayout.PREFERRED_SIZE, 72, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addComponent(lblBusca)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(txtBusca))
+                            .addComponent(btnBusca, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(comboBoxTipoBusca, javax.swing.GroupLayout.PREFERRED_SIZE, 72, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addComponent(lblBusca)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(txtBusca))
-                    .addComponent(btnBusca, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jButton1)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(btnMostrarTodosCadastros, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(jButton2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addGap(0, 0, Short.MAX_VALUE)))
+                .addContainerGap())
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -93,11 +109,14 @@ public class FrmBusca extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(lblBusca)
-                    .addComponent(txtBusca, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(txtBusca, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnMostrarTodosCadastros))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btnBusca)
-                    .addComponent(jButton1))
+                    .addComponent(jButton2))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 114, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
@@ -114,14 +133,14 @@ public class FrmBusca extends javax.swing.JFrame {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap())
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+    private void btnMostrarTodosCadastrosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnMostrarTodosCadastrosActionPerformed
   
         String stringLista = "";
         
@@ -130,32 +149,35 @@ public class FrmBusca extends javax.swing.JFrame {
         }
         
         JOptionPane.showMessageDialog(null, stringLista);
-    }//GEN-LAST:event_jButton1ActionPerformed
+    }//GEN-LAST:event_btnMostrarTodosCadastrosActionPerformed
 
     private void btnBuscaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBuscaActionPerformed
         String stringLista = "";
+        DefaultListModel listModelAtletas = new DefaultListModel();
+        ArrayList<Atleta> resultadoBusca = null;
+        
         try{
             if(comboBoxTipoBusca.getSelectedIndex() == 0){
-                for(Atleta a: atletaControl.getAtletaPorNome(txtBusca.getText())){
-                    stringLista += a.getNome() + "\n";
-                }
+                resultadoBusca = atletaControl.getAtletaPorNome(txtBusca.getText());
+                
             }else if(comboBoxTipoBusca.getSelectedIndex() == 1){
-                for(Atleta a: atletaControl.getAtletaPorCodigo(Integer.parseInt(txtBusca.getText()))){
-                    stringLista += a.getNome() + "\n";
-                }
+                resultadoBusca = atletaControl.getAtletaPorCodigo(Integer.parseInt(txtBusca.getText()));
+                
             }else if(comboBoxTipoBusca.getSelectedIndex() == 2){
-                for(Atleta a: atletaControl.getAtletaPorIdade(Integer.parseInt(txtBusca.getText()))){
-                    stringLista += a.getNome() + "\n";
-                }
+                resultadoBusca = atletaControl.getAtletaPorIdade(Integer.parseInt(txtBusca.getText()));
+                
             }else if(comboBoxTipoBusca.getSelectedIndex() == 3){
-                for(Atleta a: atletaControl.getAtletaPorAltura(Integer.parseInt(txtBusca.getText()))){
-                    stringLista += a.getNome() + "\n";
-                }
+                resultadoBusca = atletaControl.getAtletaPorAltura(Integer.parseInt(txtBusca.getText()));
+                
             }else if(comboBoxTipoBusca.getSelectedIndex() == 4){
-                for(Atleta a: atletaControl.getAtletaPorPeso(Double.parseDouble(txtBusca.getText()))){
-                    stringLista += a.getNome() + "\n";
-                }
+                resultadoBusca = atletaControl.getAtletaPorPeso(Double.parseDouble(txtBusca.getText()));
             }
+            
+            for(Atleta a: resultadoBusca){
+                
+                jListBusca.add(a.getNome(), this);
+            }
+            
             JOptionPane.showMessageDialog(null, stringLista);
         }catch(NullPointerException e){
             JOptionPane.showMessageDialog(null, "Não há pessoas no cadastro");
@@ -200,9 +222,12 @@ public class FrmBusca extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnBusca;
+    private javax.swing.JButton btnMostrarTodosCadastros;
     private javax.swing.JComboBox<String> comboBoxTipoBusca;
-    private javax.swing.JButton jButton1;
+    private javax.swing.JButton jButton2;
+    private javax.swing.JList<String> jListBusca;
     private javax.swing.JPanel jPanel1;
+    private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JLabel lblBusca;
     private javax.swing.JLabel lblTipoBusca;
     private javax.swing.JTextField txtBusca;
