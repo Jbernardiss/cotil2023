@@ -36,5 +36,4 @@ public class Aluno {
         this.nome = nome;
     }
     
-    
 }
