@@ -9,6 +9,7 @@ import control.AtletaControl;
 import exception.NumeroInvalidoException;
 import exception.StringVaziaException;
 import javax.swing.JOptionPane;
+import model.Atleta;
 
 /**
  *
@@ -46,9 +47,10 @@ public class FrmAtleta extends javax.swing.JFrame {
         lblIdade = new javax.swing.JLabel();
         txtIdade = new javax.swing.JTextField();
         btnCadastrar = new javax.swing.JButton();
-        jButton1 = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
-        jButton3 = new javax.swing.JButton();
+        btnMediaPesos = new javax.swing.JButton();
+        btnAtletaMaisAlto = new javax.swing.JButton();
+        btnMaiorEMenorIdade = new javax.swing.JButton();
+        btnBusca = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -69,16 +71,33 @@ public class FrmAtleta extends javax.swing.JFrame {
             }
         });
 
-        jButton1.setText("Média dos pesos");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
+        btnMediaPesos.setText("Média dos pesos");
+        btnMediaPesos.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+                btnMediaPesosActionPerformed(evt);
             }
         });
 
-        jButton2.setText("Atleta mais alto");
+        btnAtletaMaisAlto.setText("Atleta mais alto");
+        btnAtletaMaisAlto.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnAtletaMaisAltoActionPerformed(evt);
+            }
+        });
 
-        jButton3.setText("Maioridade geral");
+        btnMaiorEMenorIdade.setText("Maioridade geral");
+        btnMaiorEMenorIdade.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnMaiorEMenorIdadeActionPerformed(evt);
+            }
+        });
+
+        btnBusca.setText("Busca e Exclusão de Atletas");
+        btnBusca.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnBuscaActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
@@ -104,11 +123,12 @@ public class FrmAtleta extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(txtPeso, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addComponent(btnCadastrar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 112, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 56, Short.MAX_VALUE)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(jButton1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jButton2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jButton3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(btnMediaPesos, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(btnAtletaMaisAlto, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(btnMaiorEMenorIdade, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(btnBusca, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap())
         );
         jPanel2Layout.setVerticalGroup(
@@ -118,23 +138,26 @@ public class FrmAtleta extends javax.swing.JFrame {
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(lblNome)
                     .addComponent(txtNome, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jButton1))
+                    .addComponent(btnMediaPesos))
                 .addGap(18, 18, 18)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(lblPeso)
                     .addComponent(txtPeso, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jButton2))
+                    .addComponent(btnAtletaMaisAlto))
                 .addGap(18, 18, 18)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(lblAltura)
                     .addComponent(txtAltura, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jButton3))
+                    .addComponent(btnMaiorEMenorIdade))
                 .addGap(18, 18, 18)
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(lblIdade)
-                    .addComponent(txtIdade, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(btnCadastrar)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(lblIdade)
+                            .addComponent(txtIdade, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(btnCadastrar))
+                    .addComponent(btnBusca, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
@@ -215,10 +238,31 @@ public class FrmAtleta extends javax.swing.JFrame {
         
     }//GEN-LAST:event_btnCadastrarActionPerformed
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+    private void btnMediaPesosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnMediaPesosActionPerformed
         double mediaPesos = atletaControl.mediaPesos();
         JOptionPane.showMessageDialog(null, "Média Pesos: " + mediaPesos + "kg");
-    }//GEN-LAST:event_jButton1ActionPerformed
+    }//GEN-LAST:event_btnMediaPesosActionPerformed
+
+    private void btnAtletaMaisAltoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAtletaMaisAltoActionPerformed
+        
+        Atleta atletaMaisAlto = atletaControl.getAtletaMaisAlto();
+        
+        try {
+            JOptionPane.showMessageDialog(null, "Atleta mais alto: " + atletaMaisAlto.getNome());
+        } catch(NullPointerException e) {
+            JOptionPane.showMessageDialog(null, "Não há atletas cadastrados!");
+        }
+    }//GEN-LAST:event_btnAtletaMaisAltoActionPerformed
+
+    private void btnMaiorEMenorIdadeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnMaiorEMenorIdadeActionPerformed
+        int[] maioresEMenores = atletaControl.getMaiorEMenoridade();
+        JOptionPane.showMessageDialog(null, "Menores de Idade: " + maioresEMenores[0] + "\nMaiores de Idade: " + maioresEMenores[1]);
+    }//GEN-LAST:event_btnMaiorEMenorIdadeActionPerformed
+
+    private void btnBuscaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBuscaActionPerformed
+        FrmBusca formBusca = new FrmBusca();
+        formBusca.setVisible(true);
+    }//GEN-LAST:event_btnBuscaActionPerformed
 
     /**
      * @param args the command line arguments
@@ -256,10 +300,11 @@ public class FrmAtleta extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btnAtletaMaisAlto;
+    private javax.swing.JButton btnBusca;
     private javax.swing.JButton btnCadastrar;
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
-    private javax.swing.JButton jButton3;
+    private javax.swing.JButton btnMaiorEMenorIdade;
+    private javax.swing.JButton btnMediaPesos;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JLabel lblAltura;
