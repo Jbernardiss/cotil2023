@@ -1,8 +1,10 @@
-﻿using System;
+﻿using MySql.Data.MySqlClient;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace Studio
 {
@@ -13,7 +15,7 @@ namespace Studio
         private string rua;
         private string numero;
         private string bairro;
-        private string complmento;
+        private string complemento;
         private string cep;
         private string cidade;
         private string estado;
@@ -30,7 +32,24 @@ namespace Studio
             setRua(rua);
             setNumero(numero);
             setBairro(bairro);
-            setComplmento(complmento);
+            setComplemento(complemento);
+            setCep(cep);
+            setCidade(cidade);
+            setEstado(estado);
+            setTelefone(telefone);
+            setEmail(email);
+            setFoto(foto);
+            setAtivo(true);
+        }
+        public Aluno(string cpf, string nome, string rua, string numero, string bairro, string complemento, string cep, string cidade, string estado, string telefone,
+        string email)
+        {
+            setCpf(cpf);
+            setNome(nome);
+            setRua(rua);
+            setNumero(numero);
+            setBairro(bairro);
+            setComplemento(complemento);
             setCep(cep);
             setCidade(cidade);
             setEstado(estado);
@@ -52,18 +71,71 @@ namespace Studio
 
         public bool cadastroAluno()
         {
-            /*
+            
             bool cadastro = false;
             try
             {
                 DAO_Conexao.con.Open();
+                MySqlCommand insere = new MySqlCommand("insert into Estudio_Aluno (CPFAluno, nomeAluno, ruaAluno, numeroAluno, bairroAluno, complementoAluno, CEPAluno, " +
+                    "cidadeAluno, estadoAluno, telefoneAluno, emailAluno) values " + "('" + cpf + "','" + nome + "','" + rua + "','" + numero + "','" + bairro + "','" +
+                     complemento + "','" + cep + "','" + cidade + "','" + estado + "','" + telefone + "','" + email + "')", DAO_Conexao.con);
+            } catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
+            finally
+            {
+                DAO_Conexao.con.Close();
             }
 
             return cadastro;
-            */
         }
 
+        public bool alunoExiste()
+        {
+            bool existe = false;
+            MySqlDataReader resultado = null;
+            try
+            {
+                DAO_Conexao.con.Open();
+                MySqlCommand consulta = new MySqlCommand("SELECT * FROM Estudio_Aluno WHERE CPFAluno='" + cpf + "'", DAO_Conexao.con);
+                resultado = consulta.ExecuteReader();
+                if(resultado.Read())
+                {
+                    existe = true;
+                }
+            }
+            catch(Exception ex)
+            {
+                Console.WriteLine(ex.ToString());
+            }
+            finally
+            {
+                DAO_Conexao.con.Close();
+            }
+            return existe;
+        }
 
+        public bool excluirAluno()
+        {
+            bool exc = false;
+            try
+            {
+                DAO_Conexao.con.Open();
+                MySqlCommand exclui = new MySqlCommand("update Estudio_Aluno set ativo = 1 where CPFAluno = '" + cpf + "'", DAO_Conexao.con);
+                exclui.ExecuteNonQuery();
+                exc = true;
+            }
+            catch(Exception ex)
+            {
+                Console.WriteLine(ex.ToString());
+            }
+            finally
+            {
+                DAO_Conexao.con.Close();
+            }
+            return exc;
+        }
 
         public string getCpf()
         {
@@ -115,14 +187,14 @@ namespace Studio
             this.bairro = bairro;
         }
 
-        public string getComplmento()
+        public string getComplemento()
         {
-            return complmento;
+            return complemento;
         }
 
-        public void setComplmento(String complmento)
+        public void setComplemento(String complmento)
         {
-            this.complmento = complmento;
+            this.complemento = complmento;
         }
 
         public string getCep()
