@@ -79,6 +79,8 @@ namespace Studio
                 MySqlCommand insere = new MySqlCommand("insert into Estudio_Aluno (CPFAluno, nomeAluno, ruaAluno, numeroAluno, bairroAluno, complementoAluno, CEPAluno, " +
                     "cidadeAluno, estadoAluno, telefoneAluno, emailAluno) values " + "('" + cpf + "','" + nome + "','" + rua + "','" + numero + "','" + bairro + "','" +
                      complemento + "','" + cep + "','" + cidade + "','" + estado + "','" + telefone + "','" + email + "')", DAO_Conexao.con);
+                insere.ExecuteNonQuery();
+                cadastro = true;
             } catch (Exception ex)
             {
                 Console.WriteLine(ex.Message);
@@ -116,13 +118,34 @@ namespace Studio
             return existe;
         }
 
+        public MySqlDataReader consultarAluno()
+        {
+            MySqlDataReader resultado = null;
+            try
+            {
+                DAO_Conexao.con.Open();
+                MySqlCommand consulta = new MySqlCommand("SELECT * FROM Estudio_Aluno WHERE CPFAluno='" + cpf + "'", DAO_Conexao.con);
+                resultado = consulta.ExecuteReader();
+            }
+
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.ToString());
+            }
+            finally
+            {
+                DAO_Conexao.con.Close();
+            }
+            return resultado;
+        }
+
         public bool excluirAluno()
         {
             bool exc = false;
             try
             {
                 DAO_Conexao.con.Open();
-                MySqlCommand exclui = new MySqlCommand("update Estudio_Aluno set ativo = 1 where CPFAluno = '" + cpf + "'", DAO_Conexao.con);
+                MySqlCommand exclui = new MySqlCommand("update Estudio_Aluno set ativo = 0 where CPFAluno = '" + cpf + "'", DAO_Conexao.con);
                 exclui.ExecuteNonQuery();
                 exc = true;
             }
@@ -132,6 +155,7 @@ namespace Studio
             }
             finally
             {
+
                 DAO_Conexao.con.Close();
             }
             return exc;

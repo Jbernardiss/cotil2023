@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MySql.Data.MySqlClient;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -25,7 +26,26 @@ namespace Studio
             {
                 if (aluno.alunoExiste())
                 {
-                    MessageBox.Show("Aluno ja cadastrado!");
+                    try
+                    {
+                        MySqlDataReader dadosAluno = aluno.consultarAluno();
+
+                        txtNome.Text = dadosAluno["nomeAluno"].ToString();
+                        txtEndereco.Text = dadosAluno["ruaAluno"].ToString();
+                        txtNumero.Text = dadosAluno["numeroAluno"].ToString();
+                        txtBairro.Text = dadosAluno["bairroAluno"].ToString();
+                        txtComplemento.Text = dadosAluno["complementoAluno"].ToString();
+                        txtCEP.Text = dadosAluno["CEPAluno"].ToString();
+                        txtCidade.Text = dadosAluno["cidadeAluno"].ToString();
+                        txtEstado.Text = dadosAluno["estadoAluno"].ToString();
+                        txtTelefone.Text = dadosAluno["telefoneAluno"].ToString();
+                        txtEmail.Text = dadosAluno["emailAluno"].ToString();
+                    } 
+                    catch(Exception ex)
+                    {
+                        MessageBox.Show(ex.Message);
+                    }
+                    
                 }
                 else
                 {
@@ -40,7 +60,7 @@ namespace Studio
             Aluno aluno = new Aluno(txtCPF.Text, txtNome.Text, txtEndereco.Text, txtNumero.Text, txtBairro.Text, txtComplemento.Text, txtCEP.Text, txtCidade.Text, txtEstado.Text,
                 txtTelefone.Text, txtEmail.Text);
 
-            if(aluno.alunoExiste())
+            if(aluno.cadastroAluno())
             {
                 MessageBox.Show("Cadastro realizado com sucesso!");
             }

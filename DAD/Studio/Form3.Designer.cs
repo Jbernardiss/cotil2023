@@ -135,15 +135,15 @@ namespace Studio
             // 
             // txtCidade
             // 
-            this.txtCidade.Location = new System.Drawing.Point(178, 136);
+            this.txtCidade.Location = new System.Drawing.Point(182, 136);
             this.txtCidade.Name = "txtCidade";
-            this.txtCidade.Size = new System.Drawing.Size(122, 20);
+            this.txtCidade.Size = new System.Drawing.Size(118, 20);
             this.txtCidade.TabIndex = 17;
             // 
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(129, 139);
+            this.label9.Location = new System.Drawing.Point(133, 139);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(43, 13);
             this.label9.TabIndex = 16;
@@ -194,7 +194,7 @@ namespace Studio
             this.txtCEP.Location = new System.Drawing.Point(68, 136);
             this.txtCEP.Mask = "00.000-000";
             this.txtCEP.Name = "txtCEP";
-            this.txtCEP.Size = new System.Drawing.Size(55, 20);
+            this.txtCEP.Size = new System.Drawing.Size(59, 20);
             this.txtCEP.TabIndex = 10;
             // 
             // txtBairro

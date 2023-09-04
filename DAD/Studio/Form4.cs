@@ -20,6 +20,7 @@ namespace Studio
         private void txtCPF_KeyPress(object sender, KeyPressEventArgs e)
         {
             Aluno aluno = new Aluno(txtCPF.Text);
+
             if(e.KeyChar == 13)
             {
                 if(aluno.alunoExiste())
