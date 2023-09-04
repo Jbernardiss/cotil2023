@@ -91,7 +91,7 @@ public class AtletaControl {
         return arrayRetorno;
     }
     
-        public ArrayList<Atleta> getAtletaPorCodigo(int codigo){
+    public ArrayList<Atleta> getAtletaPorCodigo(int codigo){
         ArrayList<Atleta> arrayRetorno = new ArrayList<>();
         int encontrou = 0;
         for(Atleta a: listaAtletas){
@@ -107,7 +107,6 @@ public class AtletaControl {
                 
         return arrayRetorno;
     }
-        
             
     public ArrayList<Atleta> getAtletaPorIdade(int idade){
         ArrayList<Atleta> arrayRetorno = new ArrayList<>();
@@ -142,7 +141,6 @@ public class AtletaControl {
                 
         return arrayRetorno;
     }
-    
      
     public ArrayList<Atleta> getAtletaPorAltura(int altura){
         ArrayList<Atleta> arrayRetorno = new ArrayList<>();
@@ -161,4 +159,11 @@ public class AtletaControl {
         return arrayRetorno;
     }
     
+    public void excluirAtleta(Atleta atleta) {
+        listaAtletas.remove(atleta);
+        
+        if(Atleta.getNumeroAtletas() > 0) {
+            Atleta.setNumeroAtletas(Atleta.getNumeroAtletas() - 1);
+        }
+    }
 }

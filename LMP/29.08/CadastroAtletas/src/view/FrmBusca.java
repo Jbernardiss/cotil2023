@@ -8,6 +8,7 @@ package view;
 import control.AtletaControl;
 import java.util.ArrayList;
 import javax.swing.DefaultListModel;
+import javax.swing.JList;
 import javax.swing.JOptionPane;
 import model.Atleta;
 
@@ -17,7 +18,8 @@ import model.Atleta;
  */
 public class FrmBusca extends javax.swing.JFrame {
     
-    AtletaControl atletaControl = new AtletaControl();
+    private AtletaControl atletaControl = new AtletaControl();
+    private ArrayList<Atleta> atletasListados = new ArrayList();
     
     /**
      * Creates new form FrmBusca
@@ -141,20 +143,30 @@ public class FrmBusca extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnMostrarTodosCadastrosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnMostrarTodosCadastrosActionPerformed
-  
-        String stringLista = "";
+        
+        jListBusca.setModel(new DefaultListModel());
+        atletasListados = new ArrayList();
+        
+        DefaultListModel stringLista = new DefaultListModel();
+        String tempBuf;
         
         for(Atleta a:AtletaControl.getListaAtletas()) {
-            stringLista += a.getNome() + "\n";
+            tempBuf = "ID " + a.getCodigo() + ": " + a.getNome() + ", " + a.getIdade() + " anos";
+            stringLista.addElement(tempBuf);
         }
         
-        JOptionPane.showMessageDialog(null, stringLista);
+        jListBusca.setModel(stringLista);
+        atletasListados = AtletaControl.getListaAtletas();
     }//GEN-LAST:event_btnMostrarTodosCadastrosActionPerformed
 
     private void btnBuscaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBuscaActionPerformed
-        String stringLista = "";
-        DefaultListModel listModelAtletas = new DefaultListModel();
+        DefaultListModel stringLista = new DefaultListModel();
         ArrayList<Atleta> resultadoBusca = null;
+        
+        jListBusca.setModel(new DefaultListModel());
+        atletasListados = new ArrayList();
+        
+        String tempBuf;
         
         try{
             if(comboBoxTipoBusca.getSelectedIndex() == 0){
@@ -175,14 +187,16 @@ public class FrmBusca extends javax.swing.JFrame {
             
             for(Atleta a: resultadoBusca){
                 
-                jListBusca.add(a.getNome(), this);
+                tempBuf = "ID " + a.getCodigo() + ": " + a.getNome() + ", " + a.getIdade() + " anos";
+                stringLista.addElement(tempBuf);
             }
             
-            JOptionPane.showMessageDialog(null, stringLista);
+            jListBusca.setModel(stringLista);
+            atletasListados = resultadoBusca;
+            
         }catch(NullPointerException e){
             JOptionPane.showMessageDialog(null, "Não há pessoas no cadastro");
         }
-        
     }//GEN-LAST:event_btnBuscaActionPerformed
 
     /**

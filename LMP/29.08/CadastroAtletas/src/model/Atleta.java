@@ -12,6 +12,7 @@ package model;
 public class Atleta {
     
     private static int numeroAtletas = 0;
+    private static int ultimoCodigo = 0;
     private int codigo;
     private String nome;
     private double peso;
@@ -20,7 +21,8 @@ public class Atleta {
 
     public Atleta(String nome, double peso, int altura, int idade) {
         numeroAtletas++;
-        this.codigo = numeroAtletas;
+        ultimoCodigo++;
+        this.codigo = ultimoCodigo;
         this.nome = nome;
         this.peso = peso;
         this.altura = altura;
@@ -74,5 +76,6 @@ public class Atleta {
     public static void setNumeroAtletas(int numeroAtletas) {
         Atleta.numeroAtletas = numeroAtletas;
     }
+    
     
 }
