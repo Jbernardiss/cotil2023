@@ -79,7 +79,7 @@ public class AtletaControl {
         ArrayList<Atleta> arrayRetorno = new ArrayList<>();
         int encontrou = 0;
         for(Atleta a: listaAtletas){
-            if(a.getNome().equals(nome)){
+            if(a.getNome().toLowerCase().contains(nome.toLowerCase())) {
                 arrayRetorno.add(a);
                 encontrou = 1;
             }
