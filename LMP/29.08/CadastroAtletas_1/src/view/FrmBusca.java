@@ -6,8 +6,6 @@
 package view;
 
 import control.AtletaControl;
-import java.awt.event.MouseAdapter;
-import java.awt.event.MouseEvent;
 import java.util.ArrayList;
 import javax.swing.DefaultListModel;
 import javax.swing.JList;
@@ -48,9 +46,9 @@ public class FrmBusca extends javax.swing.JFrame {
         btnMostrarTodosCadastros = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
         jListBusca = new javax.swing.JList<>();
-        btnExcluir = new javax.swing.JButton();
+        jButton2 = new javax.swing.JButton();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
+        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         comboBoxTipoBusca.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Nome", "Código", "Idade", "Altura", "Peso" }));
 
@@ -72,20 +70,10 @@ public class FrmBusca extends javax.swing.JFrame {
             }
         });
 
-        jListBusca.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jListBuscaMouseClicked(evt);
-            }
-        });
         jScrollPane1.setViewportView(jListBusca);
 
-        btnExcluir.setText("Excluir Selecionado");
-        btnExcluir.setToolTipText("");
-        btnExcluir.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnExcluirActionPerformed(evt);
-            }
-        });
+        jButton2.setText("Excluir Selecionado");
+        jButton2.setToolTipText("");
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -109,7 +97,7 @@ public class FrmBusca extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addComponent(btnMostrarTodosCadastros, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(btnExcluir, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                            .addComponent(jButton2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                         .addGap(0, 0, Short.MAX_VALUE)))
                 .addContainerGap())
         );
@@ -128,7 +116,7 @@ public class FrmBusca extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btnBusca)
-                    .addComponent(btnExcluir))
+                    .addComponent(jButton2))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 114, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
@@ -207,66 +195,9 @@ public class FrmBusca extends javax.swing.JFrame {
             atletasListados = resultadoBusca;
             
         }catch(NullPointerException e){
-            
-            JOptionPane.showMessageDialog(null, "Não há usuários com tais dados!");
+            JOptionPane.showMessageDialog(null, "Não há pessoas no cadastro");
         }
     }//GEN-LAST:event_btnBuscaActionPerformed
-
-    private void jListBuscaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jListBuscaMouseClicked
-        String outputString = "";
-        JList list = (JList)evt.getSource();
-        
-        if (evt.getClickCount() == 2) {
-            int index = list.locationToIndex(evt.getPoint());
-            
-            outputString += "Nome: " + atletasListados.get(index).getNome();
-            outputString += "\nPeso: " + atletasListados.get(index).getPeso() + "kg";
-            outputString += "\nAltura: " + atletasListados.get(index).getAltura() + "cm";
-            outputString += "\nIdade: " + atletasListados.get(index).getIdade() + " anos";
-            outputString += "\nCódigo: " + atletasListados.get(index).getCodigo();
-            
-            JOptionPane.showMessageDialog(null, outputString);
-        }
-    }//GEN-LAST:event_jListBuscaMouseClicked
-
-    private void btnExcluirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnExcluirActionPerformed
-        DefaultListModel stringLista = new DefaultListModel();        
-        String tempBuf;
-
-        
-        try {
-            tempBuf = "\n\nNome: " + atletasListados.get(jListBusca.getSelectedIndex()).getNome();
-            tempBuf += "\nCódigo: " + atletasListados.get(jListBusca.getSelectedIndex()).getCodigo();
-            tempBuf += "\nPeso: " + atletasListados.get(jListBusca.getSelectedIndex()).getPeso();
-            tempBuf += "\nAltura: " + atletasListados.get(jListBusca.getSelectedIndex()).getAltura();
-            tempBuf += "\nIdade: " + atletasListados.get(jListBusca.getSelectedIndex()).getIdade();
-            
-            
-            int confirmar = JOptionPane.showOptionDialog(null, "Deseja realmente excluir este usuário?: " + tempBuf, "Excluir?",
-              JOptionPane.YES_NO_OPTION, JOptionPane.WARNING_MESSAGE, null, null, "No");
-            
-            if(confirmar == JOptionPane.YES_OPTION) {
-                atletaControl.excluirAtleta(atletasListados.get(jListBusca.getSelectedIndex()));
-                JOptionPane.showMessageDialog(null, "Atleta excluído!");
-            } else {
-                JOptionPane.showMessageDialog(null, "Atleta não excluído.");
-                return;
-            }
-            
-        
-        
-            for(Atleta a: atletasListados){
-                
-                tempBuf = "ID " + a.getCodigo() + ": " + a.getNome() + ", " + a.getIdade() + " anos";
-                stringLista.addElement(tempBuf);
-            }
-            
-            jListBusca.setModel(stringLista);
-            
-        } catch(NumberFormatException | IndexOutOfBoundsException e) {
-            JOptionPane.showMessageDialog(null, "Não há usuários selecionados!");
-        }
-    }//GEN-LAST:event_btnExcluirActionPerformed
 
     /**
      * @param args the command line arguments
@@ -305,9 +236,9 @@ public class FrmBusca extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnBusca;
-    private javax.swing.JButton btnExcluir;
     private javax.swing.JButton btnMostrarTodosCadastros;
     private javax.swing.JComboBox<String> comboBoxTipoBusca;
+    private javax.swing.JButton jButton2;
     private javax.swing.JList<String> jListBusca;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;

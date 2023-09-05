@@ -16,8 +16,9 @@ import model.Atleta;
  * @author aluno
  */
 public class FrmAtleta extends javax.swing.JFrame {
+
     AtletaControl atletaControl = new AtletaControl();
-     AtletaControl atletaControl2 = new AtletaControl();
+    
     /**
      * Creates new form FrmAtleta
      */
@@ -25,9 +26,9 @@ public class FrmAtleta extends javax.swing.JFrame {
         initComponents();
     }
 
-  
+    Atleta pc = new Atleta ("edu",200,120,16);
     
- 
+    
     /**,
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -38,6 +39,7 @@ public class FrmAtleta extends javax.swing.JFrame {
     private void initComponents() {
 
         jPanel1 = new javax.swing.JPanel();
+        jPanel2 = new javax.swing.JPanel();
         txtNome = new javax.swing.JTextField();
         txtPeso = new javax.swing.JTextField();
         lblNome = new javax.swing.JLabel();
@@ -54,7 +56,7 @@ public class FrmAtleta extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        jPanel1.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        jPanel2.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
 
         lblNome.setText("Nome: ");
 
@@ -63,12 +65,6 @@ public class FrmAtleta extends javax.swing.JFrame {
         lblAltura.setText("Altura: ");
 
         lblIdade.setText("Idade: ");
-
-        txtIdade.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtIdadeActionPerformed(evt);
-            }
-        });
 
         btnCadastrar.setText("Cadastrar");
         btnCadastrar.addActionListener(new java.awt.event.ActionListener() {
@@ -105,66 +101,83 @@ public class FrmAtleta extends javax.swing.JFrame {
             }
         });
 
+        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
+        jPanel2.setLayout(jPanel2Layout);
+        jPanel2Layout.setHorizontalGroup(
+            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel2Layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addComponent(lblNome)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(txtNome, javax.swing.GroupLayout.PREFERRED_SIZE, 102, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addComponent(lblIdade)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(txtIdade))
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addComponent(lblAltura)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(txtAltura, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addComponent(lblPeso)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(txtPeso, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(btnCadastrar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 56, Short.MAX_VALUE)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(btnMediaPesos, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(btnAtletaMaisAlto, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(btnMaiorEMenorIdade, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(btnBusca, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap())
+        );
+        jPanel2Layout.setVerticalGroup(
+            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel2Layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(lblNome)
+                    .addComponent(txtNome, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnMediaPesos))
+                .addGap(18, 18, 18)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(lblPeso)
+                    .addComponent(txtPeso, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnAtletaMaisAlto))
+                .addGap(18, 18, 18)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(lblAltura)
+                    .addComponent(txtAltura, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnMaiorEMenorIdade))
+                .addGap(18, 18, 18)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(lblIdade)
+                            .addComponent(txtIdade, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(btnCadastrar))
+                    .addComponent(btnBusca, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(18, 18, 18)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addGroup(jPanel1Layout.createSequentialGroup()
-                            .addGap(2, 2, 2)
-                            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                .addComponent(lblNome)
-                                .addComponent(lblPeso)))
-                        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                            .addGap(1, 1, 1)
-                            .addComponent(lblIdade)))
-                    .addComponent(lblAltura, javax.swing.GroupLayout.Alignment.LEADING))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(txtPeso, javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(txtNome)
-                    .addComponent(txtAltura, javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(txtIdade, javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(btnCadastrar, javax.swing.GroupLayout.PREFERRED_SIZE, 102, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 58, Short.MAX_VALUE)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(btnMediaPesos, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 169, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btnAtletaMaisAlto, javax.swing.GroupLayout.PREFERRED_SIZE, 169, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btnMaiorEMenorIdade, javax.swing.GroupLayout.PREFERRED_SIZE, 169, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btnBusca))
-                .addGap(18, 18, 18))
+                .addContainerGap()
+                .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap())
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(19, 19, 19)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(txtNome, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(lblNome)
-                    .addComponent(btnMediaPesos))
-                .addGap(6, 6, 6)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(txtPeso, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(lblPeso)
-                    .addComponent(btnAtletaMaisAlto))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(txtAltura, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(lblAltura)
-                    .addComponent(btnMaiorEMenorIdade))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(txtIdade, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(lblIdade))
-                        .addGap(18, 18, 18)
-                        .addComponent(btnCadastrar))
-                    .addComponent(btnBusca, javax.swing.GroupLayout.PREFERRED_SIZE, 54, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(14, Short.MAX_VALUE))
+                .addContainerGap()
+                .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -187,39 +200,13 @@ public class FrmAtleta extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void btnBuscaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBuscaActionPerformed
-        FrmBusca formBusca = new FrmBusca();
-        formBusca.setVisible(true);
-    }//GEN-LAST:event_btnBuscaActionPerformed
-
-    private void btnMaiorEMenorIdadeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnMaiorEMenorIdadeActionPerformed
-        int[] maioresEMenores = atletaControl.getMaiorEMenoridade();
-        JOptionPane.showMessageDialog(null, "Menores de Idade: " + maioresEMenores[0] + "\nMaiores de Idade: " + maioresEMenores[1]);
-    }//GEN-LAST:event_btnMaiorEMenorIdadeActionPerformed
-
-    private void btnAtletaMaisAltoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAtletaMaisAltoActionPerformed
-
-        Atleta atletaMaisAlto = atletaControl.getAtletaMaisAlto();
-
-        try {
-            JOptionPane.showMessageDialog(null, "Atleta mais alto: " + atletaMaisAlto.getNome());
-        } catch(NullPointerException e) {
-            JOptionPane.showMessageDialog(null, "Não há atletas cadastrados!");
-        }
-    }//GEN-LAST:event_btnAtletaMaisAltoActionPerformed
-
-    private void btnMediaPesosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnMediaPesosActionPerformed
-        double mediaPesos = atletaControl.mediaPesos();
-        JOptionPane.showMessageDialog(null, "Média Pesos: " + mediaPesos + "kg");
-    }//GEN-LAST:event_btnMediaPesosActionPerformed
-
     private void btnCadastrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCadastrarActionPerformed
         try{
             double peso = Double.parseDouble(txtPeso.getText());
             int idade = Integer.parseInt(txtIdade.getText());
             int altura = Integer.parseInt(txtAltura.getText());
             String nome = txtNome.getText();
-
+            
             if(peso <= 0){
                 throw new NumeroInvalidoException();
             }else if(idade <= 0){
@@ -227,19 +214,19 @@ public class FrmAtleta extends javax.swing.JFrame {
             }else if(altura <= 0){
                 throw new NumeroInvalidoException();
             }
-
+            
             if(nome.equals("")){
                 throw new StringVaziaException();
             }
-
+            
             atletaControl.cadastrarAtleta(nome, idade, peso, altura);
             JOptionPane.showMessageDialog(null, "Cadastrado com Sucesso!");
-
+            
             txtPeso.setText("");
             txtAltura.setText("");
             txtNome.setText("");
             txtIdade.setText("");
-
+            
         } catch(NumeroInvalidoException e){
             JOptionPane.showMessageDialog(null, e.getMessage());
         } catch(StringVaziaException e){
@@ -250,11 +237,34 @@ public class FrmAtleta extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(null, e.getMessage());
         }
 
+        
     }//GEN-LAST:event_btnCadastrarActionPerformed
 
-    private void txtIdadeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtIdadeActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txtIdadeActionPerformed
+    private void btnMediaPesosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnMediaPesosActionPerformed
+        double mediaPesos = atletaControl.mediaPesos();
+        JOptionPane.showMessageDialog(null, "Média Pesos: " + mediaPesos + "kg");
+    }//GEN-LAST:event_btnMediaPesosActionPerformed
+
+    private void btnAtletaMaisAltoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAtletaMaisAltoActionPerformed
+        
+        Atleta atletaMaisAlto = atletaControl.getAtletaMaisAlto();
+        
+        try {
+            JOptionPane.showMessageDialog(null, "Atleta mais alto: " + atletaMaisAlto.getNome());
+        } catch(NullPointerException e) {
+            JOptionPane.showMessageDialog(null, "Não há atletas cadastrados!");
+        }
+    }//GEN-LAST:event_btnAtletaMaisAltoActionPerformed
+
+    private void btnMaiorEMenorIdadeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnMaiorEMenorIdadeActionPerformed
+        int[] maioresEMenores = atletaControl.getMaiorEMenoridade();
+        JOptionPane.showMessageDialog(null, "Menores de Idade: " + maioresEMenores[0] + "\nMaiores de Idade: " + maioresEMenores[1]);
+    }//GEN-LAST:event_btnMaiorEMenorIdadeActionPerformed
+
+    private void btnBuscaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBuscaActionPerformed
+        FrmBusca formBusca = new FrmBusca();
+        formBusca.setVisible(true);
+    }//GEN-LAST:event_btnBuscaActionPerformed
 
     /**
      * @param args the command line arguments
@@ -298,6 +308,7 @@ public class FrmAtleta extends javax.swing.JFrame {
     private javax.swing.JButton btnMaiorEMenorIdade;
     private javax.swing.JButton btnMediaPesos;
     private javax.swing.JPanel jPanel1;
+    private javax.swing.JPanel jPanel2;
     private javax.swing.JLabel lblAltura;
     private javax.swing.JLabel lblIdade;
     private javax.swing.JLabel lblNome;
