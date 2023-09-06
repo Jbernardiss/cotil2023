@@ -21,16 +21,18 @@ namespace Studio
 
         private void txtCPF_KeyPress(object sender, KeyPressEventArgs e)
         {
-            Aluno aluno = new Aluno(txtCPF.Text);
+            
+
             if(e.KeyChar == 13)
             {
+                Aluno aluno = new Aluno(txtCPF.Text);
                 if (aluno.alunoExiste())
                 {
                     try
                     {
                         MySqlDataReader dadosAluno = aluno.consultarAluno();
-
                         txtNome.Text = dadosAluno["nomeAluno"].ToString();
+                        /*
                         txtEndereco.Text = dadosAluno["ruaAluno"].ToString();
                         txtNumero.Text = dadosAluno["numeroAluno"].ToString();
                         txtBairro.Text = dadosAluno["bairroAluno"].ToString();
@@ -40,18 +42,21 @@ namespace Studio
                         txtEstado.Text = dadosAluno["estadoAluno"].ToString();
                         txtTelefone.Text = dadosAluno["telefoneAluno"].ToString();
                         txtEmail.Text = dadosAluno["emailAluno"].ToString();
-                    } 
-                    catch(Exception ex)
+                        */
+                    }
+                    catch (Exception ex)
                     {
                         MessageBox.Show(ex.Message);
                     }
-                    
+                    finally
+                    {
+                        DAO_Conexao.con.Close();
+                    }
                 }
                 else
                 {
                     txtNome.Focus();
                 }
-                DAO_Conexao.con.Close();
             }
         }
 
