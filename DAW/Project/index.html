@@ -5,13 +5,43 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+
     <link href="./styles/general.css" rel="stylesheet" type="text/css">
     <link href="./styles/components.css" rel="stylesheet" type="text/css">
     <link href="./styles/index.css" rel="stylesheet" type="text/css">
     <link rel="shortcut icon" href="./images/favicon_32x32.png" type="image/x-icon">
 </head>
 <body>
-    <header class="navbar">
+    <nav class="navbar navbar-toggler navbar-collapse navbar-expand-lg bg-dark border-bottom border-body" data-bs-theme="dark">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="../index.html"><img src="images/logo.png" alt="website logo" width="100px"></a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="index.html">Home</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="pages/history.html">History</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="pages/scuderiaFerrari.html">Scuderia Ferrari</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="pages/about.html">About</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="pages/contact.html">Contact</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+    </nav>
+    <!--
+        <header class="navbar">
         <a href="../index.html"><img src="images/logo.png" alt="website logo" width="100px"></a>
         <nav>
             <a class="navLink" href="index.html">Home</a>
@@ -21,6 +51,9 @@
             <a class="navLink" href="pages/contact.html">Contact</a>
         </nav>
     </header>
+
+    -->
+    
     <main>
         <header>
             <h1 class="mainTitle">Get to know the greatest motorsport team of all time!</h1>
@@ -32,7 +65,7 @@
                     Born in Modena, Italy in 1898, Enzo Ferrari started out as a race car driver. In the 1920s, he was made a driver with Alfa Romeo and won several racing awards including the 2nd Circuito di Modena.
                 </p>
                 <figcaption>
-                    <img src="./images/enzoFerrariYoung.jpg" width="500px">
+                    <img class="enzoFerrari" src="./images/enzoFerrariYoung.jpg" width="500px">
                     <caption>Enzo Ferrari</caption>
                 </figcaption>
                 <p>
@@ -68,5 +101,6 @@
     <footer class="mainFooter">
         <a href="#top">Back to top</a>
     </footer>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
 </body>
 </html>
