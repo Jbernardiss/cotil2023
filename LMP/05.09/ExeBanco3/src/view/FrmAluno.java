@@ -179,7 +179,7 @@ public class FrmAluno extends javax.swing.JFrame {
     private void btnBuscarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBuscarActionPerformed
  
         ArrayList<Aluno> listaAlunos;
-        
+
         try {
             listaAlunos = alctrl.buscar();
             DefaultTableModel dados = (DefaultTableModel) tblAlunos.getModel();
