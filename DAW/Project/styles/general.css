@@ -77,6 +77,15 @@ section {
 @media print {
     * {
         font-size: 95%;
+        color: black;
+    }
+
+    .navbar {
+        display: none;
+    }
+
+    .navbar-brand {
+        display: none;
     }
 
     .enzoFerrari { 
