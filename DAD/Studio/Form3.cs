@@ -25,14 +25,21 @@ namespace Studio
 
             if(e.KeyChar == 13)
             {
+
                 Aluno aluno = new Aluno(txtCPF.Text);
+                aluno.atualizarAluno();
+
+                /*
+                Aluno aluno = new Aluno(txtCPF.Text);
+                MessageBox.Show(aluno.getCpf());
                 if (aluno.alunoExiste())
                 {
                     try
                     {
                         MySqlDataReader dadosAluno = aluno.consultarAluno();
                         txtNome.Text = dadosAluno["nomeAluno"].ToString();
-                        /*
+                        
+                       
                         txtEndereco.Text = dadosAluno["ruaAluno"].ToString();
                         txtNumero.Text = dadosAluno["numeroAluno"].ToString();
                         txtBairro.Text = dadosAluno["bairroAluno"].ToString();
@@ -42,7 +49,7 @@ namespace Studio
                         txtEstado.Text = dadosAluno["estadoAluno"].ToString();
                         txtTelefone.Text = dadosAluno["telefoneAluno"].ToString();
                         txtEmail.Text = dadosAluno["emailAluno"].ToString();
-                        */
+                       
                     }
                     catch (Exception ex)
                     {
@@ -56,7 +63,7 @@ namespace Studio
                 else
                 {
                     txtNome.Focus();
-                }
+                } */  
             }
         }
 
