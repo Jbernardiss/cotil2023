@@ -11,10 +11,10 @@ package model;
  */
 public class Usuario {
     private String nome;
-    private String cpf;
+    private int cpf;
     private int idade;
     
-    public Usuario(String nome, String cpf, int idade){
+    public Usuario(String nome, int cpf, int idade){
         this.idade = idade;
         this.nome = nome;
         this.cpf = cpf;
@@ -28,11 +28,11 @@ public class Usuario {
         this.nome = nome;
     }
 
-    public String getCpf() {
+    public int getCpf() {
         return cpf;
     }
 
-    public void setCpf(String cpf) {
+    public void setCpf(int cpf) {
         this.cpf = cpf;
     }
 

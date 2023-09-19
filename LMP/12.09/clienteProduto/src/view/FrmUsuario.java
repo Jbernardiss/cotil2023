@@ -5,12 +5,22 @@
  */
 package view;
 
+import control.UsuarioControl;
+import java.sql.SQLException;
+import java.util.ArrayList;
+import javax.swing.JOptionPane;
+import javax.swing.table.DefaultTableModel;
+import model.Usuario;
+
 /**
  *
  * @author aluno
  */
 public class FrmUsuario extends javax.swing.JFrame {
 
+    UsuarioControl usCtrl = new UsuarioControl();
+    
+    
     /**
      * Creates new form FrmUsuario
      */
@@ -48,21 +58,14 @@ public class FrmUsuario extends javax.swing.JFrame {
 
         lblCpf.setText("CPF: ");
 
-        txtCpf.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtCpfActionPerformed(evt);
-            }
-        });
-
         lblIdade.setText("Idade: ");
 
-        txtIdade.addActionListener(new java.awt.event.ActionListener() {
+        btnCadastrar.setText("Cadastrar");
+        btnCadastrar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtIdadeActionPerformed(evt);
+                btnCadastrarActionPerformed(evt);
             }
         });
-
-        btnCadastrar.setText("Cadastrar");
 
         btnExcluir.setText("Excluir");
         btnExcluir.addActionListener(new java.awt.event.ActionListener() {
@@ -72,6 +75,11 @@ public class FrmUsuario extends javax.swing.JFrame {
         });
 
         btnConsultar.setText("Consultar");
+        btnConsultar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnConsultarActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -159,16 +167,49 @@ public class FrmUsuario extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnExcluirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnExcluirActionPerformed
-        // TODO add your handling code here:
+        try {
+            usCtrl.excluir(Integer.parseInt(txtCpf.getText()));
+            JOptionPane.showMessageDialog(null, "Usuário excluído com sucesso!");
+        } catch(SQLException ex) {
+            JOptionPane.showMessageDialog(null, ex.getMessage());
+        } catch(ClassNotFoundException ex) {
+            JOptionPane.showMessageDialog(null, ex.getMessage());
+        }
     }//GEN-LAST:event_btnExcluirActionPerformed
 
-    private void txtCpfActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtCpfActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txtCpfActionPerformed
+    private void btnCadastrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCadastrarActionPerformed
+        
+        try {
+            usCtrl.inserir(txtNome.getText(),  Integer.parseInt(txtCpf.getText()), Integer.parseInt(txtIdade.getText()));
+            JOptionPane.showMessageDialog(null, "Usuário cadastrado com sucesso!");
+        } catch(SQLException ex) {
+            JOptionPane.showMessageDialog(null, ex.getMessage());
+        } catch(ClassNotFoundException ex) {
+            JOptionPane.showMessageDialog(null, ex.getMessage());
+        }
+        
+        
+    }//GEN-LAST:event_btnCadastrarActionPerformed
 
-    private void txtIdadeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtIdadeActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txtIdadeActionPerformed
+    private void btnConsultarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnConsultarActionPerformed
+        
+        ArrayList<Usuario> usuarios;
+        
+        
+        try {
+            usuarios = usCtrl.buscar();
+            DefaultTableModel dados = (DefaultTableModel) tblUsuario.getModel();
+            dados.setNumRows(0);
+            for(Usuario us :usuarios) {
+                dados.addRow(new Object[]{us.getNome(), us.getCpf(), us.getIdade()});
+            }
+            
+        } catch(SQLException ex) {
+            JOptionPane.showMessageDialog(null, ex.getMessage());
+        } catch(ClassNotFoundException ex) {
+            JOptionPane.showMessageDialog(null, ex.getMessage());
+        }
+    }//GEN-LAST:event_btnConsultarActionPerformed
 
     /**
      * @param args the command line arguments

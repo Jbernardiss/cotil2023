@@ -1,0 +1,30 @@
+adicionados itens flex:
+-na main(general.css):
+  -flex-direction
+  -flex-grow
+
+-no figcaption(components.css)
+  -align-items
+  -justify-content
+
+adicionado tag meta viewport em todas as páginas
+
+adicionado media print(general.css)
+  -font-size
+  -width
+  -display
+
+adicionados media queries(general.css)
+-media screen(max-width: 991px)
+  -font-size
+  -width
+
+-media screen(max-width: 767px)
+  -font-size
+  -width
+
+-media screen(max-width: 450px)
+  -font-size
+  -content-visibility
+  -margin-top
+  -width

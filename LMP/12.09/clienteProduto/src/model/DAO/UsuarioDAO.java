@@ -11,25 +11,24 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
-import model.Produto;
 import model.Usuario;
 
 /**
  *
  * @author aluno
  */
-public class ProdutoDAO {
+public class UsuarioDAO {
     
     Connection con = null;
     
-    public void cadastrarProduto(int ID, String nome, double preco, int estoque) throws SQLException, ClassNotFoundException{
+    public void cadastrarUsuario(Usuario us) throws SQLException, ClassNotFoundException {
+        
         con = Conexao.getConnection();
-        String sql = "INSERT INTO produtoJava(id, nome, preco, estoque) values(?, ?, ?, ?)";
+        String sql = "insert into usuarioJava(cpf, nome, idade) values(?,?,?)";
         PreparedStatement stmt = con.prepareStatement(sql);
-        stmt.setInt(1, ID);
-        stmt.setString(2, nome);
-        stmt.setDouble(3, preco);
-        stmt.setInt(4, estoque);
+        stmt.setInt(1, us.getCpf());
+        stmt.setString(2, us.getNome());
+        stmt.setInt(3, us.getIdade());
         
         stmt.execute();
         stmt.close();
@@ -37,38 +36,39 @@ public class ProdutoDAO {
         con.close();
     }
     
-    public void excluirProduto(int ID) throws SQLException, ClassNotFoundException{
+    public void excluirUsuario(int cpf) throws SQLException, ClassNotFoundException {
+        
         con = Conexao.getConnection();
-        String sql = "DELETE FROM produtoJava WHERE cpf = ?";
+        String sql = "delete from usuarioJava where(cpf = ?)";
         PreparedStatement stmt = con.prepareStatement(sql);
-        stmt.setInt(1, ID);
+        stmt.setInt(1, cpf);
         stmt.execute();
         stmt.close();
         
         con.close();
     }
     
-    public ArrayList<Produto> consultarProduto() throws SQLException, ClassNotFoundException{
+    public ArrayList<Usuario> consultarUsuarios() throws SQLException, ClassNotFoundException {
         ResultSet res;
-        ArrayList<Produto> produtos = new ArrayList<Produto>();
+        ArrayList<Usuario> usuarios = new ArrayList<>();
+        
+        
         
         con = Conexao.getConnection();
-        String sql = "select * from produtoJava";
+        String sql = "select * from usuarioJava";
         
         PreparedStatement stmt = con.prepareStatement(sql);
         res = stmt.executeQuery();
         while(res.next()) {
-            int ID = res.getInt("id");
+            int cpf = res.getInt("cpf");
             String nome = res.getString("nome");
-            double preco = res.getDouble("preco");
-            int estoque = res.getInt("estoque");
-            Produto produto = new Produto(ID, nome, preco, estoque);
-            produtos.add(produto);
-        }     
+            int idade = res.getInt("idade");
+            Usuario us = new Usuario(nome, cpf, idade);
+            usuarios.add(us);
+        }
+        
         stmt.close();
         con.close();
-             
-        return produtos;
+        return usuarios;
     }
-    
 }

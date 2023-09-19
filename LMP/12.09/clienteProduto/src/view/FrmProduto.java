@@ -50,18 +50,6 @@ public class FrmProduto extends javax.swing.JFrame {
 
         lblEstoque.setText("Estoque: ");
 
-        txtEstoque.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtEstoqueActionPerformed(evt);
-            }
-        });
-
-        txtNome.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtNomeActionPerformed(evt);
-            }
-        });
-
         btnCadastrar.setText("Cadastrar");
 
         btnExcluir.setText("Excluir");
@@ -152,14 +140,6 @@ public class FrmProduto extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-
-    private void txtNomeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtNomeActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txtNomeActionPerformed
-
-    private void txtEstoqueActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtEstoqueActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txtEstoqueActionPerformed
 
     /**
      * @param args the command line arguments
