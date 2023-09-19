@@ -13,6 +13,8 @@ namespace Studio
 {
     public partial class Form3 : Form
     {
+        bool alunoExiste = false;
+
         public Form3()
         {
             InitializeComponent();
@@ -21,25 +23,22 @@ namespace Studio
 
         private void txtCPF_KeyPress(object sender, KeyPressEventArgs e)
         {
-            
 
             if(e.KeyChar == 13)
             {
 
                 Aluno aluno = new Aluno(txtCPF.Text);
-                aluno.atualizarAluno();
 
-                /*
-                Aluno aluno = new Aluno(txtCPF.Text);
-                MessageBox.Show(aluno.getCpf());
-                if (aluno.alunoExiste())
-                {
-                    try
+
+                try
+                {    
+                    MySqlDataReader dadosAluno = aluno.consultarAluno();
+
+                    if(dadosAluno.Read())
                     {
-                        MySqlDataReader dadosAluno = aluno.consultarAluno();
+                        MessageBox.Show("Usuário já existe!");
+
                         txtNome.Text = dadosAluno["nomeAluno"].ToString();
-                        
-                       
                         txtEndereco.Text = dadosAluno["ruaAluno"].ToString();
                         txtNumero.Text = dadosAluno["numeroAluno"].ToString();
                         txtBairro.Text = dadosAluno["bairroAluno"].ToString();
@@ -49,21 +48,19 @@ namespace Studio
                         txtEstado.Text = dadosAluno["estadoAluno"].ToString();
                         txtTelefone.Text = dadosAluno["telefoneAluno"].ToString();
                         txtEmail.Text = dadosAluno["emailAluno"].ToString();
-                       
-                    }
-                    catch (Exception ex)
-                    {
-                        MessageBox.Show(ex.Message);
-                    }
-                    finally
-                    {
-                        DAO_Conexao.con.Close();
-                    }
+
+                        alunoExiste = true;
+                        btnCadastrar.Text = "Atualizar";
+                    } 
                 }
-                else
+                catch (Exception ex)
                 {
-                    txtNome.Focus();
-                } */  
+                    MessageBox.Show(ex.Message);
+                }
+                finally
+                {
+                    DAO_Conexao.con.Close();
+                }
             }
         }
 
@@ -72,14 +69,43 @@ namespace Studio
             Aluno aluno = new Aluno(txtCPF.Text, txtNome.Text, txtEndereco.Text, txtNumero.Text, txtBairro.Text, txtComplemento.Text, txtCEP.Text, txtCidade.Text, txtEstado.Text,
                 txtTelefone.Text, txtEmail.Text);
 
-            if(aluno.cadastroAluno())
+            if(alunoExiste == false)
             {
-                MessageBox.Show("Cadastro realizado com sucesso!");
+                if (aluno.cadastroAluno())
+                {
+                    MessageBox.Show("Cadastro realizado com sucesso!");
+                }
+                else
+                {
+                    MessageBox.Show("Erro no cadastro.");
+                }
             }
-            else
-            {
-                MessageBox.Show("Erro no cadastro.");
+            else if(alunoExiste == true) 
+            { 
+                if(aluno.atualizarAluno())
+                {
+                    MessageBox.Show("Cadastro atualizado com sucesso!");
+                }
+                else
+                {
+                    MessageBox.Show("Erro na atualização.");
+                }
+
+                btnCadastrar.Text = "Cadastrar";
             }
+            
+
+            txtCPF.Text = "";
+            txtNome.Text = "";
+            txtEndereco.Text = "";
+            txtNumero.Text = "";
+            txtBairro.Text = "";
+            txtComplemento.Text = "";
+            txtCEP.Text = "";
+            txtCidade.Text = "";
+            txtEstado.Text = "";
+            txtTelefone.Text = ""; 
+            txtEmail.Text = "";
         }
     }
 }
