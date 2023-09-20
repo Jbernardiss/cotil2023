@@ -77,5 +77,19 @@ namespace Studio
             form4.MdiParent = this;
             form4.Show();
         }
+
+        private void criarModalidadeToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Form5 form5 = new Form5();
+            form5.MdiParent = this;
+            form5.Show();
+        }
+
+        private void excluirModalidadeToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Form6 form6 = new Form6();
+            form6.MdiParent = this;
+            form6.Show();
+        }
     }
 }

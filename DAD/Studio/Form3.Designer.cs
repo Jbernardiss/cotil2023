@@ -96,7 +96,7 @@ namespace Studio
             this.btnCadastrar.Location = new System.Drawing.Point(9, 188);
             this.btnCadastrar.Name = "btnCadastrar";
             this.btnCadastrar.Size = new System.Drawing.Size(467, 23);
-            this.btnCadastrar.TabIndex = 22;
+            this.btnCadastrar.TabIndex = 13;
             this.btnCadastrar.Text = "Cadastrar";
             this.btnCadastrar.UseVisualStyleBackColor = true;
             this.btnCadastrar.Click += new System.EventHandler(this.btnCadastrar_Click);
@@ -106,7 +106,7 @@ namespace Studio
             this.txtEmail.Location = new System.Drawing.Point(196, 162);
             this.txtEmail.Name = "txtEmail";
             this.txtEmail.Size = new System.Drawing.Size(280, 20);
-            this.txtEmail.TabIndex = 21;
+            this.txtEmail.TabIndex = 11;
             // 
             // label11
             // 
@@ -122,7 +122,7 @@ namespace Studio
             this.txtEstado.Location = new System.Drawing.Point(355, 136);
             this.txtEstado.Name = "txtEstado";
             this.txtEstado.Size = new System.Drawing.Size(121, 20);
-            this.txtEstado.TabIndex = 19;
+            this.txtEstado.TabIndex = 9;
             // 
             // label10
             // 
@@ -138,7 +138,7 @@ namespace Studio
             this.txtCidade.Location = new System.Drawing.Point(182, 136);
             this.txtCidade.Name = "txtCidade";
             this.txtCidade.Size = new System.Drawing.Size(118, 20);
-            this.txtCidade.TabIndex = 17;
+            this.txtCidade.TabIndex = 8;
             // 
             // label9
             // 
@@ -154,7 +154,7 @@ namespace Studio
             this.txtComplemento.Location = new System.Drawing.Point(345, 110);
             this.txtComplemento.Name = "txtComplemento";
             this.txtComplemento.Size = new System.Drawing.Size(131, 20);
-            this.txtComplemento.TabIndex = 15;
+            this.txtComplemento.TabIndex = 6;
             // 
             // label8
             // 
@@ -170,7 +170,7 @@ namespace Studio
             this.txtNumero.Location = new System.Drawing.Point(437, 84);
             this.txtNumero.Name = "txtNumero";
             this.txtNumero.Size = new System.Drawing.Size(39, 20);
-            this.txtNumero.TabIndex = 13;
+            this.txtNumero.TabIndex = 4;
             // 
             // label7
             // 
@@ -187,7 +187,7 @@ namespace Studio
             this.txtTelefone.Mask = "(00)00000-0000";
             this.txtTelefone.Name = "txtTelefone";
             this.txtTelefone.Size = new System.Drawing.Size(81, 20);
-            this.txtTelefone.TabIndex = 11;
+            this.txtTelefone.TabIndex = 10;
             // 
             // txtCEP
             // 
@@ -195,21 +195,21 @@ namespace Studio
             this.txtCEP.Mask = "00.000-000";
             this.txtCEP.Name = "txtCEP";
             this.txtCEP.Size = new System.Drawing.Size(59, 20);
-            this.txtCEP.TabIndex = 10;
+            this.txtCEP.TabIndex = 7;
             // 
             // txtBairro
             // 
             this.txtBairro.Location = new System.Drawing.Point(68, 110);
             this.txtBairro.Name = "txtBairro";
             this.txtBairro.Size = new System.Drawing.Size(191, 20);
-            this.txtBairro.TabIndex = 9;
+            this.txtBairro.TabIndex = 5;
             // 
             // txtEndereco
             // 
             this.txtEndereco.Location = new System.Drawing.Point(68, 84);
             this.txtEndereco.Name = "txtEndereco";
             this.txtEndereco.Size = new System.Drawing.Size(335, 20);
-            this.txtEndereco.TabIndex = 8;
+            this.txtEndereco.TabIndex = 3;
             // 
             // txtCPF
             // 
@@ -217,7 +217,7 @@ namespace Studio
             this.txtCPF.Mask = "000.000.000-00";
             this.txtCPF.Name = "txtCPF";
             this.txtCPF.Size = new System.Drawing.Size(81, 20);
-            this.txtCPF.TabIndex = 7;
+            this.txtCPF.TabIndex = 1;
             this.txtCPF.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtCPF_KeyPress);
             // 
             // label6
@@ -270,7 +270,7 @@ namespace Studio
             this.txtNome.Location = new System.Drawing.Point(68, 58);
             this.txtNome.Name = "txtNome";
             this.txtNome.Size = new System.Drawing.Size(335, 20);
-            this.txtNome.TabIndex = 1;
+            this.txtNome.TabIndex = 2;
             // 
             // label1
             // 
@@ -294,7 +294,7 @@ namespace Studio
             this.button2.Location = new System.Drawing.Point(504, 193);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(131, 30);
-            this.button2.TabIndex = 2;
+            this.button2.TabIndex = 12;
             this.button2.Text = "Escolher Foto";
             this.button2.UseVisualStyleBackColor = true;
             // 
