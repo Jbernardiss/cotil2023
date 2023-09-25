@@ -10,10 +10,20 @@ namespace Studio
     class Modalidade
     {
 
+        private int id;
         private string descricao;
         private double preco;
         private int qtde_alunos;
         private int qtde_aulas;
+
+        public Modalidade(int id, string descricao, double preco, int qtde_alunos, int qtde_aulas)
+        {
+            this.id = id;
+            this.descricao = descricao;
+            this.preco = preco;
+            this.qtde_alunos = qtde_alunos;
+            this.qtde_aulas = qtde_aulas;
+        }
 
         public Modalidade(string descricao, double preco, int qtde_alunos, int qtde_aulas)
         {
@@ -21,6 +31,11 @@ namespace Studio
             this.preco = preco;
             this.qtde_alunos = qtde_alunos;
             this.qtde_aulas = qtde_aulas;
+        }
+
+        public Modalidade(int id)
+        {
+            this.id = id;
         }
 
         public Modalidade(string descricao)
@@ -80,23 +95,50 @@ namespace Studio
             return dadosModalidade;
         }
 
-        /*
-        public MySqlDataReader consultarModalidade()
+        public bool excluirModalidade()
         {
+            bool excluido = false;
 
-        }
+            try
+            {
+                DAO_Conexao.con.Open();
+                MySqlCommand sql = new MySqlCommand("UPDATE Estudio_Modalidade set ativa = 0 where idEstudio_Modalidade = '" + id + "'", DAO_Conexao.con);
+                sql.ExecuteNonQuery();
+                excluido = true;
+            }
+            catch(Exception ex)
+            {
+                Console.WriteLine(ex.ToString());
+            }
+            finally
+            {
+                DAO_Conexao.con.Close();
+            }
 
-        
+            return excluido;
+        }        
 
         public bool atualizarModalidade()
         {
+            bool atualizado = false;
 
+            try
+            {
+                DAO_Conexao.con.Open();
+                MySqlCommand sql = new MySqlCommand("UPDATE Estudio_Modalidade set descricaoModalidade = '" + descricao + "', precoModalidade = " + preco + ", qtdeAlunos = " + qtde_alunos + ", qtdeAulas = " + qtde_aulas + "where idEstudioAluno = " + id, DAO_Conexao.con);
+                sql.ExecuteNonQuery();
+                atualizado = true;
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.ToString());
+            }
+            finally
+            {
+                DAO_Conexao.con.Close();
+            }
+
+            return atualizado;
         }
-
-        public bool excluirModalidade()
-        {
-
-        }
-        */
     }
 }

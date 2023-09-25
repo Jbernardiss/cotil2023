@@ -26,6 +26,11 @@ namespace Studio
             return retorno;
         }
 
+        internal static object getConexao()
+        {
+            throw new NotImplementedException();
+        }
+
         public static Boolean cadastroUsuario(string usuario, string senha, int tipo)
         {
             bool cad = false;
@@ -47,11 +52,7 @@ namespace Studio
             }
             return cad;
         }
-
-        internal static object getConexao()
-        {
-            throw new NotImplementedException();
-        }
+        
 
         public static int buscaTipoUsuario(string usuario, string senha)
         {
@@ -77,5 +78,6 @@ namespace Studio
 
             return tipo;
         }
+
     }
 }
