@@ -85,23 +85,26 @@ namespace Studio
                 txtQtdeAluno.Text = "";
                 txtQtdeAula.Text = "";
                 btnCadastrar.Text = "Cadastrar";
+                atualizando = false;
+                comboBoxDescricao.SelectedIndex = -1;
             }
             catch(Exception ex)
             {
                 MessageBox.Show("Nenhum dos campos pode estar vazio");
             }
-
-            comboBoxDescricao.SelectedIndex = -1;
+            
             carregarComboBox();
         }
 
         private void comboBoxDescricao_SelectedIndexChanged(object sender, EventArgs e)
         {
-            txtPreco.Text = arrayModalidades[comboBoxDescricao.SelectedIndex].Preco.ToString();
-            txtQtdeAluno.Text = arrayModalidades[comboBoxDescricao.SelectedIndex].Qtde_alunos.ToString();
-            txtQtdeAula.Text = arrayModalidades[comboBoxDescricao.SelectedIndex].Qtde_aulas.ToString();
-
-            btnCadastrar.Text = "Atualizar";
+            if(comboBoxDescricao.SelectedIndex != -1)
+            {
+                txtPreco.Text = arrayModalidades[comboBoxDescricao.SelectedIndex].Preco.ToString();
+                txtQtdeAluno.Text = arrayModalidades[comboBoxDescricao.SelectedIndex].Qtde_alunos.ToString();
+                txtQtdeAula.Text = arrayModalidades[comboBoxDescricao.SelectedIndex].Qtde_aulas.ToString();
+                btnCadastrar.Text = "Atualizar";
+            } 
         }
     }
 }

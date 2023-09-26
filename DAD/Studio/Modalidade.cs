@@ -125,7 +125,7 @@ namespace Studio
             try
             {
                 DAO_Conexao.con.Open();
-                MySqlCommand sql = new MySqlCommand("UPDATE Estudio_Modalidade set descricaoModalidade = '" + descricao + "', precoModalidade = " + preco + ", qtdeAlunos = " + qtde_alunos + ", qtdeAulas = " + qtde_aulas + "where idEstudioAluno = " + id, DAO_Conexao.con);
+                MySqlCommand sql = new MySqlCommand("UPDATE Estudio_Modalidade set descricaoModalidade = '" + descricao + "', precoModalidade = " + preco + ", qtdeAlunos = " + qtde_alunos + ", qtdeAulas = " + qtde_aulas + "where idEstudio_Modalidade = " + id, DAO_Conexao.con);
                 sql.ExecuteNonQuery();
                 atualizado = true;
             }
