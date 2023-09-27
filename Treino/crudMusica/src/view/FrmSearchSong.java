@@ -5,19 +5,45 @@
  */
 package view;
 
+import control.SongControl;
+import java.sql.SQLException;
+import java.util.ArrayList;
+import javax.swing.JOptionPane;
+import javax.swing.table.DefaultTableModel;
+import model.Song;
+
 /**
  *
  * @author aluno
  */
 public class FrmSearchSong extends javax.swing.JFrame {
-
+    
+    SongControl songCtrl = new SongControl();
+    ArrayList<Song> displayedSongs = new ArrayList<>();
+    
     /**
      * Creates new form FrmSearchSong
      */
     public FrmSearchSong() {
         initComponents();
     }
-
+    
+    private void refreshTable() {
+        try {
+            displayedSongs = songCtrl.getSongs();
+            DefaultTableModel data = (DefaultTableModel) tblSongs.getModel();
+            data.setNumRows(0);
+            for(Song song:displayedSongs) {
+                data.addRow(new Object[]{song.getId(), song.getTitle(), song.getAuthor(), song.getAlbum(), song.getDurationMinutes() + ":" + String.format("%02d", song.getDurationSeconds())});
+            }
+            
+        } catch(SQLException ex) {
+            JOptionPane.showMessageDialog(null, ex.getMessage());
+        } catch(ClassNotFoundException ex) {
+            JOptionPane.showMessageDialog(null, ex.getMessage());
+        }
+    }
+    
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -27,21 +53,84 @@ public class FrmSearchSong extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        jScrollPane1 = new javax.swing.JScrollPane();
+        tblSongs = new javax.swing.JTable();
+        btnShowAll = new javax.swing.JButton();
+        btnRemove = new javax.swing.JButton();
+
+        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
+
+        tblSongs.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+
+            },
+            new String [] {
+                "ID", "Title", "Author", "Album", "Duration"
+            }
+        ));
+        jScrollPane1.setViewportView(tblSongs);
+
+        btnShowAll.setText("Show all");
+        btnShowAll.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnShowAllActionPerformed(evt);
+            }
+        });
+
+        btnRemove.setText("Remove");
+        btnRemove.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnRemoveActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 400, Short.MAX_VALUE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(btnRemove, javax.swing.GroupLayout.PREFERRED_SIZE, 79, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnShowAll, javax.swing.GroupLayout.Alignment.TRAILING))
+                .addGap(18, 18, 18)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 335, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 300, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 275, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(layout.createSequentialGroup()
+                .addGap(75, 75, 75)
+                .addComponent(btnRemove)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(btnShowAll)
+                .addGap(82, 82, 82))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void btnShowAllActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnShowAllActionPerformed
+                
+        refreshTable();
+    }//GEN-LAST:event_btnShowAllActionPerformed
+
+    private void btnRemoveActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRemoveActionPerformed
+        
+        try {
+            songCtrl.remove(displayedSongs.get(tblSongs.getSelectedRow()).getId());
+            JOptionPane.showMessageDialog(null, "Song removed with success!");
+            refreshTable();
+        } catch(SQLException ex) {
+            JOptionPane.showMessageDialog(null, ex.getMessage());
+        } catch(ClassNotFoundException ex) {
+            JOptionPane.showMessageDialog(null, ex.getMessage());
+        }
+    }//GEN-LAST:event_btnRemoveActionPerformed
 
     /**
      * @param args the command line arguments
@@ -79,5 +168,9 @@ public class FrmSearchSong extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btnRemove;
+    private javax.swing.JButton btnShowAll;
+    private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JTable tblSongs;
     // End of variables declaration//GEN-END:variables
 }

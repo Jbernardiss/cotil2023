@@ -5,12 +5,18 @@
  */
 package view;
 
+import control.SongControl;
+import java.sql.SQLException;
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author aluno
  */
 public class FrmAddSong extends javax.swing.JFrame {
-
+    
+    SongControl songCtrl = new SongControl();
+    
     /**
      * Creates new form FrmAddSong
      */
@@ -35,7 +41,7 @@ public class FrmAddSong extends javax.swing.JFrame {
         lblDuration = new javax.swing.JLabel();
         txtAlbum = new javax.swing.JTextField();
         txtDurationMin = new javax.swing.JTextField();
-        jButton1 = new javax.swing.JButton();
+        btnAddSong = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
         txtDurationSeconds = new javax.swing.JTextField();
         jLabel2 = new javax.swing.JLabel();
@@ -50,7 +56,12 @@ public class FrmAddSong extends javax.swing.JFrame {
 
         lblDuration.setText("Duration: ");
 
-        jButton1.setText("Add song");
+        btnAddSong.setText("Add song");
+        btnAddSong.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnAddSongActionPerformed(evt);
+            }
+        });
 
         jLabel1.setText("min");
 
@@ -63,7 +74,7 @@ public class FrmAddSong extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                    .addComponent(jButton1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(btnAddSong, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(lblDuration)
@@ -80,10 +91,10 @@ public class FrmAddSong extends javax.swing.JFrame {
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                 .addComponent(jLabel1)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(txtDurationSeconds, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(txtDurationSeconds, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(jLabel2)
-                                .addGap(31, 31, 31)))))
+                                .addGap(25, 25, 25)))))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
@@ -109,16 +120,26 @@ public class FrmAddSong extends javax.swing.JFrame {
                     .addComponent(txtDurationSeconds, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel2))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jButton1)
+                .addComponent(btnAddSong)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    /**
-     * @param args the command line arguments
-     */
+    private void btnAddSongActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAddSongActionPerformed
+        
+        try {
+            songCtrl.create(txtTitle.getText(), txtAuthor.getText(), txtAlbum.getText(), Integer.parseInt(txtDurationMin.getText()), Integer.parseInt(txtDurationSeconds.getText()));
+            JOptionPane.showMessageDialog(null, "Song added with success!");
+        } catch(SQLException ex) {
+            JOptionPane.showMessageDialog(null, ex.getMessage());
+        } catch(ClassNotFoundException ex) {
+            JOptionPane.showMessageDialog(null, ex.getMessage());
+        }
+    }//GEN-LAST:event_btnAddSongActionPerformed
+
+
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
@@ -152,7 +173,7 @@ public class FrmAddSong extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton1;
+    private javax.swing.JButton btnAddSong;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel lblAlbum;
