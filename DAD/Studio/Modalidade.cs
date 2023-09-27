@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace Studio
 {
@@ -46,7 +47,7 @@ namespace Studio
         public Modalidade()
         {
         }
-
+        public int Id { get => id; set => id = value; }
         public string Descricao { get => descricao; set => descricao = value; }
         public double Preco { get => preco; set => preco = value; }
         public int Qtde_alunos { get => qtde_alunos; set => qtde_alunos = value; }
@@ -125,13 +126,13 @@ namespace Studio
             try
             {
                 DAO_Conexao.con.Open();
-                MySqlCommand sql = new MySqlCommand("UPDATE Estudio_Modalidade set descricaoModalidade = '" + descricao + "', precoModalidade = " + preco + ", qtdeAlunos = " + qtde_alunos + ", qtdeAulas = " + qtde_aulas + "where idEstudioAluno = " + id, DAO_Conexao.con);
+                MySqlCommand sql = new MySqlCommand("UPDATE Estudio_Modalidade set descricaoModalidade = '" + descricao + "', precoModalidade = " + preco + ", qtdeAlunos = " + qtde_alunos + ", qtdeAulas = " + qtde_aulas + " where idEstudio_Modalidade = '" + id + "'", DAO_Conexao.con);
                 sql.ExecuteNonQuery();
                 atualizado = true;
             }
             catch (Exception ex)
             {
-                Console.WriteLine(ex.ToString());
+                MessageBox.Show(ex.ToString()); //Console.WriteLine(ex.ToString());
             }
             finally
             {
