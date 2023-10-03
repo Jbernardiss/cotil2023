@@ -24,14 +24,14 @@ import javax.persistence.Table;
  * @author taniabasso
  */
 @Entity
-@Table
+@Table(name = "AulaTania")
 public class Aluno implements Serializable {
     
     @Id
-    @Column(unique = true)
+    @Column(name = "id", unique = true)
     private int ra;
 
-    @Column
+    @Column(length = 50)
     private String nome;
 
     public Aluno() {

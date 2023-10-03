@@ -30,14 +30,39 @@ public class TesteHibernate2 {
         Aluno al2 = new Aluno(5678,"Leandro");
         Aluno al3 = new Aluno(9012,"Maria");
 
+        // cria professores
+        Professor prof1 = new Professor(1, "Tania", 2000);
+        Professor prof2 = new Professor(2,"Xandão", 1500);
+
+        // cria departamentos
+        Departamento dept1 = new Departamento(1, "Exatas");
+        Departamento dept2 = new Departamento(2, "Humanas");
+
+        // cria funcionarios
+        Funcionario func1 = new Funcionario(1, "David", 15000);
+        Funcionario func2 = new Funcionario(2, "Sandro", -10);
+
         //salva alunos
         session.save(al1);
         session.save(al2);
         session.save(al3);
 
+        //salva disciplinas
         session.save(disc1);
         session.save(disc2);
         session.save(disc3);
+
+        //salva professores
+        session.save(prof1);
+        session.save(prof2);
+
+        //salva departamentos
+        session.save(dept1);
+        session.save(dept2);
+
+        //salva funcionarios
+        session.save(func1);
+        session.save(func2);
            
         session.getTransaction().commit();
         

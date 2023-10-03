@@ -48,7 +48,10 @@ Contributor(s):
     <property name="hibernate.connection.password">Th30n3Wh0Kn0ck$</property>
     <property name="hibernate.show_sql">true</property>
     <property name="hbm2ddl.auto">create</property>
-    <mapping class="testehibernate.Aluno"></mapping>
-    <mapping class="testehibernate.Disciplina"></mapping>
+    <mapping class="testehibernate.Aluno"/>
+    <mapping class="testehibernate.Disciplina"/>
+    <mapping class="testehibernate.Professor"/>
+    <mapping class="testehibernate.Departamento"/>
+    <mapping class="testehibernate.Funcionario"/>
   </session-factory>
 </hibernate-configuration>
