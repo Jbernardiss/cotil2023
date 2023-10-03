@@ -55,10 +55,11 @@ namespace Studio
                     throw new Exception();
                 }
 
-                Modalidade modalidade = new Modalidade(comboBoxDescricao.Text, Convert.ToDouble(txtPreco.Text), Convert.ToInt32(txtQtdeAluno.Text), Convert.ToInt32(txtQtdeAula.Text));
+                
                 if(atualizando)
                 {
-                    if(modalidade.atualizarModalidade())
+                    Modalidade modalidade = new Modalidade(Convert.ToInt32(arrayModalidades[comboBoxDescricao.SelectedIndex].Id.ToString()), comboBoxDescricao.Text, Convert.ToDouble(txtPreco.Text), Convert.ToInt32(txtQtdeAluno.Text), Convert.ToInt32(txtQtdeAula.Text));
+                    if (modalidade.atualizarModalidade())
                     {
                         MessageBox.Show("Modalidade atualizada com sucesso");
                     }
@@ -69,6 +70,7 @@ namespace Studio
                 }
                 else
                 {
+                    Modalidade modalidade = new Modalidade(comboBoxDescricao.Text, Convert.ToDouble(txtPreco.Text), Convert.ToInt32(txtQtdeAluno.Text), Convert.ToInt32(txtQtdeAula.Text));
                     if (modalidade.cadastrarModalidade())
                     {
                         MessageBox.Show("Modalidade cadastrada com sucesso");
@@ -92,8 +94,10 @@ namespace Studio
             {
                 MessageBox.Show("Nenhum dos campos pode estar vazio");
             }
-            
-            carregarComboBox();
+            finally
+            {
+                carregarComboBox();
+            }
         }
 
         private void comboBoxDescricao_SelectedIndexChanged(object sender, EventArgs e)
@@ -104,6 +108,11 @@ namespace Studio
                 txtQtdeAluno.Text = arrayModalidades[comboBoxDescricao.SelectedIndex].Qtde_alunos.ToString();
                 txtQtdeAula.Text = arrayModalidades[comboBoxDescricao.SelectedIndex].Qtde_aulas.ToString();
                 btnCadastrar.Text = "Atualizar";
+                atualizando = true;
+            }
+            else
+            {
+                atualizando = false;
             } 
         }
     }

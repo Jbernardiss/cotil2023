@@ -84,7 +84,8 @@ public class FrmHome extends javax.swing.JFrame {
     }//GEN-LAST:event_btnAddSongActionPerformed
 
     private void btnSearchSongActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSearchSongActionPerformed
-        // TODO add your handling code here:
+        FrmSearchSong frmSearchSong = new FrmSearchSong();
+        frmSearchSong.setVisible(true);
     }//GEN-LAST:event_btnSearchSongActionPerformed
 
     /**

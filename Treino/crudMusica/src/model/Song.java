@@ -16,19 +16,21 @@ public class Song {
     private int durationSeconds;
     
     
-    public Song(int id, String title, String author, String album, int lengthMinutes, int lengthSeconds) {
+    public Song(int id, String title, String author, String album, int durationMinutes, int durationSeconds) {
         this.id = id;
+        this.title = title;
         this.author = author;
         this.album = album;
-        this.durationMinutes = lengthMinutes;
-        this.durationSeconds = lengthSeconds;
+        this.durationMinutes = durationMinutes;
+        this.durationSeconds = durationSeconds;
     }
     
-    public Song(String title, String author, String album, int lengthMinutes, int lengthSeconds) {
+    public Song(String title, String author, String album, int durationMinutes, int durationSeconds) {
+        this.title = title;
         this.author = author;
         this.album = album;
-        this.durationMinutes = lengthMinutes;
-        this.durationSeconds = lengthSeconds;
+        this.durationMinutes = durationMinutes;
+        this.durationSeconds = durationSeconds;
     }
     
 
