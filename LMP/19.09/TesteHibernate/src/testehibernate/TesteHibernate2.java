@@ -8,6 +8,7 @@ package testehibernate;
 import java.util.ArrayList;
 import java.util.List;
 import org.hibernate.Session;
+import org.hibernate.query.Query;
 import util.HibernateUtil;
 
 /**
@@ -19,7 +20,7 @@ public class TesteHibernate2 {
         
         Session session = HibernateUtil.getSessionFactory().openSession();
         session.beginTransaction();
-     
+
         //primeiro cria as disciplinas
         Disciplina disc1 = new Disciplina (1,"java", 80);
         Disciplina disc2 = new Disciplina (2, "estrutura de dados", 40);
@@ -55,6 +56,13 @@ public class TesteHibernate2 {
         //salva professores
         session.save(prof1);
         session.save(prof2);
+        List<Disciplina> listaDisc = new ArrayList<Disciplina>();
+        List<Disciplina> listaDiscXandao = new ArrayList<Disciplina>();
+        listaDisc.add(disc1);
+        listaDisc.add(disc2);
+        listaDiscXandao.add(disc3);
+        prof1.setListaDisc(listaDisc);
+        prof2.setListaDisc(listaDiscXandao);
 
         //salva departamentos
         session.save(dept1);
@@ -65,7 +73,41 @@ public class TesteHibernate2 {
         session.save(func2);
            
         session.getTransaction().commit();
-        
+
+        String hql = "from Professor";
+        Query query = session.createQuery(hql);
+        List<Professor> result = query.list();
+        for (Professor prof : result) {
+            System.out.println(prof.getNome() + " " + prof.getSalario());
+        }
+
+        hql = "from Aluno";
+        query = session.createQuery(hql);
+        List<Aluno> alunoResult = query.list();
+        for(Aluno al: alunoResult){
+            if(al.getRa() == 1) {
+                System.out.println("Aluno 1: " + al.getNome());
+            }
+        }
+        for(Aluno al: alunoResult){
+            if(al.getNome().startsWith("a")) {
+                System.out.println("Aluno a: " + al.getNome());
+            }
+        }
+
+        hql = "from Disciplina";
+        query = session.createQuery(hql);
+        List<Disciplina> discResult = query.list();
+        for(Disciplina disc: discResult) {
+            if(disc.getCodigo() == 2) {
+                System.out.println("#" + disc.getCodigo() + ": " + disc.getDescricao() + ", " + disc.getCargaHoraria() + " horas");
+            }
+        }
+        for(Disciplina disc: discResult) {
+            if(disc.getCargaHoraria() < 80) {
+                System.out.println("#" + disc.getCodigo() + ": " + disc.getDescricao() + ", " + disc.getCargaHoraria() + " horas");
+            }
+        }
 
 
         session.close();
