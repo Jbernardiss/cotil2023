@@ -17,7 +17,7 @@ import util.HibernateUtil;
  */
 public class TesteHibernate2 {
     public static void main(String[] args) {
-        
+
         Session session = HibernateUtil.getSessionFactory().openSession();
         session.beginTransaction();
 
@@ -25,7 +25,7 @@ public class TesteHibernate2 {
         Disciplina disc1 = new Disciplina (1,"java", 80);
         Disciplina disc2 = new Disciplina (2, "estrutura de dados", 40);
         Disciplina disc3 = new Disciplina (3, "banco de dados", 40);
-        
+
         //cria os alunos
         Aluno al1 = new Aluno(1234,"Tania");
         Aluno al2 = new Aluno(5678,"Leandro");
@@ -56,6 +56,7 @@ public class TesteHibernate2 {
         //salva professores
         session.save(prof1);
         session.save(prof2);
+
         List<Disciplina> listaDisc = new ArrayList<Disciplina>();
         List<Disciplina> listaDiscXandao = new ArrayList<Disciplina>();
         listaDisc.add(disc1);
@@ -71,7 +72,7 @@ public class TesteHibernate2 {
         //salva funcionarios
         session.save(func1);
         session.save(func2);
-           
+
         session.getTransaction().commit();
 
         String hql = "from Professor";

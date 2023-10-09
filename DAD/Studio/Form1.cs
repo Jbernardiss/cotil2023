@@ -91,5 +91,19 @@ namespace Studio
             form6.MdiParent = this;
             form6.Show();
         }
+
+        private void criarTurmaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Form7 form7 = new Form7();
+            form7.MdiParent = this;
+            form7.Show();
+        }
+
+        private void excluirTurmaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Form8 form8 = new Form8();
+            form8.MdiParent = this;
+            form8.Show();
+        }
     }
 }

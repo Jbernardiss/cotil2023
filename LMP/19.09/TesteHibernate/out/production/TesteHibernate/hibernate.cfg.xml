@@ -43,9 +43,9 @@ Contributor(s):
   <session-factory>
     <property name="hibernate.dialect">org.hibernate.dialect.MySQL8Dialect</property>
     <property name="hibernate.connection.driver_class">com.mysql.jdbc.Driver</property>
-    <property name="hibernate.connection.url">jdbc:mysql://143.106.241.3:3306/cl202232</property>
-    <property name="hibernate.connection.username">cl202232</property>
-    <property name="hibernate.connection.password">Th30n3Wh0Kn0ck$</property>
+    <property name="hibernate.connection.url">jdbc:mysql://143.106.241.3:3306/cl202183</property>
+    <property name="hibernate.connection.username">cl202183</property>
+    <property name="hibernate.connection.password">cl*22072006</property>
     <property name="hibernate.show_sql">true</property>
     <property name="hbm2ddl.auto">create</property>
     <mapping class="testehibernate.Aluno"/>
