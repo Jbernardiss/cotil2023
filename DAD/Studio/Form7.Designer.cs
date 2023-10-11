@@ -34,24 +34,24 @@ namespace Studio
             this.txtHora = new System.Windows.Forms.TextBox();
             this.txtDiaDaSemana = new System.Windows.Forms.TextBox();
             this.txtProfessor = new System.Windows.Forms.TextBox();
-            this.cBoxModalidade = new System.Windows.Forms.ComboBox();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.modalidade = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.txtModalidade = new System.Windows.Forms.TextBox();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.txtModalidade);
             this.groupBox1.Controls.Add(this.btnCadastrar);
             this.groupBox1.Controls.Add(this.txtHora);
             this.groupBox1.Controls.Add(this.txtDiaDaSemana);
             this.groupBox1.Controls.Add(this.txtProfessor);
-            this.groupBox1.Controls.Add(this.cBoxModalidade);
             this.groupBox1.Controls.Add(this.label4);
             this.groupBox1.Controls.Add(this.label3);
             this.groupBox1.Controls.Add(this.label2);
@@ -71,6 +71,7 @@ namespace Studio
             this.btnCadastrar.TabIndex = 8;
             this.btnCadastrar.Text = "Cadastrar";
             this.btnCadastrar.UseVisualStyleBackColor = true;
+            this.btnCadastrar.Click += new System.EventHandler(this.btnCadastrar_Click);
             // 
             // txtHora
             // 
@@ -92,14 +93,6 @@ namespace Studio
             this.txtProfessor.Name = "txtProfessor";
             this.txtProfessor.Size = new System.Drawing.Size(324, 20);
             this.txtProfessor.TabIndex = 5;
-            // 
-            // cBoxModalidade
-            // 
-            this.cBoxModalidade.FormattingEnabled = true;
-            this.cBoxModalidade.Location = new System.Drawing.Point(96, 38);
-            this.cBoxModalidade.Name = "cBoxModalidade";
-            this.cBoxModalidade.Size = new System.Drawing.Size(324, 21);
-            this.cBoxModalidade.TabIndex = 4;
             // 
             // label4
             // 
@@ -139,18 +132,32 @@ namespace Studio
             // 
             // dataGridView1
             // 
+            this.dataGridView1.AllowUserToAddRows = false;
+            this.dataGridView1.AllowUserToDeleteRows = false;
+            this.dataGridView1.AllowUserToOrderColumns = true;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.modalidade});
             this.dataGridView1.Location = new System.Drawing.Point(12, 238);
+            this.dataGridView1.MultiSelect = false;
             this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.ReadOnly = true;
+            this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridView1.Size = new System.Drawing.Size(475, 232);
             this.dataGridView1.TabIndex = 1;
+            this.dataGridView1.SelectionChanged += new System.EventHandler(this.dataGridView1_SelectionChanged);
             // 
             // modalidade
             // 
             this.modalidade.HeaderText = "Modalidade";
             this.modalidade.Name = "modalidade";
+            // 
+            // txtModalidade
+            // 
+            this.txtModalidade.Location = new System.Drawing.Point(95, 35);
+            this.txtModalidade.Name = "txtModalidade";
+            this.txtModalidade.Size = new System.Drawing.Size(325, 20);
+            this.txtModalidade.TabIndex = 9;
             // 
             // Form7
             // 
@@ -175,12 +182,12 @@ namespace Studio
         private System.Windows.Forms.TextBox txtHora;
         private System.Windows.Forms.TextBox txtDiaDaSemana;
         private System.Windows.Forms.TextBox txtProfessor;
-        private System.Windows.Forms.ComboBox cBoxModalidade;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.DataGridViewTextBoxColumn modalidade;
+        private System.Windows.Forms.TextBox txtModalidade;
     }
 }

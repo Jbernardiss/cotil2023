@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MySql.Data.MySqlClient;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,9 +13,54 @@ namespace Studio
 {
     public partial class Form8 : Form
     {
+        List<Modalidade> arrayModalidades = new List<Modalidade>();
+
         public Form8()
         {
             InitializeComponent();
+            carregarModalidade();
+        }
+
+        void carregarModalidade()
+        {
+            MySqlDataReader dadosModalidades = Modalidade.consultarTodasModalidades();
+
+            int id;
+            string descricao;
+            double preco;
+            int qtde_alunos;
+            int qtde_aulas;
+            
+            while(dadosModalidades.Read())
+            {
+                id = (int)dadosModalidades["idEstudio_Modalidade"];
+                descricao = dadosModalidades["descricaoModalidade"].ToString();
+                preco = (double)dadosModalidades["precoModalidade"];
+                qtde_alunos = (int)dadosModalidades["qtdeAlunos"];
+                qtde_aulas = (int)dadosModalidades["qtdeAulas"];
+                arrayModalidades.Add(new Modalidade(id, descricao, preco, qtde_alunos, qtde_aulas));
+
+                cBoxModalidade.Items.Add(dadosModalidades["descricaoModalidade"].ToString());
+            }
+
+            DAO_Conexao.con.Close();
+        }
+
+        void carregarDiaDaSemana()
+        {
+            MySqlDataReader dadosTurmas = Turma.consultarTurmaPorModalidade(arrayModalidades[cBoxModalidade.SelectedIndex].Id);
+
+            
+        }
+
+        void carregarHora()
+        {
+
+        }
+
+        private void btnExcluir_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

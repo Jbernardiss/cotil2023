@@ -30,13 +30,13 @@ namespace Studio
         private void InitializeComponent()
         {
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.cBoxModalidade = new System.Windows.Forms.ComboBox();
-            this.cBoxDiaDaSemana = new System.Windows.Forms.ComboBox();
-            this.cBoxHora = new System.Windows.Forms.ComboBox();
             this.btnExcluir = new System.Windows.Forms.Button();
+            this.cBoxHora = new System.Windows.Forms.ComboBox();
+            this.cBoxDiaDaSemana = new System.Windows.Forms.ComboBox();
+            this.cBoxModalidade = new System.Windows.Forms.ComboBox();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -56,23 +56,39 @@ namespace Studio
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Turma";
             // 
-            // label1
+            // btnExcluir
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(29, 33);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(65, 13);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Modalidade:";
+            this.btnExcluir.Location = new System.Drawing.Point(6, 150);
+            this.btnExcluir.Name = "btnExcluir";
+            this.btnExcluir.Size = new System.Drawing.Size(540, 23);
+            this.btnExcluir.TabIndex = 6;
+            this.btnExcluir.Text = "Excluir";
+            this.btnExcluir.UseVisualStyleBackColor = true;
+            this.btnExcluir.Click += new System.EventHandler(this.btnExcluir_Click);
             // 
-            // label2
+            // cBoxHora
             // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(11, 67);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(83, 13);
-            this.label2.TabIndex = 1;
-            this.label2.Text = "Dia da Semana:";
+            this.cBoxHora.FormattingEnabled = true;
+            this.cBoxHora.Location = new System.Drawing.Point(101, 105);
+            this.cBoxHora.Name = "cBoxHora";
+            this.cBoxHora.Size = new System.Drawing.Size(429, 21);
+            this.cBoxHora.TabIndex = 5;
+            // 
+            // cBoxDiaDaSemana
+            // 
+            this.cBoxDiaDaSemana.FormattingEnabled = true;
+            this.cBoxDiaDaSemana.Location = new System.Drawing.Point(101, 67);
+            this.cBoxDiaDaSemana.Name = "cBoxDiaDaSemana";
+            this.cBoxDiaDaSemana.Size = new System.Drawing.Size(429, 21);
+            this.cBoxDiaDaSemana.TabIndex = 4;
+            // 
+            // cBoxModalidade
+            // 
+            this.cBoxModalidade.FormattingEnabled = true;
+            this.cBoxModalidade.Location = new System.Drawing.Point(101, 33);
+            this.cBoxModalidade.Name = "cBoxModalidade";
+            this.cBoxModalidade.Size = new System.Drawing.Size(429, 21);
+            this.cBoxModalidade.TabIndex = 3;
             // 
             // label3
             // 
@@ -83,38 +99,23 @@ namespace Studio
             this.label3.TabIndex = 2;
             this.label3.Text = "Hora:";
             // 
-            // cBoxModalidade
+            // label2
             // 
-            this.cBoxModalidade.FormattingEnabled = true;
-            this.cBoxModalidade.Location = new System.Drawing.Point(101, 33);
-            this.cBoxModalidade.Name = "cBoxModalidade";
-            this.cBoxModalidade.Size = new System.Drawing.Size(429, 21);
-            this.cBoxModalidade.TabIndex = 3;
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(11, 67);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(83, 13);
+            this.label2.TabIndex = 1;
+            this.label2.Text = "Dia da Semana:";
             // 
-            // cBoxDiaDaSemana
+            // label1
             // 
-            this.cBoxDiaDaSemana.FormattingEnabled = true;
-            this.cBoxDiaDaSemana.Location = new System.Drawing.Point(101, 67);
-            this.cBoxDiaDaSemana.Name = "cBoxDiaDaSemana";
-            this.cBoxDiaDaSemana.Size = new System.Drawing.Size(429, 21);
-            this.cBoxDiaDaSemana.TabIndex = 4;
-            // 
-            // cBoxHora
-            // 
-            this.cBoxHora.FormattingEnabled = true;
-            this.cBoxHora.Location = new System.Drawing.Point(101, 105);
-            this.cBoxHora.Name = "cBoxHora";
-            this.cBoxHora.Size = new System.Drawing.Size(429, 21);
-            this.cBoxHora.TabIndex = 5;
-            // 
-            // btnExcluir
-            // 
-            this.btnExcluir.Location = new System.Drawing.Point(6, 150);
-            this.btnExcluir.Name = "btnExcluir";
-            this.btnExcluir.Size = new System.Drawing.Size(540, 23);
-            this.btnExcluir.TabIndex = 6;
-            this.btnExcluir.Text = "Excluir";
-            this.btnExcluir.UseVisualStyleBackColor = true;
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(29, 33);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(65, 13);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "Modalidade:";
             // 
             // Form8
             // 
