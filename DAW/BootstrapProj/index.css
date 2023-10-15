@@ -9,14 +9,12 @@ body {
     padding-top: 0;
 }
 
-nav {
-    border-bottom-left-radius: 10px;
-    border-bottom-right-radius: 10px;
-}
 
 nav div {
     margin: 5px;
 }
+
+
 
 .navbar-brand {
     display: flex;
@@ -30,4 +28,17 @@ main {
 
 .slogan {
 
+}
+
+.palavraChave{
+    color: blue;
+}
+
+#cardsVenda{
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
+
+#servicoAccordion{
+    padding: 10px;
 }
