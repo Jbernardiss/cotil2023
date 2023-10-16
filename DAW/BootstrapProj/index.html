@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 
 <head>
   <meta charset="UTF-8">
@@ -40,10 +40,7 @@
             <a class="nav-link" href="#">Ofertas</a>
           </li>
         </ul>
-        <form class="d-flex" role="search">
-          <input class="form-control me-2" type="search" placeholder="Lugares Incríveis" aria-label="Search">
-          <button class="btn btn-outline-light" type="submit">Pesquisar</button>
-        </form>
+        <a href="signin.html">Criar Cadastro</a>
       </div>
     </div>
   </nav>
@@ -142,48 +139,120 @@
       <div class="accordion" id="servicoAccordion">
         <div class="accordion-item">
           <h2 class="accordion-header">
-            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne"
+              aria-expanded="true" aria-controls="collapseOne">
               Segurança
             </button>
           </h2>
           <div id="collapseOne" class="accordion-collapse collapse show" data-bs-parent="#accordionExample">
             <div class="accordion-body">
-              <strong>A TravelGo tem total responsabilidade sobre sua segurança.</strong> Isso significa que desde o momento de embarque para a sua viagem, nós somos totalmente responsabilizados por quaisquer danos causados ao seu patrimônio ou integridade física.
+              <strong>A TravelGo tem total responsabilidade sobre sua segurança.</strong> Isso significa que desde o
+              momento de embarque para a sua viagem, nós somos totalmente responsabilizados por quaisquer danos causados
+              ao seu patrimônio ou integridade física.
             </div>
           </div>
         </div>
         <div class="accordion-item">
           <h2 class="accordion-header">
-            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+              data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
               Garantia
             </button>
           </h2>
           <div id="collapseTwo" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
             <div class="accordion-body">
-              <strong>Em caso de desistência, devolvemos o seu dinheiro.</strong> A TravelGo garante que em caso de desistência de viagens e reservas com aviso prévio de 3 dias, devolvemos todo o seu dinheiro.
+              <strong>Em caso de desistência, devolvemos o seu dinheiro.</strong> A TravelGo garante que em caso de
+              desistência de viagens e reservas com aviso prévio de 3 dias, devolvemos todo o seu dinheiro.
             </div>
           </div>
         </div>
         <div class="accordion-item">
           <h2 class="accordion-header">
-            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+              data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
               Comunicação
             </button>
           </h2>
           <div id="collapseThree" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
             <div class="accordion-body">
-              <strong>Aqui, você pode sempre conversar com nossos assistentes.</strong> Em sua viagem ou momento de contrato, você pode comunicar-se com um de nossos atendentes e tirar todas as suas dúvidas ou solicitar suporte imediato.
+              <strong>Aqui, você pode sempre conversar com nossos assistentes.</strong> Em sua viagem ou momento de
+              contrato, você pode comunicar-se com um de nossos atendentes e tirar todas as suas dúvidas ou solicitar
+              suporte imediato.
             </div>
           </div>
         </div>
       </div>
 
+
+      <div class="fs-2">Cupom para novos clientes</div>
+
+      <button class="btn btn-primary" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasScrolling"
+        aria-controls="offcanvasScrolling">Resgatar Cupons <i class="bi bi-ticket-fill"></i></button>
+
+      <div class="offcanvas offcanvas-start" data-bs-scroll="true" data-bs-backdrop="false" tabindex="-1"
+        id="offcanvasScrolling" aria-labelledby="offcanvasScrollingLabel">
+        <div class="offcanvas-header">
+          <h5 class="offcanvas-title" id="offcanvasScrollingLabel">Cupons <i class="bi bi-ticket-fill"></i></h5>
+          <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+        </div>
+        <div class="offcanvas-body">
+          <div id="cupons">
+
+            <p>
+              <button class="btn btn-primary" type="button" data-bs-toggle="collapse"
+                data-bs-target="#collapseWidthExample" aria-expanded="false" aria-controls="collapseWidthExample">
+                Resgatar
+              </button>
+            </p>
+            <div style="min-height: 120px;">
+              <div class="collapse collapse-horizontal" id="collapseWidthExample">
+                <div class="card card-body" style="width: 300px;">
+                  Seu cupom: <strong>"091X08"</strong>
+                  Entre no link abaixo e resgate o código do cupom
+                  <a href="#">Resgate seu cupom</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+  </div>
+  </div>
   </div>
   </main>
 
+  <footer class="container-fluid" id="footer">
+    <div class="container text-center">
+      <div class="row">
+        <div class="col-md bs-border">
+          <p class="fs-3 fw-bold">Endereço </p>
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d715.050006841265!2d17.905407414343962!3d44.202945290040795!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1spt-BR!2sbr!4v1697475664601!5m2!1spt-BR!2sbr"
+            width="300" height="300" style="border:0;" allowfullscreen="" loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </div>
 
+        <div class="col-md">
+          <p class="fs-3 fw-bold">Quer receber as promoções no email?</p>
+          <label for="exampleFormControlInput1" class="form-label">Seu melhor email</label>
+          <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="email@gmail.com">
+          <button type="button" id="botaoInscrever" class="btn btn-light">Inscrever</button>
+        </div>
 
-  <footer></footer>
+        <div class="col-md">
+          <p class="fs-3 fw-bold">Contato: </p>
+
+          <a href="mailto:contato@gotravel.com">contato@gotravel.com</a>
+
+          <p class="fs-3">Feito por: </p>
+          <i class="bi bi-github"></i> <a href="https://github.com/MatheusGambaroGuilherme">Matheus Gambaro
+            Guilherme</a> <br>
+          <i class="bi bi-github"></i> <a href="https://github.com/Jbernardiss">João Vitor Bernardis</a>
+
+        </div>
+      </div>
+    </div>
+  </footer>
 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"

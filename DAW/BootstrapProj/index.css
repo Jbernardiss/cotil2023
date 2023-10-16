@@ -31,7 +31,7 @@ main {
 }
 
 .palavraChave{
-    color: blue;
+    color: #0d6efd;
 }
 
 #cardsVenda{
@@ -41,4 +41,39 @@ main {
 
 #servicoAccordion{
     padding: 10px;
+}
+
+#footer{
+    padding-top: 15px;
+    height: auto;
+    background-color: #0d6efd;
+    color: white;
+}
+
+#footer a:link{
+    color: white;
+}
+
+#botaoInscrever{
+    margin: 10px;
+}
+
+div[class*="carousel"]{
+    border-radius: 10px;
+}
+
+a[href*="signin.html"] {
+    color: white;
+}
+
+#cupons{
+    margin-top: 15px;
+}
+
+button[data-bs-target*="#cupom2"]{
+    margin-top: 7px;
+}
+
+#footer div{
+    margin-bottom: 10px;
 }
