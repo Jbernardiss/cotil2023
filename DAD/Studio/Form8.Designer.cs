@@ -68,6 +68,7 @@ namespace Studio
             // 
             // cBoxHora
             // 
+            this.cBoxHora.Enabled = false;
             this.cBoxHora.FormattingEnabled = true;
             this.cBoxHora.Location = new System.Drawing.Point(101, 105);
             this.cBoxHora.Name = "cBoxHora";
@@ -76,11 +77,13 @@ namespace Studio
             // 
             // cBoxDiaDaSemana
             // 
+            this.cBoxDiaDaSemana.Enabled = false;
             this.cBoxDiaDaSemana.FormattingEnabled = true;
             this.cBoxDiaDaSemana.Location = new System.Drawing.Point(101, 67);
             this.cBoxDiaDaSemana.Name = "cBoxDiaDaSemana";
             this.cBoxDiaDaSemana.Size = new System.Drawing.Size(429, 21);
             this.cBoxDiaDaSemana.TabIndex = 4;
+            this.cBoxDiaDaSemana.SelectedIndexChanged += new System.EventHandler(this.cBoxDiaDaSemana_SelectedIndexChanged);
             // 
             // cBoxModalidade
             // 
@@ -89,6 +92,7 @@ namespace Studio
             this.cBoxModalidade.Name = "cBoxModalidade";
             this.cBoxModalidade.Size = new System.Drawing.Size(429, 21);
             this.cBoxModalidade.TabIndex = 3;
+            this.cBoxModalidade.SelectedIndexChanged += new System.EventHandler(this.cBoxModalidade_SelectedIndexChanged);
             // 
             // label3
             // 

@@ -67,7 +67,7 @@ namespace Studio
             try
             {
                 DAO_Conexao.con.Open();
-                MySqlCommand sql = new MySqlCommand($"SELECT * FROM Estudio_Turma WHERE idModalidade = {idModalidade}", DAO_Conexao.con);
+                MySqlCommand sql = new MySqlCommand($"SELECT * FROM Estudio_Turma WHERE idModalidade = {idModalidade} AND ativo = 1", DAO_Conexao.con);
                 dadosTurmas = sql.ExecuteReader();
             }
             catch (Exception ex)
@@ -78,12 +78,48 @@ namespace Studio
             return dadosTurmas;
         }
 
-        /*
-        public bool excluirTurma()
+        static public MySqlDataReader consultarTurmaPorModalidadeEDia(int idModalidade, string diaSemana)
         {
-            
+            MySqlDataReader dadosTurmas = null;
+
+            try
+            {
+                DAO_Conexao.con.Open();
+                MySqlCommand sql = new MySqlCommand($"SELECT * FROM Estudio_Turma WHERE idModalidade = {idModalidade} AND diaSemanaTurma = '{diaSemana}' AND ativo = 1", DAO_Conexao.con);
+                dadosTurmas = sql.ExecuteReader();
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.ToString());
+            }
+
+            return dadosTurmas;
         }
 
+        static public bool excluirTurma(int idModalidade, string diaSemana, string hora)
+        {
+            bool excluido = false;
+
+            try
+            {
+                DAO_Conexao.con.Open();
+                MySqlCommand sql = new MySqlCommand($"UPDATE Estudio_Turma SET ativo = 0 WHERE idModalidade = {idModalidade} AND diaSemanaTurma = '{diaSemana}' AND horaTurma = '{hora}'", DAO_Conexao.con);
+                sql.ExecuteNonQuery();
+                excluido = true;
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.ToString());
+            }
+            finally
+            {
+                DAO_Conexao.con.Close();
+            }
+
+            return excluido;
+        }
+
+        /*
         public MySqlDataReader consultarTurma()
         {
 
