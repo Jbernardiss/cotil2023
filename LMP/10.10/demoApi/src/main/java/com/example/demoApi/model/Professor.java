@@ -7,7 +7,7 @@ import jakarta.persistence.Table;
 
 @Entity
 @Table
-public class Aluno {
+public class Professor {
 
     @Id
     private int ra;
@@ -16,16 +16,7 @@ public class Aluno {
     private String nome;
 
     @Column
-    private double altura;
-
-
-    public double getAltura() {
-        return altura;
-    }
-
-    public void setAltura(double altura) {
-        this.altura = altura;
-    }
+    private String materia;
 
     public int getRa() {
         return ra;
@@ -41,5 +32,13 @@ public class Aluno {
 
     public void setNome(String nome) {
         this.nome = nome;
+    }
+
+    public String getMateria() {
+        return materia;
+    }
+
+    public void setMateria(String materia) {
+        this.materia = materia;
     }
 }
