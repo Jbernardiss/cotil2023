@@ -105,5 +105,12 @@ namespace Studio
             form8.MdiParent = this;
             form8.Show();
         }
+
+        private void atualizarTurmaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Form9 form9 = new Form9();
+            form9.MdiParent = this;
+            form9.Show();
+        }
     }
 }
