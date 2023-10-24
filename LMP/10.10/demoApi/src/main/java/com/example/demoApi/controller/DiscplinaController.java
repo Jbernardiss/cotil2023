@@ -3,6 +3,7 @@ package com.example.demoApi.controller;
 import com.example.demoApi.model.Disciplina;
 import com.example.demoApi.model.Professor;
 import com.example.demoApi.repository.DisciplinaRepository;
+import org.hibernate.query.sqm.sql.internal.DiscriminatorPathInterpretation;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -41,9 +42,38 @@ public class DiscplinaController {
         return discRep.findBySigla(sigla);
     }
 
-
     @PostMapping("/inserir")
     public void inserir(@RequestBody Disciplina disc){
         discRep.save(disc);
+    }
+
+    @DeleteMapping("/deletar")
+    public void deletar(@RequestBody Disciplina disc) {
+        discRep.delete(disc);
+    }
+
+    @DeleteMapping("/deletar/codigo/{codigo}")
+    public void deletarPorId(@PathVariable("codigo") int codigo) {
+        discRep.deleteById(codigo);
+    }
+
+    @PutMapping("/atualizar")
+    public void atualizar(@RequestBody Disciplina disc) {
+        discRep.save(disc);
+    }
+
+    @GetMapping("/todas/siglaCodigo/{sigla}/{codigo}")
+    public List<Disciplina> buscaSiglaCodigo(@PathVariable("sigla") String sigla,@PathVariable("codigo") int codigo){
+        return discRep.findBySiglaCod(sigla, codigo);
+    }
+
+    @GetMapping("/todas/nomeCodigo/{nome}/{codigo}")
+    public List<Disciplina> buscaNomeCodigo(@PathVariable("nome") String nome, @PathVariable("codigo") int codigo){
+        return discRep.findByNomeCod(nome, codigo);
+    }
+
+    @GetMapping("/todas/nomeSigla/{nome}/{sigla}")
+    public List<Disciplina> buscaNomeSigla(@PathVariable("nome") String nome, @PathVariable("sigla") String sigla){
+        return discRep.findByNomeSigla(nome, sigla);
     }
 }

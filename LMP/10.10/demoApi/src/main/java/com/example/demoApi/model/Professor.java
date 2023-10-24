@@ -18,6 +18,17 @@ public class Professor {
     @Column
     private String materia;
 
+    @Column
+    private double salario;
+
+    public double getSalario() {
+        return salario;
+    }
+
+    public void setSalario(double salario) {
+        this.salario = salario;
+    }
+
     public int getRa() {
         return ra;
     }
