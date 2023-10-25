@@ -124,7 +124,7 @@ namespace Studio
             try
             {
                 DAO_Conexao.con.Open();
-                MySqlCommand consulta = new MySqlCommand("SELECT * FROM Estudio_Aluno WHERE CPFAluno='" + cpf + "'", DAO_Conexao.con);
+                MySqlCommand consulta = new MySqlCommand("SELECT * FROM Estudio_Aluno WHERE CPFAluno='" + cpf + "' and ativo=1", DAO_Conexao.con);
                 resultado = consulta.ExecuteReader();
 
             }

@@ -95,6 +95,28 @@ namespace Studio
             return atualizado;
         }
 
+        public bool adicionarAluno(string cpfAluno)
+        {
+            bool adicionado = false;
+            try
+            {
+                DAO_Conexao.con.Open();
+                MySqlCommand sql = new MySqlCommand($"INSERT INTO Estudio_TurmaAluno (cpfAluno, idEstudio_Turma) VALUES ('{cpfAluno}', {id}", DAO_Conexao.con);
+                sql.ExecuteNonQuery();
+                adicionado = true;
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
+            finally
+            {
+                DAO_Conexao.con.Close();
+            }
+
+            return adicionado;
+        }
+
         static public MySqlDataReader consultarTurmaPorModalidade(int idModalidade)
         {
             MySqlDataReader dadosTurmas = null;
@@ -177,31 +199,6 @@ namespace Studio
             return excluido;
         }
 
-        /*
-        static public bool excluirTurmasPorModalidade(int idModalidade)
-        {
-            bool excluido = false;
-
-            try
-            {
-                DAO_Conexao.con.Open();
-                MySqlCommand sql = new MySqlCommand($"UPDATE Estudio_Turma SET ativo = 0 WHERE idModalidade = {idModalidade}", DAO_Conexao.con);
-                sql.ExecuteNonQuery();
-                excluido = true;
-            }
-            catch (Exception ex)
-            {
-                Console.WriteLine(ex.ToString());
-            }
-            finally
-            {
-                DAO_Conexao.con.Close();
-            }
-
-            return excluido;
-        }
-        */
-
         static public MySqlDataReader consultarTodasTurmasComDescModalidade()
         {
             MySqlDataReader dadosTurmas = null;
@@ -219,5 +216,7 @@ namespace Studio
 
             return dadosTurmas;
         }
+
+
     }
 }
