@@ -216,7 +216,5 @@ namespace Studio
 
             return dadosTurmas;
         }
-
-
     }
 }

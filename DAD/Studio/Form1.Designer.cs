@@ -59,6 +59,8 @@ namespace Studio
             this.consultarModalidadeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.turmaToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.consultarTurmaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.matrículaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.gerenciarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.menuStrip2.SuspendLayout();
@@ -69,7 +71,8 @@ namespace Studio
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.arquivoToolStripMenuItem,
             this.modalidadeToolStripMenuItem,
-            this.turmaToolStripMenuItem});
+            this.turmaToolStripMenuItem,
+            this.matrículaToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Size = new System.Drawing.Size(800, 24);
@@ -310,9 +313,24 @@ namespace Studio
             // consultarTurmaToolStripMenuItem
             // 
             this.consultarTurmaToolStripMenuItem.Name = "consultarTurmaToolStripMenuItem";
-            this.consultarTurmaToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.consultarTurmaToolStripMenuItem.Size = new System.Drawing.Size(162, 22);
             this.consultarTurmaToolStripMenuItem.Text = "Consultar Turma";
             this.consultarTurmaToolStripMenuItem.Click += new System.EventHandler(this.consultarTurmaToolStripMenuItem_Click);
+            // 
+            // matrículaToolStripMenuItem
+            // 
+            this.matrículaToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.gerenciarToolStripMenuItem});
+            this.matrículaToolStripMenuItem.Name = "matrículaToolStripMenuItem";
+            this.matrículaToolStripMenuItem.Size = new System.Drawing.Size(69, 20);
+            this.matrículaToolStripMenuItem.Text = "Matrícula";
+            // 
+            // gerenciarToolStripMenuItem
+            // 
+            this.gerenciarToolStripMenuItem.Name = "gerenciarToolStripMenuItem";
+            this.gerenciarToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.gerenciarToolStripMenuItem.Text = "Gerenciar";
+            this.gerenciarToolStripMenuItem.Click += new System.EventHandler(this.gerenciarToolStripMenuItem_Click);
             // 
             // Form1
             // 
@@ -320,8 +338,8 @@ namespace Studio
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.groupBox1);
-            this.Controls.Add(this.menuStrip1);
             this.Controls.Add(this.menuStrip2);
+            this.Controls.Add(this.menuStrip1);
             this.IsMdiContainer = true;
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "Form1";
@@ -369,6 +387,8 @@ namespace Studio
         private System.Windows.Forms.ToolStripMenuItem consultarModalidadeToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem turmaToolStripMenuItem1;
         private System.Windows.Forms.ToolStripMenuItem consultarTurmaToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem matrículaToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem gerenciarToolStripMenuItem;
     }
 }
 

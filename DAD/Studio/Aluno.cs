@@ -136,6 +136,24 @@ namespace Studio
             return resultado;
         }
 
+        public MySqlDataReader consultarTodosAlunos()
+        {
+            MySqlDataReader resultado = null;
+            try
+            {
+                DAO_Conexao.con.Open();
+                MySqlCommand consulta = new MySqlCommand("SELECT * FROM Estudio_Aluno WHERE ativo = 1", DAO_Conexao.con);
+                resultado = consulta.ExecuteReader();
+
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.ToString());
+            }
+
+            return resultado;
+        }
+
         public bool excluirAluno()
         {
             bool exc = false;

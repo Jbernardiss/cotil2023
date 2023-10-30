@@ -142,5 +142,12 @@ namespace Studio
             form9.MdiParent = this;
             form9.Show();
         }
+
+        private void gerenciarToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Form10 form10 = new Form10();
+            form10.MdiParent = this;
+            form10.Show();
+        }
     }
 }
