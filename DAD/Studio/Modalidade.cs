@@ -109,8 +109,8 @@ namespace Studio
                 MySqlCommand sql = new MySqlCommand($"SELECT * FROM Estudio_Modalidade WHERE idEstudio_Modalidade = {idModalidade} AND ativa = 1", DAO_Conexao.con);
                 dadosModalidade = sql.ExecuteReader();
 
-
-
+                dadosModalidade.Read();
+                qtdeAlunos = (int) dadosModalidade["qtdeAlunos"];
             }
             catch (Exception ex)
             {

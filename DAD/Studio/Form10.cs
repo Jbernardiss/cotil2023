@@ -13,7 +13,6 @@ namespace Studio
 {
     public partial class Form10 : Form
     {
-        List<Matricula> arrMatricula = new List<Matricula>();
         List<Aluno> arrAluno = new List<Aluno>();
         List<Turma> arrTurma = new List<Turma>();
 
@@ -97,6 +96,8 @@ namespace Studio
         {
             selectedIdTurma = arrTurma[dataGridViewTurma.CurrentCell.RowIndex].Id;
             MessageBox.Show($"{selectedIdTurma}");
+            MessageBox.Show($"{arrTurma[dataGridViewTurma.CurrentCell.RowIndex].NumeroAlunosTurma}");
+            MessageBox.Show($"{Modalidade.getQtdeMaximaAlunosModalidade(arrTurma[dataGridViewTurma.CurrentCell.RowIndex].Modalidade)}");
         }
 
         private void btnMatricular_Click(object sender, EventArgs e)
@@ -104,8 +105,19 @@ namespace Studio
             Matricula matricula = new Matricula(selectedCpf, selectedIdTurma);
             if(matricula.cadastrarMatricula())
             {
-                MessageBox.Show("Matrícula feita com sucesso!");
-                carregarTurmas();
+                int qtdeMaxima = Modalidade.getQtdeMaximaAlunosModalidade(arrTurma[dataGridViewTurma.CurrentCell.RowIndex].Modalidade);
+
+                if(arrTurma[dataGridViewTurma.CurrentCell.RowIndex].NumeroAlunosTurma < qtdeMaxima)
+                {
+                    MessageBox.Show("Matrícula feita com sucesso!");
+                    carregarTurmas();
+                }
+                else
+                {
+                    MessageBox.Show("A classe já está cheia!");
+                }
+
+                
             }
             else
             {
