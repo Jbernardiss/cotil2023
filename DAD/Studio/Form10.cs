@@ -18,6 +18,7 @@ namespace Studio
         List<Turma> arrTurma = new List<Turma>();
 
         string selectedCpf;
+        int selectedIdTurma;
 
         public Form10()
         {
@@ -25,6 +26,9 @@ namespace Studio
 
             carregarAlunos();
             carregarTurmas();
+
+            selectedCpf = arrAluno[0].getCpf();
+            selectedIdTurma = arrTurma[0].Id;
         }
 
         public void carregarAlunos()
@@ -77,16 +81,36 @@ namespace Studio
 
                 Turma turma = new Turma(idEstudioTurma, professorTurma, diaSemanaTurma, horaTurma, descricaoModalidade, idModalidade, numeroAlunosTurma);
                 arrTurma.Add(turma);
-                dataGridViewTurma.Rows.Add(turma.DescModalidade + " " + turma.Id);
-                    
+                dataGridViewTurma.Rows.Add(turma.DescModalidade + "#" + turma.Id, turma.Professor, turma.Dia_semana, turma.Hora, turma.NumeroAlunosTurma);
             }
 
             DAO_Conexao.con.Close();
         }
 
-        private void dataGridView2_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        private void dataGridViewAluno_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             selectedCpf = arrAluno[dataGridViewAluno.CurrentCell.RowIndex].getCpf();
+            MessageBox.Show(selectedCpf);
+        }
+
+        private void dataGridViewTurma_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            selectedIdTurma = arrTurma[dataGridViewTurma.CurrentCell.RowIndex].Id;
+            MessageBox.Show($"{selectedIdTurma}");
+        }
+
+        private void btnMatricular_Click(object sender, EventArgs e)
+        {
+            Matricula matricula = new Matricula(selectedCpf, selectedIdTurma);
+            if(matricula.cadastrarMatricula())
+            {
+                MessageBox.Show("Matrícula feita com sucesso!");
+                carregarTurmas();
+            }
+            else
+            {
+                MessageBox.Show("Erro ao realizar matrícula");
+            }
         }
     }
 }

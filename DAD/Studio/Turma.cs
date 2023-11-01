@@ -20,6 +20,7 @@ namespace Studio
         public int Modalidade1 { get => modalidade; set => modalidade = value; }
         public string DescModalidade { get => descModalidade; set => descModalidade = value; }
         public int Id { get => id; set => id = value; }
+        public int NumeroAlunosTurma { get => numeroAlunosTurma; set => numeroAlunosTurma = value; }
 
         public Turma(int id, string professor, string dia_semana, string hora, string descModalidade)
         {
@@ -38,7 +39,7 @@ namespace Studio
             this.hora = hora;
             this.descModalidade = descModalidade;
             this.modalidade = modalidade;
-            this.numeroAlunosTurma = numeroAlunosTurma;
+            this.NumeroAlunosTurma = numeroAlunosTurma;
         }
 
         public Turma(int modalidade, string professor, string dia_semana, string hora)
