@@ -30,6 +30,17 @@ namespace Studio
             this.descModalidade = descModalidade;
         }
 
+        public Turma(int id, string professor, string dia_semana, string hora, string descModalidade, int modalidade, int numeroAlunosTurma)
+        {
+            this.id = id;
+            this.professor = professor;
+            this.dia_semana = dia_semana;
+            this.hora = hora;
+            this.descModalidade = descModalidade;
+            this.modalidade = modalidade;
+            this.numeroAlunosTurma = numeroAlunosTurma;
+        }
+
         public Turma(int modalidade, string professor, string dia_semana, string hora)
         {
             this.modalidade = modalidade;

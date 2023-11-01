@@ -28,22 +28,25 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.dataGridViewTurma = new System.Windows.Forms.DataGridView();
             this.dataGridViewAluno = new System.Windows.Forms.DataGridView();
+            this.txtcNome = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.lblAlunoTable = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.txtcNome = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            this.NomeTurma = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewTurma)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewAluno)).BeginInit();
             this.SuspendLayout();
             // 
-            // dataGridView1
+            // dataGridViewTurma
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(317, 43);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(246, 406);
-            this.dataGridView1.TabIndex = 0;
+            this.dataGridViewTurma.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridViewTurma.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.NomeTurma});
+            this.dataGridViewTurma.Location = new System.Drawing.Point(317, 43);
+            this.dataGridViewTurma.Name = "dataGridViewTurma";
+            this.dataGridViewTurma.Size = new System.Drawing.Size(246, 406);
+            this.dataGridViewTurma.TabIndex = 0;
             // 
             // dataGridViewAluno
             // 
@@ -57,6 +60,11 @@
             this.dataGridViewAluno.Size = new System.Drawing.Size(240, 406);
             this.dataGridViewAluno.TabIndex = 1;
             this.dataGridViewAluno.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView2_CellContentClick);
+            // 
+            // txtcNome
+            // 
+            this.txtcNome.HeaderText = "Nome";
+            this.txtcNome.Name = "txtcNome";
             // 
             // lblAlunoTable
             // 
@@ -76,10 +84,10 @@
             this.label1.TabIndex = 3;
             this.label1.Text = "Selecionar Turma";
             // 
-            // txtcNome
+            // NomeTurma
             // 
-            this.txtcNome.HeaderText = "Nome";
-            this.txtcNome.Name = "txtcNome";
+            this.NomeTurma.HeaderText = "Nome Turma";
+            this.NomeTurma.Name = "NomeTurma";
             // 
             // Form10
             // 
@@ -89,10 +97,10 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.lblAlunoTable);
             this.Controls.Add(this.dataGridViewAluno);
-            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.dataGridViewTurma);
             this.Name = "Form10";
             this.Text = "Form10";
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewTurma)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewAluno)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -101,10 +109,11 @@
 
         #endregion
 
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView dataGridViewTurma;
         private System.Windows.Forms.DataGridView dataGridViewAluno;
         private System.Windows.Forms.Label lblAlunoTable;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.DataGridViewTextBoxColumn txtcNome;
+        private System.Windows.Forms.DataGridViewTextBoxColumn NomeTurma;
     }
 }

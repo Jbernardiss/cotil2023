@@ -62,7 +62,26 @@ namespace Studio
         {
             MySqlDataReader dadosTurma = Turma.consultarTodasTurmasComDescModalidade();
 
+            arrTurma.Clear();
+            dataGridViewTurma.Rows.Clear();
 
+            while (dadosTurma.Read())
+            {
+                int idEstudioTurma = Int32.Parse(dadosTurma["idEstudio_Turma"].ToString());
+                int idModalidade = Int32.Parse(dadosTurma["idModalidade"].ToString());
+                string professorTurma = dadosTurma["professorTurma"].ToString();
+                string diaSemanaTurma = dadosTurma["diaSemanaTurma"].ToString();
+                string horaTurma = dadosTurma["horaTurma"].ToString();
+                int numeroAlunosTurma = Int32.Parse(dadosTurma["nAlunosTurma"].ToString());
+                string descricaoModalidade = dadosTurma["descricaoModalidade"].ToString();
+
+                Turma turma = new Turma(idEstudioTurma, professorTurma, diaSemanaTurma, horaTurma, descricaoModalidade, idModalidade, numeroAlunosTurma);
+                arrTurma.Add(turma);
+                dataGridViewTurma.Rows.Add(turma.DescModalidade + " " + turma.Id);
+                    
+            }
+
+            DAO_Conexao.con.Close();
         }
 
         private void dataGridView2_CellContentClick(object sender, DataGridViewCellEventArgs e)
