@@ -30,33 +30,37 @@ namespace Studio
         private void InitializeComponent()
         {
             this.btnReativar = new System.Windows.Forms.Button();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.cBoxAlunos = new System.Windows.Forms.ComboBox();
             this.SuspendLayout();
             // 
             // btnReativar
             // 
-            this.btnReativar.Location = new System.Drawing.Point(61, 77);
+            this.btnReativar.Location = new System.Drawing.Point(81, 95);
+            this.btnReativar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnReativar.Name = "btnReativar";
-            this.btnReativar.Size = new System.Drawing.Size(171, 23);
+            this.btnReativar.Size = new System.Drawing.Size(228, 28);
             this.btnReativar.TabIndex = 0;
             this.btnReativar.Text = "Reativar";
             this.btnReativar.UseVisualStyleBackColor = true;
+            this.btnReativar.Click += new System.EventHandler(this.btnReativar_Click);
             // 
-            // comboBox1
+            // cBoxAlunos
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(13, 32);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(271, 21);
-            this.comboBox1.TabIndex = 1;
+            this.cBoxAlunos.FormattingEnabled = true;
+            this.cBoxAlunos.Location = new System.Drawing.Point(17, 39);
+            this.cBoxAlunos.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.cBoxAlunos.Name = "cBoxAlunos";
+            this.cBoxAlunos.Size = new System.Drawing.Size(360, 24);
+            this.cBoxAlunos.TabIndex = 1;
             // 
             // Form12
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(300, 139);
-            this.Controls.Add(this.comboBox1);
+            this.ClientSize = new System.Drawing.Size(400, 171);
+            this.Controls.Add(this.cBoxAlunos);
             this.Controls.Add(this.btnReativar);
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "Form12";
             this.Text = "Form12";
             this.ResumeLayout(false);
@@ -66,6 +70,6 @@ namespace Studio
         #endregion
 
         private System.Windows.Forms.Button btnReativar;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.ComboBox cBoxAlunos;
     }
 }

@@ -64,6 +64,12 @@ namespace Studio
 
         }
 
+        public Aluno(string cpf, string nome)
+        {
+            this.nome = nome;
+            this.cpf = cpf;
+        }
+
         public Aluno(string cpf)
         {
             setCpf(cpf);
@@ -215,6 +221,29 @@ namespace Studio
             }
 
             return resultado;
+        }
+
+        public bool reativarAluno()
+        {
+            bool resultado = false;
+            try
+            {
+                DAO_Conexao.con.Open();
+                MySqlCommand atualiza = new MySqlCommand("update Estudio_Aluno set ativo = 1 where CPFAluno = '" + cpf + "'", DAO_Conexao.con);
+                atualiza.ExecuteNonQuery();
+                resultado = true;
+
+            }catch(Exception ex)
+            {
+                MessageBox.Show(ex.ToString());
+            }
+            finally
+            {
+                DAO_Conexao.con.Close();
+            }
+
+            return resultado;
+            
         }
 
         public string getCpf()

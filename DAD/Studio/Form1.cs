@@ -163,5 +163,12 @@ namespace Studio
             form11.MdiParent = this;
             form11.Show();
         }
+
+        private void reativarAlunoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Form12 form12 = new Form12();
+            form12.MdiParent = this;
+            form12.Show();
+        }
     }
 }
