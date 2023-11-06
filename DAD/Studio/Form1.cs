@@ -149,5 +149,19 @@ namespace Studio
             form10.MdiParent = this;
             form10.Show();
         }
+
+        private void consultarToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Form11 form11 = new Form11();
+            form11.MdiParent = this;
+            form11.Show();
+        }
+
+        private void consultarToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            Form11 form11 = new Form11();
+            form11.MdiParent = this;
+            form11.Show();
+        }
     }
 }

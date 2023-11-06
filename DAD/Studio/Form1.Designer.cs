@@ -61,6 +61,9 @@ namespace Studio
             this.consultarModalidadeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.turmaToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.consultarTurmaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.consultarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.matrículaToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.consultarToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.menuStrip2.SuspendLayout();
@@ -75,7 +78,7 @@ namespace Studio
             this.matrículaToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(800, 24);
+            this.menuStrip1.Size = new System.Drawing.Size(1006, 24);
             this.menuStrip1.TabIndex = 1;
             this.menuStrip1.Text = "menuStrip1";
             this.menuStrip1.Visible = false;
@@ -182,7 +185,8 @@ namespace Studio
             // matrículaToolStripMenuItem
             // 
             this.matrículaToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.gerenciarToolStripMenuItem});
+            this.gerenciarToolStripMenuItem,
+            this.consultarToolStripMenuItem});
             this.matrículaToolStripMenuItem.Name = "matrículaToolStripMenuItem";
             this.matrículaToolStripMenuItem.Size = new System.Drawing.Size(69, 20);
             this.matrículaToolStripMenuItem.Text = "Matrícula";
@@ -190,7 +194,7 @@ namespace Studio
             // gerenciarToolStripMenuItem
             // 
             this.gerenciarToolStripMenuItem.Name = "gerenciarToolStripMenuItem";
-            this.gerenciarToolStripMenuItem.Size = new System.Drawing.Size(124, 22);
+            this.gerenciarToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.gerenciarToolStripMenuItem.Text = "Gerenciar";
             this.gerenciarToolStripMenuItem.Click += new System.EventHandler(this.gerenciarToolStripMenuItem_Click);
             // 
@@ -258,10 +262,11 @@ namespace Studio
             this.menuStrip2.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.arquivoToolStripMenuItem1,
             this.modalidadeToolStripMenuItem1,
-            this.turmaToolStripMenuItem1});
+            this.turmaToolStripMenuItem1,
+            this.matrículaToolStripMenuItem1});
             this.menuStrip2.Location = new System.Drawing.Point(0, 0);
             this.menuStrip2.Name = "menuStrip2";
-            this.menuStrip2.Size = new System.Drawing.Size(800, 24);
+            this.menuStrip2.Size = new System.Drawing.Size(1006, 24);
             this.menuStrip2.TabIndex = 5;
             this.menuStrip2.Text = "menuStrip2";
             this.menuStrip2.Visible = false;
@@ -332,6 +337,28 @@ namespace Studio
             this.consultarTurmaToolStripMenuItem.Text = "Consultar Turma";
             this.consultarTurmaToolStripMenuItem.Click += new System.EventHandler(this.consultarTurmaToolStripMenuItem_Click);
             // 
+            // consultarToolStripMenuItem
+            // 
+            this.consultarToolStripMenuItem.Name = "consultarToolStripMenuItem";
+            this.consultarToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.consultarToolStripMenuItem.Text = "Consultar";
+            this.consultarToolStripMenuItem.Click += new System.EventHandler(this.consultarToolStripMenuItem_Click);
+            // 
+            // matrículaToolStripMenuItem1
+            // 
+            this.matrículaToolStripMenuItem1.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.consultarToolStripMenuItem1});
+            this.matrículaToolStripMenuItem1.Name = "matrículaToolStripMenuItem1";
+            this.matrículaToolStripMenuItem1.Size = new System.Drawing.Size(69, 20);
+            this.matrículaToolStripMenuItem1.Text = "Matrícula";
+            // 
+            // consultarToolStripMenuItem1
+            // 
+            this.consultarToolStripMenuItem1.Name = "consultarToolStripMenuItem1";
+            this.consultarToolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
+            this.consultarToolStripMenuItem1.Text = "Consultar";
+            this.consultarToolStripMenuItem1.Click += new System.EventHandler(this.consultarToolStripMenuItem1_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -389,6 +416,9 @@ namespace Studio
         private System.Windows.Forms.ToolStripMenuItem consultarTurmaToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem matrículaToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem gerenciarToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem consultarToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem matrículaToolStripMenuItem1;
+        private System.Windows.Forms.ToolStripMenuItem consultarToolStripMenuItem1;
     }
 }
 

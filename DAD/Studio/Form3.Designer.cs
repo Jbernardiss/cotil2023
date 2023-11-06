@@ -55,6 +55,7 @@ namespace Studio
             this.label1 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.button2 = new System.Windows.Forms.Button();
+            this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -218,7 +219,7 @@ namespace Studio
             this.txtCPF.Name = "txtCPF";
             this.txtCPF.Size = new System.Drawing.Size(81, 20);
             this.txtCPF.TabIndex = 1;
-            this.txtCPF.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtCPF_KeyPress);
+            this.txtCPF.TextChanged += new System.EventHandler(this.txtCPF_TextChanged);
             // 
             // label6
             // 
@@ -286,6 +287,7 @@ namespace Studio
             this.pictureBox1.Location = new System.Drawing.Point(504, 12);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(131, 175);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 1;
             this.pictureBox1.TabStop = false;
             // 
@@ -297,6 +299,11 @@ namespace Studio
             this.button2.TabIndex = 12;
             this.button2.Text = "Escolher Foto";
             this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
+            // 
+            // openFileDialog1
+            // 
+            this.openFileDialog1.FileName = "openFileDialog1";
             // 
             // Form3
             // 
@@ -343,5 +350,6 @@ namespace Studio
         private System.Windows.Forms.Button btnCadastrar;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.OpenFileDialog openFileDialog1;
     }
 }

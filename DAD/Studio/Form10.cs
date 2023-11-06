@@ -18,6 +18,7 @@ namespace Studio
 
         string selectedCpf;
         int selectedIdTurma;
+        int acao = 0; // criar: 0; remover: 1
 
         public Form10()
         {
@@ -89,39 +90,73 @@ namespace Studio
         private void dataGridViewAluno_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             selectedCpf = arrAluno[dataGridViewAluno.CurrentCell.RowIndex].getCpf();
-            MessageBox.Show(selectedCpf);
+
+            if(Matricula.matriculaExiste(selectedCpf, selectedIdTurma))
+            {
+                btnMatricular.Text = "Desmatricular";
+                acao = 1;
+            } else
+            {
+                btnMatricular.Text = "Matricular";
+                acao = 0;
+            }
         }
 
         private void dataGridViewTurma_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             selectedIdTurma = arrTurma[dataGridViewTurma.CurrentCell.RowIndex].Id;
-            MessageBox.Show($"{selectedIdTurma}");
-            MessageBox.Show($"{arrTurma[dataGridViewTurma.CurrentCell.RowIndex].NumeroAlunosTurma}");
-            MessageBox.Show($"{Modalidade.getQtdeMaximaAlunosModalidade(arrTurma[dataGridViewTurma.CurrentCell.RowIndex].Modalidade)}");
+
+            if (Matricula.matriculaExiste(selectedCpf, selectedIdTurma))
+            {
+                btnMatricular.Text = "Desmatricular";
+                acao = 1;
+            }
+            else
+            {
+                btnMatricular.Text = "Matricular";
+                acao = 0;
+            }
         }
 
         private void btnMatricular_Click(object sender, EventArgs e)
         {
             Matricula matricula = new Matricula(selectedCpf, selectedIdTurma);
-            if(matricula.cadastrarMatricula())
-            {
-                int qtdeMaxima = Modalidade.getQtdeMaximaAlunosModalidade(arrTurma[dataGridViewTurma.CurrentCell.RowIndex].Modalidade);
 
-                if(arrTurma[dataGridViewTurma.CurrentCell.RowIndex].NumeroAlunosTurma < qtdeMaxima)
+            if(acao == 0)
+            {
+                if (matricula.cadastrarMatricula())
                 {
-                    MessageBox.Show("Matrícula feita com sucesso!");
-                    carregarTurmas();
+                    int qtdeMaxima = Modalidade.getQtdeMaximaAlunosModalidade(arrTurma[dataGridViewTurma.CurrentCell.RowIndex].Modalidade);
+
+                    if (arrTurma[dataGridViewTurma.CurrentCell.RowIndex].NumeroAlunosTurma < qtdeMaxima)
+                    {
+                        MessageBox.Show("Matrícula feita com sucesso!");
+                        carregarTurmas();
+                    }
+                    else
+                    {
+                        MessageBox.Show("A classe já está cheia!");
+                    }
+
+
                 }
                 else
                 {
-                    MessageBox.Show("A classe já está cheia!");
+                    MessageBox.Show("Erro ao realizar matrícula");
                 }
-
-                
             }
-            else
+            else if(acao == 1)
             {
-                MessageBox.Show("Erro ao realizar matrícula");
+                if(matricula.apagarMatricula())
+                {
+                    MessageBox.Show("Aluno desmatriculado");
+                    carregarTurmas();
+                    btnMatricular.Text = "Matricular";
+                }
+                else
+                {
+                    MessageBox.Show("Erro ao desmatricular aluno");
+                }
             }
         }
     }
